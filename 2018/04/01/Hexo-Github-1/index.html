@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Simon</title>
+  <title>Hexo+Github（1） | Simon</title>
   <meta name="author" content="Simon" />
 
   
@@ -14,7 +14,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="Hexo+Github（1）" />
   <meta property="og:site_name" content="Simon" />
 
   
@@ -57,109 +57,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-04-01T14:57:42.000Z"><a href="/2018/04/01/Hexo-Github-3/">2018-04-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/04/01/Hexo-Github-3/">Hexo+Github（3）</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="17、迁移方法"><a href="#17、迁移方法" class="headerlink" title="17、迁移方法"></a>17、迁移方法</h2><h3 id="1-RSS"><a href="#1-RSS" class="headerlink" title="(1)RSS"></a>(1)RSS</h3><p>安装hexo-migrator-rss 插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-migrator-rss --save</span><br></pre></td></tr></table></figure></p>
-<p>执行 (<source> 文件路径或网址)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo migrate rss &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<pre><code>12
-</code></pre><h3 id="2-Jekyll"><a href="#2-Jekyll" class="headerlink" title="(2)Jekyll"></a>(2)Jekyll</h3><p>把_post文件夹下的所有文件复制到source/_post文件夹，并修改new_post_name参数</p>
-<blockquote>
-<p>new_post_name: :year-:month-:day-:title.md</p>
-</blockquote>
-<h3 id="3-Octopress"><a href="#3-Octopress" class="headerlink" title="(3)Octopress"></a>(3)Octopress</h3><p>把source/_post文件夹下的所有文件复制到Hexo的source/_post文件夹，并修改new_post_name参数<br>new_post_name: :year-:month-:day-:title.md</p>
-<h3 id="4-WordPress"><a href="#4-WordPress" class="headerlink" title="(4)WordPress"></a>(4)WordPress</h3><p>安装 hexo-migeator-wordpress 插件</p>
-<blockquote>
-<p>npm install hexo-migeator-wordpress –save<br>从WP导出数据，而后执行 (<source> 文件路径或网址)<br>hexo migrate wordpress <source></p>
-</blockquote>
-<h3 id="5-Joomla"><a href="#5-Joomla" class="headerlink" title="(5)Joomla"></a>(5)Joomla</h3><p>安装 hexo-migeator-joomla插件</p>
-<blockquote>
-<p>npm install hexo-migeator-joomla –save<br>用J2XML组件导出数据，而后执行 (<source> 文件路径或网址)<br>hexo migrate joomla<source></p>
-</blockquote>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/Hexo/">Hexo</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-04-01T14:44:04.000Z"><a href="/2018/04/01/Hexo-Github-2/">2018-04-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/04/01/Hexo-Github-2/">Hexo+Github（2）</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"博客名"</span>			//新建一篇博客--_posts目录下</span><br><span class="line">hexo d -g				//编辑器编好文章，那么就可以生成以及部署了</span><br><span class="line">hexo generate		--&gt;  hexo g	//生成静态文件</span><br><span class="line">hexo deploy		--&gt;  hexo d	//文件生成后立即部署网站</span><br><span class="line">hexo watch		--&gt;  hexo w	//监视文件变动</span><br><span class="line">hexo publish [layout] &lt;Filename&gt; 	//发表草稿</span><br><span class="line">hexo server 				//启动服务器</span><br><span class="line">hexo port		--&gt;  hexo p	//重设端口</span><br><span class="line">hexo static		--&gt;  hexo s	//只使用静态文件</span><br><span class="line">hexo <span class="built_in">log</span>		--&gt;  hexo l	//启动日志</span><br><span class="line">hexo render &lt;file1&gt;[file2]...		//渲染文件</span><br><span class="line">hexo migrate &lt;<span class="built_in">type</span>&gt;			//从其他博客迁移</span><br><span class="line">hexo clean		--&gt;  hexo c	//清除缓存文件db.json和文件夹public</span><br><span class="line">hexo list &lt;<span class="built_in">type</span>&gt;			//列出网站资料</span><br><span class="line">hexo version				//显示版本</span><br><span class="line">hexo safe				//安全模式 不载入插件和脚本</span><br><span class="line">hexo debug				//调试模式 显示调试信息记录在debug.log中</span><br><span class="line">hexo silent				//简洁模式 隐藏终端信息</span><br><span class="line">hexo config custom.yml			//自定义配置文件的路径</span><br><span class="line">hexo draft				//显示<span class="built_in">source</span>/_drafts 文件夹中的草稿</span><br><span class="line">hexo cwd /path/to/cwd			//自定义当前工作目录的路径</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/Hexo/">Hexo</a>
-  </div>
-
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -169,7 +67,7 @@
       
       
   
-    <h1 class="title"><a href="/2018/04/01/Hexo-Github-1/">Hexo+Github（1）</a></h1>
+    <h1 class="title">Hexo+Github（1）</h1>
   
 
     </header>
@@ -209,95 +107,6 @@
 
 
 
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-03-31T14:21:05.000Z"><a href="/2018/03/31/add/">2018-03-31</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/03/31/add/">add</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-03-24T01:28:28.450Z"><a href="/2018/03/24/hello-world/">2018-03-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/03/24/hello-world/">Hello World</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-<nav id="pagination">
-  
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
