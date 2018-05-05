@@ -186,15 +186,14 @@
 
 
             <div class="toc red-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#"><span class="section table-of-contents-text"></span></a></li></ol>
 </div>
 
 
             <div class="entry red-link-context">
                 <hr>
 <p>查看登录失败的IP 并显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>为了验证是否被入侵，可以先查看现在谁在登录服务器，列出用户所有的登录时间和登录终端的地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br><span class="line">显示系统中所有用户最近一次登录信息</span><br><span class="line">```bash</span><br><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="Failed login.png" alt="Failed login"></h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，列出用户所有的登录时间和登录终端的地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br><span class="line">显示系统中所有用户最近一次登录信息</span><br><span class="line">```bash</span><br><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>把对方IP加入到黑名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
 <hr>
