@@ -7,7 +7,7 @@
 
     
 
-    <title>服务器安防之VPS爆破防御（简） | An Apple</title>
+    <title>服务器安防之VPS爆破防御（简） | Simon&#39;s Blog</title>
     <meta name="author" content="Simon">
     
     <meta name="description" content="An Apple A Day.">
@@ -186,25 +186,26 @@
 
 
             <div class="toc red-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#"><span class="section table-of-contents-text"></span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#查看登录失败的IP"><span class="section table-of-contents-text">查看登录失败的IP</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#列出用户所有的登录时间和登录终端的地址"><span class="section table-of-contents-text">列出用户所有的登录时间和登录终端的地址</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#加入到黑名单"><span class="section table-of-contents-text">加入到黑名单</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#禁止所有IP访问SSH功能"><span class="section table-of-contents-text">禁止所有IP访问SSH功能</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#（自行决定）"><span class="section table-of-contents-text">（自行决定）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#更改端口号"><span class="section table-of-contents-text">更改端口号</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#禁止root-ssh登录"><span class="section table-of-contents-text">禁止root ssh登录</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#sudo-etc-init-d-ssh-restart"><span class="section table-of-contents-text">$ sudo /etc/init.d/ssh restart </span></a></li></ol>
 </div>
 
 
             <div class="entry red-link-context">
                 <hr>
-<p>查看登录失败的IP 并显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="Failed login.png" alt="Failed login"></h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，列出用户所有的登录时间和登录终端的地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br><span class="line">显示系统中所有用户最近一次登录信息</span><br><span class="line">```bash</span><br><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
+<h2 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
+<p><img src="Failed login.png" alt="Failed login"></p>
 <hr>
-<p>把对方IP加入到黑名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
+<h2 id="列出用户所有的登录时间和登录终端的地址"><a href="#列出用户所有的登录时间和登录终端的地址" class="headerlink" title="列出用户所有的登录时间和登录终端的地址"></a>列出用户所有的登录时间和登录终端的地址</h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br></pre></td></tr></table></figure></p>
+<p>显示系统中所有用户最近一次登录信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>禁止所有IP访问SSH功能<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
+<h2 id="加入到黑名单"><a href="#加入到黑名单" class="headerlink" title="加入到黑名单"></a>加入到黑名单</h2><p>把对方IP加入到黑名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>由于暴力破解骇客首先会尝试root 用户，所以还要禁止root ssh登录,修改sshd_conf文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-<p>#把PermitRootLogin 属性 yes 改为 no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin no</span><br></pre></td></tr></table></figure></p>
+<h2 id="禁止所有IP访问SSH功能"><a href="#禁止所有IP访问SSH功能" class="headerlink" title="禁止所有IP访问SSH功能"></a>禁止所有IP访问SSH功能</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure>
 <hr>
-<p>修改SSH端口或禁止root登录<br>修改/etc/ssh/sshd_config文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/ssh/sshd_config </span><br><span class="line"></span><br><span class="line">$ sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="（自行决定）"><a href="#（自行决定）" class="headerlink" title="（自行决定）"></a>（自行决定）</h2><h2 id="更改端口号"><a href="#更改端口号" class="headerlink" title="更改端口号"></a>更改端口号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Port 22</span></span><br></pre></td></tr></table></figure>
+<h2 id="禁止root-ssh登录"><a href="#禁止root-ssh登录" class="headerlink" title="禁止root ssh登录"></a>禁止root ssh登录</h2><p>暴力破解骇客首先会尝试root 用户，可以,修改sshd_conf文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#PermitRootLogin no</span><br></pre></td></tr></table></figure>
+<h2 id="sudo-etc-init-d-ssh-restart"><a href="#sudo-etc-init-d-ssh-restart" class="headerlink" title="$ sudo /etc/init.d/ssh restart "></a>$ sudo /etc/init.d/ssh restart </h2>
                 
 
 
