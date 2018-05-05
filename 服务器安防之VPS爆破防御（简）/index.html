@@ -7,7 +7,7 @@
 
     
 
-    <title>归档：2018/4 | An Apple</title>
+    <title>服务器安防之VPS爆破防御（简） | An Apple</title>
     <meta name="author" content="Simon">
     
     <meta name="description" content="An Apple A Day.">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="服务器安防之VPS爆破防御（简）"/>
     <meta property="og:site_name" content="Simon"/>
 
     
@@ -193,52 +193,86 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>服务器安防之VPS爆破防御（简）</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="red-link-context" datetime="2018-05-05T01:48:35.000Z"><a href="/服务器安防之VPS爆破防御（简）/">2018-05-05</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/服务器安防/" class="chip red lighten-1">服务器安防</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2018
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/Hexo-Github-3/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T14:57:42.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（3）
-                            </a>
-                        
-                            <a href="/Hexo-Github-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T14:44:04.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（2）
-                            </a>
-                        
-                            <a href="/Hexo-Github-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T13:46:52.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（1）
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
-        
-    </ul>
+    </div>
+
+
+            <div class="toc red-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry red-link-context">
+                <hr>
+<p>查看登录失败的IP 并显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>为了验证是否被入侵，可以先查看现在谁在登录服务器，列出用户所有的登录时间和登录终端的地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br><span class="line">显示系统中所有用户最近一次登录信息</span><br><span class="line">```bash</span><br><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>把对方IP加入到黑名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>禁止所有IP访问SSH功能<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>由于暴力破解骇客首先会尝试root 用户，所以还要禁止root ssh登录,修改sshd_conf文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>#把PermitRootLogin 属性 yes 改为 no<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin no</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>修改SSH端口或禁止root登录<br>修改/etc/ssh/sshd_config文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/ssh/sshd_config </span><br><span class="line"></span><br><span class="line">$ sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></p>
+
+                
+
+
+<p class="red-link-context">
+    <a href="/Hexo-Github-3/" rel="next" title="Hexo+Github（3）">
+    下一篇：Hexo+Github（3）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>

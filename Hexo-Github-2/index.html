@@ -7,7 +7,7 @@
 
     
 
-    <title>归档：2018/4 | An Apple</title>
+    <title>Hexo+Github（2） | An Apple</title>
     <meta name="author" content="Simon">
     
     <meta name="description" content="An Apple A Day.">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="Hexo+Github（2）"/>
     <meta property="og:site_name" content="Simon"/>
 
     
@@ -193,52 +193,80 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>Hexo+Github（2）</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="red-link-context" datetime="2018-04-01T14:44:04.000Z"><a href="/Hexo-Github-2/">2018-04-01</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/Hexo/" class="chip red lighten-1">Hexo</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2018
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/Hexo-Github-3/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T14:57:42.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（3）
-                            </a>
-                        
-                            <a href="/Hexo-Github-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T14:44:04.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（2）
-                            </a>
-                        
-                            <a href="/Hexo-Github-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T13:46:52.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（1）
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
-        
-    </ul>
+    </div>
+
+
+            <div class="toc red-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry red-link-context">
+                <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"博客名"</span>			//新建一篇博客--_posts目录下</span><br><span class="line">hexo d -g				//编辑器编好文章，那么就可以生成以及部署了</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">hexo generate		--&gt;  hexo g	//生成静态文件</span><br><span class="line">hexo deploy		--&gt;  hexo d	//文件生成后立即部署网站</span><br><span class="line">hexo watch		--&gt;  hexo w	//监视文件变动</span><br><span class="line">hexo publish [layout] &lt;Filename&gt; 	//发表草稿</span><br><span class="line">hexo server 				//启动服务器</span><br><span class="line">hexo port		--&gt;  hexo p	//重设端口</span><br><span class="line">hexo static		--&gt;  hexo s	//只使用静态文件</span><br><span class="line">hexo <span class="built_in">log</span>		--&gt;  hexo l	//启动日志</span><br><span class="line">hexo render &lt;file1&gt;[file2]...		//渲染文件</span><br><span class="line">hexo migrate &lt;<span class="built_in">type</span>&gt;			//从其他博客迁移</span><br><span class="line">hexo clean		--&gt;  hexo c	//清除缓存文件db.json和文件夹public</span><br><span class="line">hexo list &lt;<span class="built_in">type</span>&gt;			//列出网站资料</span><br><span class="line">hexo version				//显示版本</span><br><span class="line">hexo safe				//安全模式 不载入插件和脚本</span><br><span class="line">hexo debug				//调试模式 显示调试信息记录在debug.log中</span><br><span class="line">hexo silent				//简洁模式 隐藏终端信息</span><br><span class="line">hexo config custom.yml			//自定义配置文件的路径</span><br><span class="line">hexo draft				//显示<span class="built_in">source</span>/_drafts 文件夹中的草稿</span><br><span class="line">hexo cwd /path/to/cwd			//自定义当前工作目录的路径</span><br></pre></td></tr></table></figure>
+
+                
+<p class="red-link-context">
+    <a href="/Hexo-Github-3/" rel="next" title="Hexo+Github（3）">
+    上一篇：Hexo+Github（3）
+  </a>
+</p>
+
+
+
+<p class="red-link-context">
+    <a href="/Hexo-Github-1/" rel="next" title="Hexo+Github（1）">
+    下一篇：Hexo+Github（1）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>

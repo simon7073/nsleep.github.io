@@ -7,7 +7,7 @@
 
     
 
-    <title>归档：2018/4 | An Apple</title>
+    <title>Hexo+Github（3） | An Apple</title>
     <meta name="author" content="Simon">
     
     <meta name="description" content="An Apple A Day.">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="Hexo+Github（3）"/>
     <meta property="og:site_name" content="Simon"/>
 
     
@@ -193,52 +193,94 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>Hexo+Github（3）</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="red-link-context" datetime="2018-04-01T14:57:42.000Z"><a href="/Hexo-Github-3/">2018-04-01</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/Hexo/" class="chip red lighten-1">Hexo</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2018
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/Hexo-Github-3/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T14:57:42.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（3）
-                            </a>
-                        
-                            <a href="/Hexo-Github-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T14:44:04.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（2）
-                            </a>
-                        
-                            <a href="/Hexo-Github-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2018-04-01T13:46:52.000Z">2018-04-01</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                Hexo+Github（1）
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
-        
-    </ul>
+    </div>
+
+
+            <div class="toc red-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#17、迁移方法"><span class="section table-of-contents-text">17、迁移方法</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-RSS"><span class="section table-of-contents-text">(1)RSS</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-Jekyll"><span class="section table-of-contents-text">(2)Jekyll</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-Octopress"><span class="section table-of-contents-text">(3)Octopress</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-WordPress"><span class="section table-of-contents-text">(4)WordPress</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-Joomla"><span class="section table-of-contents-text">(5)Joomla</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry red-link-context">
+                <h2 id="17、迁移方法"><a href="#17、迁移方法" class="headerlink" title="17、迁移方法"></a>17、迁移方法</h2><h3 id="1-RSS"><a href="#1-RSS" class="headerlink" title="(1)RSS"></a>(1)RSS</h3><p>安装hexo-migrator-rss 插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-migrator-rss --save</span><br></pre></td></tr></table></figure></p>
+<p>执行 (<source> 文件路径或网址)</p>
+<pre><code class="bash">hexo migrate rss &lt;<span class="built_in">source</span>&gt;
+</code></pre>
+<h3 id="2-Jekyll"><a href="#2-Jekyll" class="headerlink" title="(2)Jekyll"></a>(2)Jekyll</h3><p>把_post文件夹下的所有文件复制到source/_post文件夹，并修改new_post_name参数</p>
+<pre><code>new_post_name: :year-:month-:day-:title.md  
+</code></pre><h3 id="3-Octopress"><a href="#3-Octopress" class="headerlink" title="(3)Octopress"></a>(3)Octopress</h3><p>把source/_post文件夹下的所有文件复制到Hexo的source/_post文件夹，并修改new_post_name参数</p>
+<pre><code>new_post_name: :year-:month-:day-:title.md
+</code></pre><h3 id="4-WordPress"><a href="#4-WordPress" class="headerlink" title="(4)WordPress"></a>(4)WordPress</h3><p>安装 hexo-migeator-wordpress 插件</p>
+<pre><code>npm install hexo-migeator-wordpress --save
+</code></pre><p>从WP导出数据，而后执行 (<source> 文件路径或网址)</p>
+<pre><code>hexo migrate wordpress &lt;source&gt;
+</code></pre><h3 id="5-Joomla"><a href="#5-Joomla" class="headerlink" title="(5)Joomla"></a>(5)Joomla</h3><p>安装 hexo-migeator-joomla插件</p>
+<pre><code>npm install hexo-migeator-joomla --save
+</code></pre><p>用J2XML组件导出数据，而后执行 (<source> 文件路径或网址)</p>
+<pre><code>hexo migrate joomla&lt;source&gt;
+</code></pre>
+                
+<p class="red-link-context">
+    <a href="/服务器安防之VPS爆破防御（简）/" rel="next" title="服务器安防之VPS爆破防御（简）">
+    上一篇：服务器安防之VPS爆破防御（简）
+  </a>
+</p>
+
+
+
+<p class="red-link-context">
+    <a href="/Hexo-Github-2/" rel="next" title="Hexo+Github（2）">
+    下一篇：Hexo+Github（2）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
