@@ -180,23 +180,36 @@
             
     <div class="tags-row">
         
-            <a href="/tags/VPN/" class="chip red lighten-1">VPN</a>
+            <a href="/tags/VPN架设/" class="chip red lighten-1">VPN架设</a>
         
     </div>
 
 
             <div class="toc red-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#下载shadowsocks服务端"><span class="section table-of-contents-text">下载shadowsocks服务端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#安装Win-ss客户端"><span class="section table-of-contents-text">安装Win ss客户端</span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#下载shadowsocks服务端"><span class="section table-of-contents-text">下载shadowsocks服务端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#安装Win-ss客户端"><span class="section table-of-contents-text">安装Win ss客户端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#ss加速"><span class="section table-of-contents-text">ss加速</span></a></li></ol>
 </div>
 
 
             <div class="entry red-link-context">
-                <h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">shadowsocks</a>服务端</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
+                <blockquote><p>提要：<br>      系统：CentOS 6.9</p>
+</blockquote>
+<h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a></p>
-<p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a></p>
-
+<h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> ：<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+<p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> ：<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
+<hr>
+<h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><p>bbr 加速下载<br>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure>
+<p>锐速ServerSpeeder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure>
                 
+<p class="red-link-context">
+    <a href="/服务器管理面板/" rel="next" title="服务器管理面板">
+    上一篇：服务器管理面板
+  </a>
+</p>
+
 
 
 <p class="red-link-context">
