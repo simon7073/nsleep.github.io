@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nsleep.github.io/"/>
-  <updated>2018-05-31T09:25:38.353Z</updated>
+  <updated>2018-06-23T12:02:51.090Z</updated>
   <id>http://nsleep.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VPN的简单架设</title>
+    <link href="http://nsleep.github.io/VPN%E7%9A%84%E7%AE%80%E5%8D%95%E6%9E%B6%E8%AE%BE/"/>
+    <id>http://nsleep.github.io/VPN的简单架设/</id>
+    <published>2018-06-23T11:58:43.000Z</published>
+    <updated>2018-06-23T12:02:51.090Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">shadowsocks</a>服务端</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure><hr><h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a></p><p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;下载shadowsocks服务端&quot;&gt;&lt;a href=&quot;#下载shadowsocks服务端&quot; class=&quot;headerlink&quot; title=&quot;下载shadowsocks服务端&quot;&gt;&lt;/a&gt;下载&lt;a href=&quot;https://teddysun.com/486.ht
+      
+    
+    </summary>
+    
+    
+      <category term="VPN" scheme="http://nsleep.github.io/tags/VPN/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器安防之登陆次数限制</title>
