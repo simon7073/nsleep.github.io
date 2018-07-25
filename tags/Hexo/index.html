@@ -7,7 +7,7 @@
 
     
 
-    <title>Hexo | Simon&#39;s Blog</title>
+    <title>hexo | Simon&#39;s Blog</title>
     <meta name="author" content="Simon">
     
     <meta name="description" content="An Apple A Day.">
@@ -64,6 +64,14 @@
                     </li>
                 
                     <li>
+                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
                         <a class="menu-about " href="/about" >
                             <i class="fa fa-user "></i>
                             
@@ -104,6 +112,14 @@
                     <i class="fa fa-archive "></i>
                     
                     归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
                 </a>
             </li>
         
@@ -153,7 +169,7 @@
         
 
         
-            <a class="breadcrumb" href="/tags/Hexo/">Hexo</a>
+            <a class="breadcrumb" href="/tags/hexo/">hexo</a>
         
     </div>
 </nav>
@@ -162,22 +178,10 @@
 
     <div class="collection mt-0">
         
-            <a href="/Hexo-Github-3/" class="collection-item grey-text text-darken-1">
-                <time datetime="2018-04-01T14:57:42.000Z">2018-04-01</time>
+            <a href="/hexo-blog-备份/" class="collection-item grey-text text-darken-1">
+                <time datetime="2018-07-22T07:59:55.000Z">2018-07-22</time>
                 <span>&nbsp;&nbsp;&nbsp;</span>
-                Hexo+Github（3）
-            </a>
-        
-            <a href="/Hexo-Github-2/" class="collection-item grey-text text-darken-1">
-                <time datetime="2018-04-01T14:44:04.000Z">2018-04-01</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Hexo+Github（2）
-            </a>
-        
-            <a href="/Hexo-Github-1/" class="collection-item grey-text text-darken-1">
-                <time datetime="2018-04-01T13:46:52.000Z">2018-04-01</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Hexo+Github（1）
+                hexo blog 备份
             </a>
         
     </div>
@@ -460,6 +464,40 @@
                         str += "</ul>";
                         $resultContent.innerHTML = str;
                     });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
+   });
                 }
             });
         }
