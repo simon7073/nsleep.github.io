@@ -3,10 +3,10 @@
   <title>Simon&#39;s Blog</title>
   
   <subtitle>Simon&#39;s Blog</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/simon/atom.xml" rel="self"/>
   
   <link href="http://nsleep.github.io/"/>
-  <updated>2018-07-25T00:35:48.224Z</updated>
+  <updated>2018-07-25T01:35:38.065Z</updated>
   <id>http://nsleep.github.io/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>hexo blog 备份</title>
-    <link href="http://nsleep.github.io/hexo-blog-%E5%A4%87%E4%BB%BD/"/>
-    <id>http://nsleep.github.io/hexo-blog-备份/</id>
+    <link href="http://nsleep.github.io/2018-7-22/"/>
+    <id>http://nsleep.github.io/2018-7-22/</id>
     <published>2018-07-22T07:59:55.000Z</published>
-    <updated>2018-07-25T00:35:48.224Z</updated>
+    <updated>2018-07-25T01:35:38.065Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://cloud.tencent.com/developer/article/1142456" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1142456</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a><br><a href="https://blog.csdn.net/u012195214/article/details/72721065" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/72721065</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="noopener">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more</a><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a><br><a href="https://blog.csdn.net/u011192270/article/details/52459558" target="_blank" rel="noopener">https://blog.csdn.net/u011192270/article/details/52459558</a><br><a href="https://www.jianshu.com/p/baab04284923" target="_blank" rel="noopener">https://www.jianshu.com/p/baab04284923</a><br><a href="https://blog.csdn.net/zk673820543/article/details/52698760" target="_blank" rel="noopener">https://blog.csdn.net/zk673820543/article/details/52698760</a><br><a href="https://blog.csdn.net/shile/article/details/78714189" target="_blank" rel="noopener">https://blog.csdn.net/shile/article/details/78714189</a><br><a href="https://www.jianshu.com/p/6fb0b287f950" target="_blank" rel="noopener">https://www.jianshu.com/p/6fb0b287f950</a><br><a href="https://www.jianshu.com/p/53f37196f6e7" target="_blank" rel="noopener">https://www.jianshu.com/p/53f37196f6e7</a><br><a href="https://blog.csdn.net/u011116672/article/details/51114895" target="_blank" rel="noopener">https://blog.csdn.net/u011116672/article/details/51114895</a><br><a href="http://haoyuanliu.github.io/2016/11/21/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%81%E7%A7%BB/" target="_blank" rel="noopener">http://haoyuanliu.github.io/2016/11/21/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%81%E7%A7%BB/</a></p><p><a href="https://www.jianshu.com/p/39b411ddfb93" target="_blank" rel="noopener">https://www.jianshu.com/p/39b411ddfb93</a> 程序猿叨叨叨系列<br><a href="https://blog.csdn.net/u013904227/article/details/77430226" target="_blank" rel="noopener">https://blog.csdn.net/u013904227/article/details/77430226</a> Hexo深度使用<br><a href="http://haoyuanliu.github.io/tags/" target="_blank" rel="noopener">http://haoyuanliu.github.io/tags/</a></p><h1 id="1-创建仓库How"><a href="#1-创建仓库How" class="headerlink" title="1. 创建仓库How"></a>1. 创建仓库<a href="https://blog.csdn.net/hc_ttxs/article/details/79375788" target="_blank" rel="noopener">How</a></h1><pre><code>[使用Hexo &amp; Github,搭建属于自己的博客](http://www.cnblogs.com/ld1024/p/5913169.html)</code></pre><h1 id="2-创建两个分支：master-与-hexo；"><a href="#2-创建两个分支：master-与-hexo；" class="headerlink" title="2. 创建两个分支：master 与 hexo；"></a>2. 创建两个分支：master 与 hexo；</h1><p>git add .<br>git status<br>git commit -m ‘to’<br>git push –set-upstream origin hexo</p><p>查看远程分支<br>$ git branch -a</p><p>查看本地分支<br>$ git branch</p><p>切换分支<br>git checkout master</p><p>hexo new post “博客名”            //新建一篇博客–_posts目录下<br>hexo d -g<br>hexo s</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://cloud.tencent.com/developer/article/1142456" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1142456</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a><br><a href="https://blog.csdn.net/u012195214/article/details/72721065" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/72721065</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="noopener">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more</a><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a><br><a href="https://blog.csdn.net/u011192270/article/details/52459558" target="_blank" rel="noopener">https://blog.csdn.net/u011192270/article/details/52459558</a><br><a href="https://www.jianshu.com/p/baab04284923" target="_blank" rel="noopener">https://www.jianshu.com/p/baab04284923</a><br><a href="https://blog.csdn.net/zk673820543/article/details/52698760" target="_blank" rel="noopener">https://blog.csdn.net/zk673820543/article/details/52698760</a><br><a href="https://blog.csdn.net/shile/article/details/78714189" target="_blank" rel="noopener">https://blog.csdn.net/shile/article/details/78714189</a><br><a href="https://www.jianshu.com/p/6fb0b287f950" target="_blank" rel="noopener">https://www.jianshu.com/p/6fb0b287f950</a><br><a href="https://www.jianshu.com/p/53f37196f6e7" target="_blank" rel="noopener">https://www.jianshu.com/p/53f37196f6e7</a><br><a href="https://blog.csdn.net/u011116672/article/details/51114895" target="_blank" rel="noopener">https://blog.csdn.net/u011116672/article/details/51114895</a><br><a href="http://haoyuanliu.github.io/2016/11/21/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%81%E7%A7%BB/" target="_blank" rel="noopener">http://haoyuanliu.github.io/2016/11/21/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%81%E7%A7%BB/</a></p><p><a href="https://www.jianshu.com/p/39b411ddfb93" target="_blank" rel="noopener">https://www.jianshu.com/p/39b411ddfb93</a> 程序猿叨叨叨系列<br><a href="https://blog.csdn.net/u013904227/article/details/77430226" target="_blank" rel="noopener">https://blog.csdn.net/u013904227/article/details/77430226</a> Hexo深度使用<br><a href="http://haoyuanliu.github.io/tags/" target="_blank" rel="noopener">http://haoyuanliu.github.io/tags/</a></p><h1 id="1-创建仓库How"><a href="#1-创建仓库How" class="headerlink" title="1. 创建仓库How"></a>1. 创建仓库<a href="https://blog.csdn.net/hc_ttxs/article/details/79375788" target="_blank" rel="noopener">How</a></h1><p><a href="http://www.cnblogs.com/ld1024/p/5913169.html" target="_blank" rel="noopener">使用Hexo &amp; Github,搭建属于自己的博客</a></p><h1 id="2-创建两个分支：master-与-hexo；"><a href="#2-创建两个分支：master-与-hexo；" class="headerlink" title="2. 创建两个分支：master 与 hexo；"></a>2. 创建两个分支：master 与 hexo；</h1><p>git add .<br>git status<br>git commit -m ‘to’<br>git push –set-upstream origin hexo</p><p>查看远程分支<br>$ git branch -a</p><p>查看本地分支<br>$ git branch</p><p>切换分支<br>git checkout master</p><p>hexo new post “博客名”            //新建一篇博客–_posts目录下<br>hexo d -g<br>hexo s</p>]]></content>
     
     <summary type="html">
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>服务器管理面板</title>
-    <link href="http://nsleep.github.io/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/"/>
-    <id>http://nsleep.github.io/服务器管理面板/</id>
+    <link href="http://nsleep.github.io/2018-6-23/"/>
+    <id>http://nsleep.github.io/2018-6-23/</id>
     <published>2018-06-23T13:16:52.000Z</published>
     <updated>2018-07-25T00:35:48.223Z</updated>
     
@@ -67,8 +67,8 @@
   
   <entry>
     <title>VPN的简单架设</title>
-    <link href="http://nsleep.github.io/VPN%E7%9A%84%E7%AE%80%E5%8D%95%E6%9E%B6%E8%AE%BE/"/>
-    <id>http://nsleep.github.io/VPN的简单架设/</id>
+    <link href="http://nsleep.github.io/2018-6-23/"/>
+    <id>http://nsleep.github.io/2018-6-23/</id>
     <published>2018-06-23T11:58:43.000Z</published>
     <updated>2018-07-25T00:35:48.209Z</updated>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>服务器安防之登陆次数限制</title>
-    <link href="http://nsleep.github.io/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E9%98%B2%E4%B9%8B%E7%99%BB%E9%99%86%E6%AC%A1%E6%95%B0%E9%99%90%E5%88%B6/"/>
-    <id>http://nsleep.github.io/服务器安防之登陆次数限制/</id>
+    <link href="http://nsleep.github.io/2018-5-17/"/>
+    <id>http://nsleep.github.io/2018-5-17/</id>
     <published>2018-05-17T01:05:42.000Z</published>
     <updated>2018-07-25T00:35:48.180Z</updated>
     
@@ -117,8 +117,8 @@
   
   <entry>
     <title>服务器安防之VPS爆破防御（简）</title>
-    <link href="http://nsleep.github.io/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E9%98%B2%E4%B9%8BVPS%E7%88%86%E7%A0%B4%E9%98%B2%E5%BE%A1%EF%BC%88%E7%AE%80%EF%BC%89/"/>
-    <id>http://nsleep.github.io/服务器安防之VPS爆破防御（简）/</id>
+    <link href="http://nsleep.github.io/2018-5-5/"/>
+    <id>http://nsleep.github.io/2018-5-5/</id>
     <published>2018-05-05T01:48:35.000Z</published>
     <updated>2018-07-25T00:35:48.191Z</updated>
     
@@ -141,8 +141,8 @@
   
   <entry>
     <title>Hexo+Github（3）</title>
-    <link href="http://nsleep.github.io/Hexo-Github-3/"/>
-    <id>http://nsleep.github.io/Hexo-Github-3/</id>
+    <link href="http://nsleep.github.io/2018-4-1/"/>
+    <id>http://nsleep.github.io/2018-4-1/</id>
     <published>2018-04-01T14:57:42.000Z</published>
     <updated>2018-07-25T00:35:48.174Z</updated>
     
@@ -164,8 +164,8 @@
   
   <entry>
     <title>Hexo+Github（2）</title>
-    <link href="http://nsleep.github.io/Hexo-Github-2/"/>
-    <id>http://nsleep.github.io/Hexo-Github-2/</id>
+    <link href="http://nsleep.github.io/2018-4-1/"/>
+    <id>http://nsleep.github.io/2018-4-1/</id>
     <published>2018-04-01T14:44:04.000Z</published>
     <updated>2018-07-25T00:35:48.173Z</updated>
     
@@ -187,8 +187,8 @@
   
   <entry>
     <title>Hexo+Github（1）</title>
-    <link href="http://nsleep.github.io/Hexo-Github-1/"/>
-    <id>http://nsleep.github.io/Hexo-Github-1/</id>
+    <link href="http://nsleep.github.io/2018-4-1/"/>
+    <id>http://nsleep.github.io/2018-4-1/</id>
     <published>2018-04-01T13:46:52.000Z</published>
     <updated>2018-07-25T00:35:48.161Z</updated>
     
@@ -211,8 +211,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://nsleep.github.io/hello-world/"/>
-    <id>http://nsleep.github.io/hello-world/</id>
+    <link href="http://nsleep.github.io/2018-3-24/"/>
+    <id>http://nsleep.github.io/2018-3-24/</id>
     <published>2018-03-24T01:28:28.450Z</published>
     <updated>2018-03-24T01:06:41.079Z</updated>
     
