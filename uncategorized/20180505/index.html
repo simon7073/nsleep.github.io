@@ -7,15 +7,15 @@
 
     
 
-    <title>VPN的简单架设 | Simon&#39;s Blog</title>
+    <title>服务器安防之VPS爆破防御（简） | Simon</title>
     <meta name="author" content="Simon">
     
-    <meta name="description" content="An Apple A Day.">
+    <meta name="description" content="Blog">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="VPN的简单架设"/>
+    <meta property="og:title" content="服务器安防之VPS爆破防御（简）"/>
     <meta property="og:site_name" content="Simon&#39;s Blog"/>
 
     
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
     
-        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+        <link rel="stylesheet" href="/css/lib/prettify_default.css" type="text/css">
     
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -64,7 +64,7 @@
                     </li>
                 
                     <li>
-                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                        <a class="menu-category category-menu" href="/category" data-activates="category-menu" >
                             <i class="fa fa-bookmark "></i>
                             
                             分类
@@ -116,7 +116,7 @@
             </li>
         
             <li class="no-padding">
-                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                <a class="waves-effect menu-category category-menu" href="/category" data-activates="category-menu" >
                     <i class="fa fa-bookmark "></i>
                     
                     分类
@@ -181,12 +181,12 @@
             <div class="article-title">
                 
     
-        <h1>VPN的简单架设</h1>
+        <h1>服务器安防之VPS爆破防御（简）</h1>
     
 
 
             </div>
-            <time class="red-link-context" datetime="2018-06-23T11:58:43.000Z"><a href="/2018-6-23/">2018-06-23</a></time>
+            <time class="red-link-context" datetime="2018-05-05T01:48:35.000Z"><a href="/uncategorized/20180505/">2018-05-05</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -196,41 +196,46 @@
             
     <div class="tags-row">
         
-            <a href="/tags/VPN架设/" class="chip red lighten-1">VPN架设</a>
+            <a href="/tags/服务器安防/" class="chip red lighten-1">服务器安防</a>
         
     </div>
 
 
             <div class="toc red-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#下载shadowsocks服务端"><span class="section table-of-contents-text">下载shadowsocks服务端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#安装Win-ss客户端"><span class="section table-of-contents-text">安装Win ss客户端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#ss加速"><span class="section table-of-contents-text">ss加速</span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#查看登录失败的IP"><span class="section table-of-contents-text">查看登录失败的IP</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#列出用户所有的登录时间和登录终端的地址"><span class="section table-of-contents-text">列出用户所有的登录时间和登录终端的地址</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#加入到黑名单"><span class="section table-of-contents-text">加入到黑名单</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#禁止所有IP访问SSH功能"><span class="section table-of-contents-text">禁止所有IP访问SSH功能</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#（自行决定）"><span class="section table-of-contents-text">（自行决定）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#更改端口号"><span class="section table-of-contents-text">更改端口号</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#禁止root-ssh登录"><span class="section table-of-contents-text">禁止root ssh登录</span></a></li></ol>
 </div>
 
 
             <div class="entry red-link-context">
-                <blockquote><p>提要：<br>      系统：CentOS 6.9</p>
-</blockquote>
-<h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
+                <hr>
+<h2 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
+<p><img src="Failed login.png" alt="Failed login"></p>
 <hr>
-<h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> ：<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
-<p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> ：<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
+<h2 id="列出用户所有的登录时间和登录终端的地址"><a href="#列出用户所有的登录时间和登录终端的地址" class="headerlink" title="列出用户所有的登录时间和登录终端的地址"></a>列出用户所有的登录时间和登录终端的地址</h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br></pre></td></tr></table></figure></p>
+<p>显示系统中所有用户最近一次登录信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><p>bbr 加速下载<br>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure>
-<p>锐速ServerSpeeder</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure>
+<h2 id="加入到黑名单"><a href="#加入到黑名单" class="headerlink" title="加入到黑名单"></a>加入到黑名单</h2><p>把对方IP加入到黑名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="禁止所有IP访问SSH功能"><a href="#禁止所有IP访问SSH功能" class="headerlink" title="禁止所有IP访问SSH功能"></a>禁止所有IP访问SSH功能</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="（自行决定）"><a href="#（自行决定）" class="headerlink" title="（自行决定）"></a>（自行决定）</h2><h2 id="更改端口号"><a href="#更改端口号" class="headerlink" title="更改端口号"></a>更改端口号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Port 22</span></span><br></pre></td></tr></table></figure>
+<h2 id="禁止root-ssh登录"><a href="#禁止root-ssh登录" class="headerlink" title="禁止root ssh登录"></a>禁止root ssh登录</h2><p>暴力破解骇客首先会尝试root 用户，可以,修改sshd_conf文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#PermitRootLogin no</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<hr>
+
                 
 <p class="red-link-context">
-    <a href="/2018-6-23/" rel="next" title="服务器管理面板">
-    上一篇：服务器管理面板
+    <a href="/uncategorized/20180517/" rel="next" title="服务器安防之登陆次数限制">
+    上一篇：服务器安防之登陆次数限制
   </a>
 </p>
 
 
 
 <p class="red-link-context">
-    <a href="/2018-5-17/" rel="next" title="服务器安防之登陆次数限制">
-    下一篇：服务器安防之登陆次数限制
+    <a href="/uncategorized/20180401/" rel="next" title="Hexo+Github（3）">
+    下一篇：Hexo+Github（3）
   </a>
 </p>
 
@@ -542,15 +547,6 @@
 
 
 
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
 

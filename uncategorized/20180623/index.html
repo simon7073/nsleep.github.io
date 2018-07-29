@@ -7,15 +7,15 @@
 
     
 
-    <title>hexo blog 备份 | Simon&#39;s Blog</title>
+    <title>VPN的简单架设 | Simon</title>
     <meta name="author" content="Simon">
     
-    <meta name="description" content="An Apple A Day.">
+    <meta name="description" content="Blog">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="hexo blog 备份"/>
+    <meta property="og:title" content="VPN的简单架设"/>
     <meta property="og:site_name" content="Simon&#39;s Blog"/>
 
     
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 
     
-        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+        <link rel="stylesheet" href="/css/lib/prettify_default.css" type="text/css">
     
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -64,7 +64,7 @@
                     </li>
                 
                     <li>
-                        <a class="menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                        <a class="menu-category category-menu" href="/category" data-activates="category-menu" >
                             <i class="fa fa-bookmark "></i>
                             
                             分类
@@ -116,7 +116,7 @@
             </li>
         
             <li class="no-padding">
-                <a class="waves-effect menu-category category-menu" href="javascript:;" data-activates="category-menu" >
+                <a class="waves-effect menu-category category-menu" href="/category" data-activates="category-menu" >
                     <i class="fa fa-bookmark "></i>
                     
                     分类
@@ -181,12 +181,12 @@
             <div class="article-title">
                 
     
-        <h1>hexo blog 备份</h1>
+        <h1>VPN的简单架设</h1>
     
 
 
             </div>
-            <time class="red-link-context" datetime="2018-07-22T07:59:55.000Z"><a href="/2018-7-22/">2018-07-22</a></time>
+            <time class="red-link-context" datetime="2018-06-23T11:58:43.000Z"><a href="/uncategorized/20180623/">2018-06-23</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -196,32 +196,41 @@
             
     <div class="tags-row">
         
-            <a href="/tags/hexo/" class="chip red lighten-1">hexo</a>
+            <a href="/tags/VPN架设/" class="chip red lighten-1">VPN架设</a>
         
     </div>
 
 
             <div class="toc red-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#1-创建仓库How"><span class="section table-of-contents-text">1. 创建仓库How</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#2-创建两个分支：master-与-hexo；"><span class="section table-of-contents-text">2. 创建两个分支：master 与 hexo；</span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#下载shadowsocks服务端"><span class="section table-of-contents-text">下载shadowsocks服务端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#安装Win-ss客户端"><span class="section table-of-contents-text">安装Win ss客户端</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#ss加速"><span class="section table-of-contents-text">ss加速</span></a></li></ol>
 </div>
 
 
             <div class="entry red-link-context">
-                <p><a href="https://cloud.tencent.com/developer/article/1142456" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1142456</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a><br><a href="https://blog.csdn.net/u012195214/article/details/72721065" target="_blank" rel="noopener">https://blog.csdn.net/u012195214/article/details/72721065</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="noopener">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more</a><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a><br><a href="https://blog.csdn.net/u011192270/article/details/52459558" target="_blank" rel="noopener">https://blog.csdn.net/u011192270/article/details/52459558</a><br><a href="https://www.jianshu.com/p/baab04284923" target="_blank" rel="noopener">https://www.jianshu.com/p/baab04284923</a><br><a href="https://blog.csdn.net/zk673820543/article/details/52698760" target="_blank" rel="noopener">https://blog.csdn.net/zk673820543/article/details/52698760</a><br><a href="https://blog.csdn.net/shile/article/details/78714189" target="_blank" rel="noopener">https://blog.csdn.net/shile/article/details/78714189</a><br><a href="https://www.jianshu.com/p/6fb0b287f950" target="_blank" rel="noopener">https://www.jianshu.com/p/6fb0b287f950</a><br><a href="https://www.jianshu.com/p/53f37196f6e7" target="_blank" rel="noopener">https://www.jianshu.com/p/53f37196f6e7</a><br><a href="https://blog.csdn.net/u011116672/article/details/51114895" target="_blank" rel="noopener">https://blog.csdn.net/u011116672/article/details/51114895</a><br><a href="http://haoyuanliu.github.io/2016/11/21/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%81%E7%A7%BB/" target="_blank" rel="noopener">http://haoyuanliu.github.io/2016/11/21/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%81%E7%A7%BB/</a></p>
-<p><a href="https://www.jianshu.com/p/39b411ddfb93" target="_blank" rel="noopener">https://www.jianshu.com/p/39b411ddfb93</a> 程序猿叨叨叨系列<br><a href="https://blog.csdn.net/u013904227/article/details/77430226" target="_blank" rel="noopener">https://blog.csdn.net/u013904227/article/details/77430226</a> Hexo深度使用<br><a href="http://haoyuanliu.github.io/tags/" target="_blank" rel="noopener">http://haoyuanliu.github.io/tags/</a></p>
-<h1 id="1-创建仓库How"><a href="#1-创建仓库How" class="headerlink" title="1. 创建仓库How"></a>1. 创建仓库<a href="https://blog.csdn.net/hc_ttxs/article/details/79375788" target="_blank" rel="noopener">How</a></h1><p><a href="http://www.cnblogs.com/ld1024/p/5913169.html" target="_blank" rel="noopener">使用Hexo &amp; Github,搭建属于自己的博客</a></p>
-<h1 id="2-创建两个分支：master-与-hexo；"><a href="#2-创建两个分支：master-与-hexo；" class="headerlink" title="2. 创建两个分支：master 与 hexo；"></a>2. 创建两个分支：master 与 hexo；</h1><p>git add .<br>git status<br>git commit -m ‘to’<br>git push –set-upstream origin hexo</p>
-<p>查看远程分支<br>$ git branch -a</p>
-<p>查看本地分支<br>$ git branch</p>
-<p>切换分支<br>git checkout master</p>
-<p>hexo new post “博客名”            //新建一篇博客–_posts目录下<br>hexo d -g<br>hexo s</p>
-
+                <blockquote><p>提要：<br>      系统：CentOS 6.9</p>
+</blockquote>
+<h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> ：<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+<p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> ：<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
+<hr>
+<h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><p>bbr 加速下载<br>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure>
+<p>锐速ServerSpeeder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure>
                 
+<p class="red-link-context">
+    <a href="/uncategorized/20180623/" rel="next" title="服务器管理面板">
+    上一篇：服务器管理面板
+  </a>
+</p>
+
 
 
 <p class="red-link-context">
-    <a href="/2018-6-23/" rel="next" title="服务器管理面板">
-    下一篇：服务器管理面板
+    <a href="/uncategorized/20180517/" rel="next" title="服务器安防之登陆次数限制">
+    下一篇：服务器安防之登陆次数限制
   </a>
 </p>
 
@@ -533,15 +542,6 @@
 
 
 
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
 
