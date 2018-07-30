@@ -488,7 +488,11 @@
 
 </body>
 </html>
-ntent + "...</p>"
+");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
                                 }
                                 str += "</li>";
                             }
