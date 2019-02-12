@@ -58,42 +58,6 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
-    <article id="post-post-tit" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/0212/post-tit/">post-tit</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/0212/post-tit/" class="article-date">
-  <time datetime="2019-02-12T06:17:42.000Z" itemprop="datePublished">2019-02-12</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>天埃特纳</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
     <article id="post-hello-world" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -575,12 +539,56 @@
 </article>
 
   
+    <article id="post-Hexo-Github-1" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/0401/Hexo-Github-1/">Hexo+Github（1）</a>
+    </h1>
+  
 
-
-  <nav id="page-nav">
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2018/0401/Hexo-Github-1/" class="article-date">
+  <time datetime="2018-04-01T13:46:52.000Z" itemprop="datePublished">2018-04-01</time>
+</a>
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h2 id="1、Github账户"><a href="#1、Github账户" class="headerlink" title="1、Github账户"></a>1、Github账户</h2><p>注册并新建项目，项目必须要遵守格式：账户名.github.io</p>
+<h2 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h2><h3 id="配置好Git环境"><a href="#配置好Git环境" class="headerlink" title="配置好Git环境"></a>配置好Git环境</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your_name"</span></span><br><span class="line">git config --global user.email <span class="string">"your_email"</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="创建ssh密钥，将公钥上传"><a href="#创建ssh密钥，将公钥上传" class="headerlink" title="创建ssh密钥，将公钥上传"></a>创建ssh密钥，将公钥上传</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email"</span> </span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span>  		//添加密钥到ssh-agent ,似乎非必要</span><br><span class="line">ssh -T git@github.com  		//测试添加ssh是否成功</span><br></pre></td></tr></table></figure></div>
+<h2 id="3、创建一个文件夹，然后通过命令行或Git-Bash进入到该文件夹里面"><a href="#3、创建一个文件夹，然后通过命令行或Git-Bash进入到该文件夹里面" class="headerlink" title="3、创建一个文件夹，然后通过命令行或Git Bash进入到该文件夹里面"></a>3、创建一个文件夹，然后通过命令行或Git Bash进入到该文件夹里面</h2><h2 id="4、安装Node-js"><a href="#4、安装Node-js" class="headerlink" title="4、安装Node.js"></a>4、安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></h2><h3 id="并配置好Node-js环境"><a href="#并配置好Node-js环境" class="headerlink" title="并配置好Node.js环境"></a>并配置好Node.js环境</h3><h2 id="5、安装Hexo"><a href="#5、安装Hexo" class="headerlink" title="5、安装Hexo"></a>5、安装<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br><span class="line">hexo -v //检查hexo是否安装成功</span><br></pre></td></tr></table></figure></div>
+<h2 id="6、初始化该文件夹"><a href="#6、初始化该文件夹" class="headerlink" title="6、初始化该文件夹"></a>6、初始化该文件夹</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></div>
+<h2 id="7、安装所需要的组件"><a href="#7、安装所需要的组件" class="headerlink" title="7、安装所需要的组件"></a>7、安装所需要的组件</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
+<h2 id="8、Hexo生成静态文件–public文件夹下"><a href="#8、Hexo生成静态文件–public文件夹下" class="headerlink" title="8、Hexo生成静态文件–public文件夹下"></a>8、Hexo生成静态文件–public文件夹下</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></div>
+<h2 id="9、开启本地服务"><a href="#9、开启本地服务" class="headerlink" title="9、开启本地服务"></a>9、开启本地服务</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
+<h2 id="10、改变端口号"><a href="#10、改变端口号" class="headerlink" title="*10、改变端口号"></a>*10、改变端口号</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -p 端口号</span><br></pre></td></tr></table></figure></div>
+<h2 id="11、修改-config-yml文件"><a href="#11、修改-config-yml文件" class="headerlink" title="11、修改_config.yml文件"></a>11、修改_config.yml文件</h2><p>修改repo值（在末尾）,注意：所有配置项目的分号后都需要一个空格<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>: git</span><br><span class="line">	repo: git@github.com:your_name/your_name.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure></div></p>
+<h2 id="12、生成及部署文章"><a href="#12、生成及部署文章" class="headerlink" title="12、生成及部署文章"></a>12、生成及部署文章</h2><p>生成以及部署文章之前，需要安装一个扩展<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div></p>
+<p>在_posts目录下新建一篇博客，编辑器编好文章，那么就可以生成以及部署了<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"博客名"</span>	</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></div></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+
 
 
 </section>
@@ -628,7 +636,7 @@
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
     </div>
   </div>
 
@@ -638,10 +646,6 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2019/0212/post-tit/">post-tit</a>
-          </li>
         
           <li>
             <a href="/2018/0830/hello-world/">Hello World</a>
@@ -657,6 +661,10 @@
         
           <li>
             <a href="/2018/0623/服务器管理面板/">服务器管理面板</a>
+          </li>
+        
+          <li>
+            <a href="/2018/0623/VPN的简单架设/">VPN的简单架设</a>
           </li>
         
       </ul>
