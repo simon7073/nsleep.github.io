@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Simon �Ĳ���</title>
+  <title>Simon 的博客</title>
   
   <subtitle>Simon</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://nsleep.github.io/</id>
   
   <author>
-    <name>��Ǭ</name>
+    <name>程乾</name>
     
   </author>
   
