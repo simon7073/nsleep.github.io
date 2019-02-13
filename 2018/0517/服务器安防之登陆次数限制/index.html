@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，以作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more  1. 始终允许IP假设">
+  <meta name="description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more  1. 始终允许IP假设">
 <meta name="keywords" content="服务器安防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器安防之登陆次数限制">
 <meta property="og:url" content="http://nsleep.github.io/2018/0517/服务器安防之登陆次数限制/index.html">
 <meta property="og:site_name" content="Simon 的博客">
-<meta property="og:description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，以作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more  1. 始终允许IP假设">
+<meta property="og:description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more  1. 始终允许IP假设">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-25T00:35:48.180Z">
+<meta property="og:updated_time" content="2019-02-13T10:20:21.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器安防之登陆次数限制">
-<meta name="twitter:description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，以作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more  1. 始终允许IP假设">
+<meta name="twitter:description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more  1. 始终允许IP假设">
   
     <link rel="alternate" href="/atom.xml" title="Simon 的博客" type="application/atom+xml">
   
@@ -89,7 +89,7 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，以作此篇；</p>
+        <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；</p>
 <hr>
 <h1 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h1><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></div></p>
 <hr>

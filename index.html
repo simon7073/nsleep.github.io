@@ -87,8 +87,12 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
+        <ul>
+<li>19/02/13 更新：翻译此篇例文</li>
+</ul>
+<hr>
+<p>欢迎来到<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>!这是你的第一篇文章。查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a>以获取更多信息。如果您在使用Hexo时遇到任何问题，可以在<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">故障排除</a>中找到答案，或者您可以在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>上询问我。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><figcaption><span>to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Quick Start</span><br><span class="line"></span><br><span class="line">### Create a new post</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$ hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure></div>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
@@ -368,7 +372,7 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，以作此篇；</p>
+        <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；</p>
 <hr>
 <h1 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h1><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></div></p>
 <hr>
