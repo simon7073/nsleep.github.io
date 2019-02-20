@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="1、Github账户注册并新建项目，项目必须要遵守格式：账户名.github.io 2、安装Git配置好Git环境12git config --global user.name &quot;your_name&quot;git config --global user.email &quot;your_email&quot; 创建ssh密钥，将公钥上传123ssh-keygen -t rsa -C &quot;your_email&quot; eval &quot;">
+  <meta name="description" content="1、Github账户注册并新建项目，项目必须要遵守格式：账户名.github.io 2、安装Git配置好Git环境12git config --global user.name &quot;your_name&quot;git config --global user.email &quot;your_email&quot;">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Github（1）">
 <meta property="og:url" content="http://nsleep.github.io/2018/0401/Hexo-Github-1/index.html">
 <meta property="og:site_name" content="Simon 的博客">
-<meta property="og:description" content="1、Github账户注册并新建项目，项目必须要遵守格式：账户名.github.io 2、安装Git配置好Git环境12git config --global user.name &quot;your_name&quot;git config --global user.email &quot;your_email&quot; 创建ssh密钥，将公钥上传123ssh-keygen -t rsa -C &quot;your_email&quot; eval &quot;">
+<meta property="og:description" content="1、Github账户注册并新建项目，项目必须要遵守格式：账户名.github.io 2、安装Git配置好Git环境12git config --global user.name &quot;your_name&quot;git config --global user.email &quot;your_email&quot;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-08T06:55:46.662Z">
+<meta property="og:updated_time" content="2019-02-20T07:17:45.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github（1）">
-<meta name="twitter:description" content="1、Github账户注册并新建项目，项目必须要遵守格式：账户名.github.io 2、安装Git配置好Git环境12git config --global user.name &quot;your_name&quot;git config --global user.email &quot;your_email&quot; 创建ssh密钥，将公钥上传123ssh-keygen -t rsa -C &quot;your_email&quot; eval &quot;">
+<meta name="twitter:description" content="1、Github账户注册并新建项目，项目必须要遵守格式：账户名.github.io 2、安装Git配置好Git环境12git config --global user.name &quot;your_name&quot;git config --global user.email &quot;your_email&quot;">
   
     <link rel="alternate" href="/atom.xml" title="Simon 的博客" type="application/atom+xml">
   
@@ -54,9 +54,9 @@
         
         >归档</a>
       
-        <a class="nav-item" href="/gitments" title
+        <a class="nav-item" href="/about" title
         
-        >留言板</a>
+        >关于</a>
       
     </nav>
   </div>
@@ -95,6 +95,7 @@
       
         <h2 id="1、Github账户"><a href="#1、Github账户" class="headerlink" title="1、Github账户"></a>1、Github账户</h2><p>注册并新建项目，项目必须要遵守格式：账户名.github.io</p>
 <h2 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h2><h3 id="配置好Git环境"><a href="#配置好Git环境" class="headerlink" title="配置好Git环境"></a>配置好Git环境</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your_name"</span></span><br><span class="line">git config --global user.email <span class="string">"your_email"</span></span><br></pre></td></tr></table></figure></div>
+<a id="more"></a>
 <h3 id="创建ssh密钥，将公钥上传"><a href="#创建ssh密钥，将公钥上传" class="headerlink" title="创建ssh密钥，将公钥上传"></a>创建ssh密钥，将公钥上传</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email"</span> </span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span>  		//添加密钥到ssh-agent ,似乎非必要</span><br><span class="line">ssh -T git@github.com  		//测试添加ssh是否成功</span><br></pre></td></tr></table></figure></div>
 <h2 id="3、创建一个文件夹，然后通过命令行或Git-Bash进入到该文件夹里面"><a href="#3、创建一个文件夹，然后通过命令行或Git-Bash进入到该文件夹里面" class="headerlink" title="3、创建一个文件夹，然后通过命令行或Git Bash进入到该文件夹里面"></a>3、创建一个文件夹，然后通过命令行或Git Bash进入到该文件夹里面</h2><h2 id="4、安装Node-js"><a href="#4、安装Node-js" class="headerlink" title="4、安装Node.js"></a>4、安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></h2><h3 id="并配置好Node-js环境"><a href="#并配置好Node-js环境" class="headerlink" title="并配置好Node.js环境"></a>并配置好Node.js环境</h3><h2 id="5、安装Hexo"><a href="#5、安装Hexo" class="headerlink" title="5、安装Hexo"></a>5、安装<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g</span><br><span class="line">hexo -v //检查hexo是否安装成功</span><br></pre></td></tr></table></figure></div>
 <h2 id="6、初始化该文件夹"><a href="#6、初始化该文件夹" class="headerlink" title="6、初始化该文件夹"></a>6、初始化该文件夹</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></div>
@@ -135,7 +136,8 @@
 </nav>
 
     
-<div id="gitmentContainer"></div>
+<!-- <div id="gitmentContainer"></div> -->
+
 <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
 
@@ -274,7 +276,7 @@ gitment.render('gitmentContainer')
   
     <a href="/archives" class="mobile-nav-link">归档</a>
   
-    <a href="/gitments" class="mobile-nav-link">留言板</a>
+    <a href="/about" class="mobile-nav-link">关于</a>
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    

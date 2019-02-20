@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。 一、 咱要备份哪些文件捏？1、 文章./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。 2、 配置文件根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。 3、 主题文件夹./th">
+  <meta name="description" content="咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。 一、 咱要备份哪些文件捏？1、 文章./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。 2、 配置文件根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-Github-备份">
 <meta property="og:url" content="http://nsleep.github.io/2018/0722/Hexo-Github-备份/index.html">
 <meta property="og:site_name" content="Simon 的博客">
-<meta property="og:description" content="咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。 一、 咱要备份哪些文件捏？1、 文章./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。 2、 配置文件根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。 3、 主题文件夹./th">
+<meta property="og:description" content="咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。 一、 咱要备份哪些文件捏？1、 文章./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。 2、 配置文件根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-30T03:54:10.657Z">
+<meta property="og:updated_time" content="2019-02-20T07:40:15.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Github-备份">
-<meta name="twitter:description" content="咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。 一、 咱要备份哪些文件捏？1、 文章./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。 2、 配置文件根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。 3、 主题文件夹./th">
+<meta name="twitter:description" content="咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。 一、 咱要备份哪些文件捏？1、 文章./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。 2、 配置文件根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。">
   
     <link rel="alternate" href="/atom.xml" title="Simon 的博客" type="application/atom+xml">
   
@@ -54,9 +54,9 @@
         
         >归档</a>
       
-        <a class="nav-item" href="/gitments" title
+        <a class="nav-item" href="/about" title
         
-        >留言板</a>
+        >关于</a>
       
     </nav>
   </div>
@@ -94,40 +94,26 @@
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
         <p>咱用Hexo+GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。</p>
-<h1 id="一、-咱要备份哪些文件捏？"><a href="#一、-咱要备份哪些文件捏？" class="headerlink" title="一、 咱要备份哪些文件捏？"></a>一、 咱要备份哪些文件捏？</h1><h2 id="1、-文章"><a href="#1、-文章" class="headerlink" title="1、 文章"></a>1、 文章</h2><pre><code>./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。
-</code></pre><h2 id="2、-配置文件"><a href="#2、-配置文件" class="headerlink" title="2、 配置文件"></a>2、 配置文件</h2><pre><code>根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。
-</code></pre><h2 id="3、-主题文件夹"><a href="#3、-主题文件夹" class="headerlink" title="3、 主题文件夹"></a>3、 主题文件夹</h2><pre><code>./themes/themes_name 这里的 themes_name 指的是你的主题名称， 如果咱对主题进行了一些个性化的配置， 那么这个主题也最好全部备份。
-</code></pre><h2 id="4、-模版"><a href="#4、-模版" class="headerlink" title="4、 模版"></a>4、 模版</h2><pre><code>./scaffolds 文件夹， 这个文件夹里是创建文    章时的模板， 如果没修改过这个文件夹中的东西， 可以不用备份。
-</code></pre><h2 id="5、-密钥"><a href="#5、-密钥" class="headerlink" title="5、 密钥"></a>5、 密钥</h2><pre><code>.ssh， 咱认为没必要备份，直接放到GitHub不安全，大不了重新生成嘛。
-</code></pre><h1 id="二、-备份到哪？"><a href="#二、-备份到哪？" class="headerlink" title="二、 备份到哪？"></a>二、 备份到哪？</h1><pre><code>创建GitHub Pages 时咱创建了两个分支：master 与 hexo
-    master 分支用来存放生成的静态网页
-    hexo 分支用来存放网站的原始文件
-</code></pre><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">'...'</span></span><br><span class="line">git push --<span class="built_in">set</span>-upstream origin hexo</span><br></pre></td></tr></table></figure></div>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 另附：</span></span><br><span class="line"></span><br><span class="line">$ git branch -a 		<span class="comment"># 查看远程分支</span></span><br><span class="line">$ git branch 			<span class="comment"># 查看本地分支</span></span><br><span class="line">$ git checkout master 	<span class="comment"># 切换分支</span></span><br></pre></td></tr></table></figure></div>
-<h1 id="三、-那么怎么去备份捏？"><a href="#三、-那么怎么去备份捏？" class="headerlink" title="三、 那么怎么去备份捏？"></a>三、 那么怎么去备份捏？</h1><pre><code>创建GitHub Pages 时创建两个分支：master 与 hexo
-设置hexo 为默认分支，修改_config.yml中的deploy参数， 分支应为master；
-依次执行
-    git add . 
-    git commit -m “…”
-    git push –set-upstream origin hexo
-提交原始文件到Hexo
-</code></pre><h1 id="四、-修改日常！"><a href="#四、-修改日常！" class="headerlink" title="四、 修改日常！"></a>四、 修改日常！</h1><pre><code>依次执行
-    git add .
-    git commit -m “…”
-    git push origin hexo 
-    指令将改动推送到GitHub（此时当前分支应为hexo）；
-然后执行
-    hexo g -d
-会发布网站到master分支上。
-另外，两个过程顺序调转一般不会有问题。
-</code></pre><h1 id="五、-那么怎么恢复编辑文件捏？"><a href="#五、-那么怎么恢复编辑文件捏？" class="headerlink" title="五、 那么怎么恢复编辑文件捏？"></a>五、 那么怎么恢复编辑文件捏？</h1><pre><code>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
-    git clone -b hexo git@github.com:YOURNAME/YOURNAME.github.io.git
-在本地新拷贝的YOURNAME.github.io文件夹下通过Git     bash依次执行下列指令：
-    npm install hexo
-    npm install
-    npm install hexo-deployer-git
-（记得，不需要hexo init这条指令）。
-</code></pre><h1 id="六、-参考文档："><a href="#六、-参考文档：" class="headerlink" title="六、 参考文档："></a>六、 参考文档：</h1><pre><code>(GitHub Pages + Hexo搭建博客)[http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more]
+<h1 id="一、-咱要备份哪些文件捏？"><a href="#一、-咱要备份哪些文件捏？" class="headerlink" title="一、 咱要备份哪些文件捏？"></a>一、 咱要备份哪些文件捏？</h1><h2 id="1、-文章"><a href="#1、-文章" class="headerlink" title="1、 文章"></a>1、 文章</h2><p>./source 文件夹，这个就不用说了，这里面包含了你写的文章的 markdown 源码，这个是最重要的。</p>
+<h2 id="2、-配置文件"><a href="#2、-配置文件" class="headerlink" title="2、 配置文件"></a>2、 配置文件</h2><p>根目录下的几个配置文件，主要是 _config.yml、 package.json、 .gitignore。<br><a id="more"></a></p>
+<h2 id="3、-主题文件夹"><a href="#3、-主题文件夹" class="headerlink" title="3、 主题文件夹"></a>3、 主题文件夹</h2><p>./themes/themes_name 这里的 themes_name 指的是你的主题名称， 如果咱对主题进行了一些个性化的配置， 那么这个主题也最好全部备份。</p>
+<h2 id="4、-模版"><a href="#4、-模版" class="headerlink" title="4、 模版"></a>4、 模版</h2><p>./scaffolds 文件夹， 这个文件夹里是创建文    章时的模板， 如果没修改过这个文件夹中的东西， 可以不用备份。</p>
+<h2 id="5、-密钥"><a href="#5、-密钥" class="headerlink" title="5、 密钥"></a>5、 密钥</h2><p>.ssh， 咱认为没必要备份，直接放到GitHub不安全，大不了重新生成嘛。</p>
+<h1 id="二、-备份到哪？"><a href="#二、-备份到哪？" class="headerlink" title="二、 备份到哪？"></a>二、 备份到哪？</h1><p>创建GitHub Pages 时咱创建了两个分支：master 与 hexo</p>
+<ul>
+<li>master 分支用来存放生成的静态网页</li>
+<li>hexo 分支用来存放网站的原始文件</li>
+</ul>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git status</span><br><span class="line">$ git commit -m <span class="string">'...'</span></span><br><span class="line">$ git push --<span class="built_in">set</span>-upstream origin hexo</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 另附：</span></span><br><span class="line">$ git branch -a 		<span class="comment"># 查看远程分支</span></span><br><span class="line">$ git branch 			<span class="comment"># 查看本地分支</span></span><br><span class="line">$ git checkout master 	<span class="comment"># 切换分支</span></span><br></pre></td></tr></table></figure></div>
+<h1 id="三、-那么怎么去备份捏？"><a href="#三、-那么怎么去备份捏？" class="headerlink" title="三、 那么怎么去备份捏？"></a>三、 那么怎么去备份捏？</h1><p>创建GitHub Pages 时创建两个分支：master 与 hexo<br>设置hexo 为默认分支，修改_config.yml中的deploy参数， 分支应为master；<br>依次执行<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add . </span><br><span class="line">$ git commit -m “…”</span><br><span class="line">$ git push –<span class="built_in">set</span>-upstream origin hexo</span><br></pre></td></tr></table></figure></div></p>
+<p>提交原始文件到Hexo</p>
+<h1 id="四、-修改日常！"><a href="#四、-修改日常！" class="headerlink" title="四、 修改日常！"></a>四、 修改日常！</h1><p>依次执行<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">'...'</span></span><br><span class="line">$ git push origin hexo</span><br></pre></td></tr></table></figure></div></p>
+<p>指令将改动推送到GitHub（此时当前分支应为hexo）；<br>然后执行<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure></div></p>
+<p>会发布网站到master分支上。另外，两个过程顺序调转一般不会有问题。</p>
+<h1 id="五、-那么怎么恢复编辑文件捏？"><a href="#五、-那么怎么恢复编辑文件捏？" class="headerlink" title="五、 那么怎么恢复编辑文件捏？"></a>五、 那么怎么恢复编辑文件捏？</h1><pre><code>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
+</code></pre><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> -b hexo git@github.com:YOURNAME/YOURNAME.github.io.git</span><br><span class="line"><span class="comment"># 在本地新拷贝的YOURNAME.github.io文件夹下通过Git 	bash依次执行下列指令：</span></span><br><span class="line">$ npm install hexo</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git</span><br><span class="line">（记得，不需要hexo init这条指令）。</span><br></pre></td></tr></table></figure></div>
+<h1 id="六、-参考文档："><a href="#六、-参考文档：" class="headerlink" title="六、 参考文档："></a>六、 参考文档：</h1><pre><code>(GitHub Pages + Hexo搭建博客)[http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more]
 [使用hexo，如果换了电脑怎么更新博客？(知乎)](https://www.zhihu.com/question/21193762)
 </code></pre>
       
@@ -164,7 +150,8 @@
 </nav>
 
     
-<div id="gitmentContainer"></div>
+<!-- <div id="gitmentContainer"></div> -->
+
 <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
 
@@ -303,7 +290,7 @@ gitment.render('gitmentContainer')
   
     <a href="/archives" class="mobile-nav-link">归档</a>
   
-    <a href="/gitments" class="mobile-nav-link">留言板</a>
+    <a href="/about" class="mobile-nav-link">关于</a>
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    

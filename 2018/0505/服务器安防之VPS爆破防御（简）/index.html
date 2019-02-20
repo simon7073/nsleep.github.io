@@ -10,19 +10,19 @@
   
   
   
-  <meta name="description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more   列出用户所有的登录时间和登录终端的地址为了验证是否被入侵，可以先查看现在谁在登录服">
+  <meta name="description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta name="keywords" content="服务器安防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器安防之VPS爆破防御（简）">
 <meta property="og:url" content="http://nsleep.github.io/2018/0505/服务器安防之VPS爆破防御（简）/index.html">
 <meta property="og:site_name" content="Simon 的博客">
-<meta property="og:description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more   列出用户所有的登录时间和登录终端的地址为了验证是否被入侵，可以先查看现在谁在登录服">
+<meta property="og:description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://nsleep.github.io/2018/0505/服务器安防之VPS爆破防御（简）/Failed%20login.png">
-<meta property="og:updated_time" content="2018-07-25T00:35:48.191Z">
+<meta property="og:updated_time" content="2019-02-20T07:33:43.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器安防之VPS爆破防御（简）">
-<meta name="twitter:description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more   列出用户所有的登录时间和登录终端的地址为了验证是否被入侵，可以先查看现在谁在登录服">
+<meta name="twitter:description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta name="twitter:image" content="http://nsleep.github.io/2018/0505/服务器安防之VPS爆破防御（简）/Failed%20login.png">
   
     <link rel="alternate" href="/atom.xml" title="Simon 的博客" type="application/atom+xml">
@@ -56,9 +56,9 @@
         
         >归档</a>
       
-        <a class="nav-item" href="/gitments" title
+        <a class="nav-item" href="/about" title
         
-        >留言板</a>
+        >关于</a>
       
     </nav>
   </div>
@@ -95,8 +95,8 @@
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <hr>
-<h2 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></div></p>
+        <h2 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></div></p>
+<a id="more"></a>
 <p><img src="Failed login.png" alt="Failed login"></p>
 <hr>
 <h2 id="列出用户所有的登录时间和登录终端的地址"><a href="#列出用户所有的登录时间和登录终端的地址" class="headerlink" title="列出用户所有的登录时间和登录终端的地址"></a>列出用户所有的登录时间和登录终端的地址</h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br></pre></td></tr></table></figure></div></p>
@@ -146,7 +146,8 @@
 </nav>
 
     
-<div id="gitmentContainer"></div>
+<!-- <div id="gitmentContainer"></div> -->
+
 <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
 
@@ -285,7 +286,7 @@ gitment.render('gitmentContainer')
   
     <a href="/archives" class="mobile-nav-link">归档</a>
   
-    <a href="/gitments" class="mobile-nav-link">留言板</a>
+    <a href="/about" class="mobile-nav-link">关于</a>
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    
