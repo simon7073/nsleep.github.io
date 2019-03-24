@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nsleep.github.io/"/>
-  <updated>2019-03-24T02:30:33.967Z</updated>
+  <updated>2019-03-24T02:32:05.183Z</updated>
   <id>http://nsleep.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="http://nsleep.github.io/2019/0324/SS%E5%8A%A0%E9%80%9F/"/>
     <id>http://nsleep.github.io/2019/0324/SS加速/</id>
     <published>2019-03-24T02:18:26.000Z</published>
-    <updated>2019-03-24T02:30:33.967Z</updated>
+    <updated>2019-03-24T02:32:05.183Z</updated>
     
-    <content type="html"><![CDATA[<hr><h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><h2 id="bbr-加速下载"><a href="#bbr-加速下载" class="headerlink" title="bbr 加速下载"></a>bbr 加速下载</h2><p>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰 - 一键安装最新内核并开启 BBR 脚本</a></p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure></div><h2 id="锐速ServerSpeeder"><a href="#锐速ServerSpeeder" class="headerlink" title="锐速ServerSpeeder"></a>锐速ServerSpeeder</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure></div><hr><p><strong>PS:</strong> <a href="https://www.moerats.com/archives/387/" target="_blank" rel="noopener">BBR+BBR魔改+Lotsever(锐速)一键脚本 for Centos/Debian/Ubuntu</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><h2 id="bbr-加速下载"><a href="#bbr-加速下载" class="headerlink" title="bbr 加速下载"></a>bbr 加速下载</h2><p>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰 - 一键安装最新内核并开启 BBR 脚本</a></p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure></div><hr><h2 id="锐速ServerSpeeder"><a href="#锐速ServerSpeeder" class="headerlink" title="锐速ServerSpeeder"></a>锐速ServerSpeeder</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure></div><hr><p><strong>PS:</strong> <a href="https://www.moerats.com/archives/387/" target="_blank" rel="noopener">BBR+BBR魔改+Lotsever(锐速)一键脚本 for Centos/Debian/Ubuntu</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;h1 id=&quot;ss加速&quot;&gt;&lt;a href=&quot;#ss加速&quot; class=&quot;headerlink&quot; title=&quot;ss加速&quot;&gt;&lt;/a&gt;ss加速&lt;/h1&gt;&lt;h2 id=&quot;bbr-加速下载&quot;&gt;&lt;a href=&quot;#bbr-加速下载&quot; class=&quot;headerlink&quot; tit
+        &lt;h1 id=&quot;ss加速&quot;&gt;&lt;a href=&quot;#ss加速&quot; class=&quot;headerlink&quot; title=&quot;ss加速&quot;&gt;&lt;/a&gt;ss加速&lt;/h1&gt;&lt;h2 id=&quot;bbr-加速下载&quot;&gt;&lt;a href=&quot;#bbr-加速下载&quot; class=&quot;headerlink&quot; title=&quot;b
       
     
     </summary>
