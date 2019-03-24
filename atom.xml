@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nsleep.github.io/"/>
-  <updated>2019-02-24T03:44:53.385Z</updated>
+  <updated>2019-03-24T02:30:33.967Z</updated>
   <id>http://nsleep.github.io/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SS加速</title>
+    <link href="http://nsleep.github.io/2019/0324/SS%E5%8A%A0%E9%80%9F/"/>
+    <id>http://nsleep.github.io/2019/0324/SS加速/</id>
+    <published>2019-03-24T02:18:26.000Z</published>
+    <updated>2019-03-24T02:30:33.967Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><h2 id="bbr-加速下载"><a href="#bbr-加速下载" class="headerlink" title="bbr 加速下载"></a>bbr 加速下载</h2><p>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰 - 一键安装最新内核并开启 BBR 脚本</a></p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure></div><h2 id="锐速ServerSpeeder"><a href="#锐速ServerSpeeder" class="headerlink" title="锐速ServerSpeeder"></a>锐速ServerSpeeder</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure></div><hr><p><strong>PS:</strong> <a href="https://www.moerats.com/archives/387/" target="_blank" rel="noopener">BBR+BBR魔改+Lotsever(锐速)一键脚本 for Centos/Debian/Ubuntu</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h1 id=&quot;ss加速&quot;&gt;&lt;a href=&quot;#ss加速&quot; class=&quot;headerlink&quot; title=&quot;ss加速&quot;&gt;&lt;/a&gt;ss加速&lt;/h1&gt;&lt;h2 id=&quot;bbr-加速下载&quot;&gt;&lt;a href=&quot;#bbr-加速下载&quot; class=&quot;headerlink&quot; tit
+      
+    
+    </summary>
+    
+    
+      <category term="VPN架设" scheme="http://nsleep.github.io/tags/VPN%E6%9E%B6%E8%AE%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django初步</title>
     <link href="http://nsleep.github.io/2019/0224/Django%E5%88%9D%E6%AD%A5/"/>
     <id>http://nsleep.github.io/2019/0224/Django初步/</id>
     <published>2019-02-24T03:26:44.000Z</published>
-    <updated>2019-02-24T03:44:53.385Z</updated>
+    <updated>2019-03-02T11:25:44.570Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>正在学习<a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>中…</p></blockquote><blockquote><p><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a> 是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。</p></blockquote><p>参考文档：<br>&emsp;&emsp;<a href="https://docs.djangoproject.com/zh-hans/2.1/" target="_blank" rel="noopener">Django 文档</a><br>&emsp;&emsp;<a href="https://docs.djangoproject.com/zh-hans/2.1/intro/" target="_blank" rel="noopener">Django 教程</a><br>&emsp;&emsp;<a href="https://www.cnblogs.com/zhangxinqi/p/8969006.html" target="_blank" rel="noopener">python3之Django基础篇</a></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>正在学习<a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>中…</p></blockquote><blockquote><p><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a> 是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。</p></blockquote><p>参考文档：<br>&emsp;&emsp;<a href="https://docs.djangoproject.com/zh-hans/2.1/" target="_blank" rel="noopener">Django 文档</a><br>&emsp;&emsp;<a href="https://docs.djangoproject.com/zh-hans/2.1/intro/" target="_blank" rel="noopener">Django 教程</a><br>&emsp;&emsp;<a href="https://www.cnblogs.com/zhangxinqi/p/8969006.html" target="_blank" rel="noopener">python3之Django基础篇</a><br>&emsp;&emsp;<a href="http://www.runoob.com/django/django-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>]]></content>
     
     <summary type="html">
     
@@ -147,16 +171,16 @@
     <link href="http://nsleep.github.io/2018/0623/VPN%E7%9A%84%E7%AE%80%E5%8D%95%E6%9E%B6%E8%AE%BE/"/>
     <id>http://nsleep.github.io/2018/0623/VPN的简单架设/</id>
     <published>2018-06-23T11:58:43.000Z</published>
-    <updated>2019-02-20T07:34:42.433Z</updated>
+    <updated>2019-03-24T02:23:02.019Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>提要：<br>      系统：CentOS 6.9</p></blockquote><h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure></div><a id="more"></a><hr><h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> ：<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p><p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> ：<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p><hr><h1 id="ss加速"><a href="#ss加速" class="headerlink" title="ss加速"></a>ss加速</h1><p>bbr 加速下载<br>参考文章：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰</a></p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure></div><p>锐速ServerSpeeder</p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh</span><br><span class="line">$ bash serverspeeder.sh</span><br></pre></td></tr></table></figure></div>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>提要：<br>      系统：CentOS 6.9</p></blockquote><h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p><p>使用root用户登录，运行以下命令：<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure></div></p><a id="more"></a><hr><h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> </p><p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> </p><hr><h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>若已安装多个版本，则卸载时也需多次运行</p><p>使用root用户登录，运行以下命令：</p><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocks-all.sh uninstall</span><br></pre></td></tr></table></figure></div><h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>Shadowsocks-Python 版：<br>/etc/init.d/shadowsocks-python start | stop | restart | status</p><p>ShadowsocksR 版：<br>/etc/init.d/shadowsocks-r start | stop | restart | status</p><p>Shadowsocks-Go 版：<br>/etc/init.d/shadowsocks-go start | stop | restart | status</p><p>Shadowsocks-libev 版：<br>/etc/init.d/shadowsocks-libev start | stop | restart | status</p><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Shadowsocks-Python 版：<br>/etc/shadowsocks-python/config.json</p><p>ShadowsocksR 版：<br>/etc/shadowsocks-r/config.json</p><p>Shadowsocks-Go 版：<br>/etc/shadowsocks-go/config.json</p><p>Shadowsocks-libev 版：<br>/etc/shadowsocks-libev/config.json</p><hr><p><strong>PS:</strong> <a href="https://do.freess.today/" target="_blank" rel="noopener">Free SS</a></p><ul><li>19/3/24：更新;另作SS加速</li></ul>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;&lt;p&gt;提要：&lt;br&gt;      系统：CentOS 6.9&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;下载shadowsocks服务端&quot;&gt;&lt;a href=&quot;#下载shadowsocks服务端&quot; class=&quot;headerlink&quot; title=&quot;下载shadowsocks服务端&quot;&gt;&lt;/a&gt;下载shadowsocks服务端&lt;/h1&gt;&lt;p&gt;参考文章：&lt;a href=&quot;https://teddysun.com/486.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;秋水逸冰 - Shadowsocks 一键安装脚本（四合一）&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;amp;&amp;amp; chmod +x shadowsocks-all.sh &amp;amp;&amp;amp; ./shadowsocks-all.sh 2&amp;gt;&amp;amp;1 | tee shadowsocks-all.log&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;使用root用户登录，运行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;amp;&amp;amp; chmod +x shadowsocks-all.sh &amp;amp;&amp;amp; ./shadowsocks-all.sh 2&amp;gt;&amp;amp;1 | tee shadowsocks-all.log&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
