@@ -178,7 +178,7 @@
       <link href="/2018/0623/VPN%E7%9A%84%E7%AE%80%E5%8D%95%E6%9E%B6%E8%AE%BE/"/>
       <url>/2018/0623/VPN%E7%9A%84%E7%AE%80%E5%8D%95%E6%9E%B6%E8%AE%BE/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>提要：<br>      系统：CentOS 6.9</p></blockquote><h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p><p>使用root用户登录，运行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure></p><a id="more"></a><hr><h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> </p><p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> </p><hr><h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>若已安装多个版本，则卸载时也需多次运行</p><p>使用root用户登录，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocks-all.sh uninstall</span><br></pre></td></tr></table></figure><h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>Shadowsocks-Python 版：<br>/etc/init.d/shadowsocks-python start | stop | restart | status</p><p>ShadowsocksR 版：<br>/etc/init.d/shadowsocks-r start | stop | restart | status</p><p>Shadowsocks-Go 版：<br>/etc/init.d/shadowsocks-go start | stop | restart | status</p><p>Shadowsocks-libev 版：<br>/etc/init.d/shadowsocks-libev start | stop | restart | status</p><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Shadowsocks-Python 版：<br>/etc/shadowsocks-python/config.json</p><p>ShadowsocksR 版：<br>/etc/shadowsocks-r/config.json</p><p>Shadowsocks-Go 版：<br>/etc/shadowsocks-go/config.json</p><p>Shadowsocks-libev 版：<br>/etc/shadowsocks-libev/config.json</p><hr><p><strong>PS:</strong> <a href="https://do.freess.today/" target="_blank" rel="noopener">Free SS</a></p><ul><li>19/3/24：更新;另作SS加速</li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>提要：<br>      系统：CentOS 6.9</p></blockquote><h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a href="https://teddysun.com/486.html" target="_blank" rel="noopener">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p><p>使用root用户登录，运行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure></p><a id="more"></a><hr><h1 id="安装Win-ss客户端"><a href="#安装Win-ss客户端" class="headerlink" title="安装Win ss客户端"></a>安装Win ss客户端</h1><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">常规版 Shadowsocks</a> </p><p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">ShadowsocksR 版</a> </p><hr><h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>若已安装多个版本，则卸载时也需多次运行</p><p>使用root用户登录，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocks-all.sh uninstall</span><br></pre></td></tr></table></figure><h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>Shadowsocks-Python 版：<br>/etc/init.d/shadowsocks-python start | stop | restart | status</p><p>ShadowsocksR 版：<br>/etc/init.d/shadowsocks-r start | stop | restart | status</p><p>Shadowsocks-Go 版：<br>/etc/init.d/shadowsocks-go start | stop | restart | status</p><p>Shadowsocks-libev 版：<br>/etc/init.d/shadowsocks-libev start | stop | restart | status</p><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Shadowsocks-Python 版：<br>/etc/shadowsocks-python/config.json</p><p>ShadowsocksR 版：<br>/etc/shadowsocks-r/config.json</p><p>Shadowsocks-Go 版：<br>/etc/shadowsocks-go/config.json</p><p>Shadowsocks-libev 版：<br>/etc/shadowsocks-libev/config.json</p><hr><h1 id="安装多用户版55R"><a href="#安装多用户版55R" class="headerlink" title="安装多用户版55R"></a>安装多用户版55R</h1><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#CentOS系统</span><br><span class="line">yum install unzip ca-certificates -y </span><br><span class="line"></span><br><span class="line">#Debian和Ubuntu系统</span><br><span class="line">apt-get install unzip ca-certificates -y</span><br></pre></td></tr></table></figure><p>安装脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.moerats.com/usr/down/55r.zip &amp;&amp; unzip 55r.zip &amp;&amp; cd 55R* &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure></p><p>卸载脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 55R* &amp;&amp; bash uninstall.sh</span><br></pre></td></tr></table></figure></p><hr><p><strong>PS:</strong> <a href="https://do.freess.today/" target="_blank" rel="noopener">Free SS</a></p><ul><li>19/3/24：更新;另作SS加速</li></ul>]]></content>
       
       
       
@@ -291,17 +291,6 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>欢迎来到我的个人技术博客。</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>留言板</title>
       <link href="/gitments/index.html"/>
       <url>/gitments/index.html</url>
@@ -318,6 +307,17 @@
       <url>/reading/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<p>欢迎来到我的个人技术博客。</p>]]></content>
       
     </entry>
     
