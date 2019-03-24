@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   
+  
+  <meta name="description" content="造轮子的攻城狮， 热爱玄学的程序猿。" />
+  
 
+  
+  
+  
+  
+  
   
   <title>服务器安防之登陆次数限制 | Simon 的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
   <meta name="description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta name="keywords" content="服务器安防">
 <meta property="og:type" content="article">
@@ -23,215 +28,150 @@
 <meta name="twitter:title" content="服务器安防之登陆次数限制">
 <meta name="twitter:description" content="记继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；  查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
   
-    <link rel="alternate" href="/atom.xml" title="Simon 的博客" type="application/atom+xml">
   
-  
-    <link rel="icon" href="/images/favicon.ico">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/css/images/favicon.ico">
   
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/highlight.css">
-</head>
+  
 
-<body>
-  <div id="fullpage" class="mobile-nav-right">
-    
-      <div id="wrapper" title="图片来自网络">
-    
-    
-      <header id="header">
-  <div id="nav-toggle" class="nav-toggle"></div>
-  <div class="head-box global-width">
-    <nav class="nav-box nav-right">
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Simon 的博客" rel="home">Simon 的博客</a>
+      </h1>
       
-        <a class="nav-item" href="/" title
-        
-        >首页</a>
+        <h2 class="site-description">
+          <a href="/" id="subtitle">Simon</a>
+        </h2>
       
-        <a class="nav-item" href="/archives" title
-        
-        >归档</a>
-      
-        <a class="nav-item" href="/about" title
-        
-        >关于</a>
-      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">主页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">归档</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
     </nav>
-  </div>
 </header>
-      <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-服务器安防之登陆次数限制" class="article global-container article-type-post" itemscope itemprop="blogPost">
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-服务器安防之登陆次数限制" class="post-服务器安防之登陆次数限制 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
   
-    <header class="article-header">
-      
-  
-    <h1 class="article-title" itemprop="name">
+    <h1 class="entry-title article-title">
       服务器安防之登陆次数限制
     </h1>
   
 
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2018/0517/服务器安防之登陆次数限制/" class="article-date">
-  <time datetime="2018-05-17T01:05:42.000Z" itemprop="datePublished">2018-05-17</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器安防/">服务器安防</a></li></ul>
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://nsleep.github.io/2018/0517/服务器安防之登陆次数限制/" data-id="cjtmbjlks0005kkjo1y9sq3m7" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
 
-  </div>
-  
-    <span id="busuanzi_container_page_pv">
-      阅读量<span id="busuanzi_value_page_pv"></span>次
-    </span>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
+    <div class="entry-content">
       
         <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；</p>
 <hr>
-<h1 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h1><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></div></p>
+<h1 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h1><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <hr>
 <h1 id="1-始终允许IP"><a href="#1-始终允许IP" class="headerlink" title="1. 始终允许IP"></a>1. 始终允许IP</h1><p>假设IP：192.168.18.1 是经常登录的IP，填入 /etc/hosts.allow ，当然 :allow 是可以省略的。当hosts.allow和host.deny相冲突时, 以hosts.allow设置为准</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:192.168.18.1:allow"</span> &gt;&gt; /etc/hosts.allow</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:192.168.18.1:allow"</span> &gt;&gt; /etc/hosts.allow</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="2-写脚本"><a href="#2-写脚本" class="headerlink" title="2. 写脚本"></a>2. 写脚本</h1><p>在路径 ‘/usr/local/bin/‘ 下，创建文件 ‘secure_ssh.sh’ ，<br>错误次数大于个位数，即错误次数大于等于10就将IP列入黑名单(判断见行7)。</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /usr/<span class="built_in">local</span>/bin/secure_ssh.sh</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /usr/<span class="built_in">local</span>/bin/secure_ssh.sh</span><br></pre></td></tr></table></figure>
 <p>内容如下：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line">cat /var/<span class="built_in">log</span>/secure|awk <span class="string">'/Failed/&#123;print $(NF-3)&#125;'</span>|sort|uniq -c|awk <span class="string">'&#123;print $2"="$1;&#125;'</span> &gt; /usr/<span class="built_in">local</span>/bin/black.list</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `cat  /usr/<span class="built_in">local</span>/bin/black.list`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  IP=`<span class="built_in">echo</span> <span class="variable">$i</span> |awk -F= <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line">  NUM=`<span class="built_in">echo</span> <span class="variable">$i</span> |awk -F= <span class="string">'&#123;print $2&#125;'</span>`</span><br><span class="line">  <span class="keyword">if</span> [ <span class="variable">$&#123;#NUM&#125;</span> -gt 1 ]; <span class="keyword">then</span></span><br><span class="line">    grep <span class="variable">$IP</span> /etc/hosts.deny &gt; /dev/null</span><br><span class="line">    <span class="keyword">if</span> [ $? -gt 0 ];<span class="keyword">then</span></span><br><span class="line">      <span class="built_in">echo</span> <span class="string">"sshd:<span class="variable">$IP</span>:deny"</span> &gt;&gt; /etc/hosts.deny</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line">cat /var/<span class="built_in">log</span>/secure|awk <span class="string">'/Failed/&#123;print $(NF-3)&#125;'</span>|sort|uniq -c|awk <span class="string">'&#123;print $2"="$1;&#125;'</span> &gt; /usr/<span class="built_in">local</span>/bin/black.list</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `cat  /usr/<span class="built_in">local</span>/bin/black.list`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  IP=`<span class="built_in">echo</span> <span class="variable">$i</span> |awk -F= <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line">  NUM=`<span class="built_in">echo</span> <span class="variable">$i</span> |awk -F= <span class="string">'&#123;print $2&#125;'</span>`</span><br><span class="line">  <span class="keyword">if</span> [ <span class="variable">$&#123;#NUM&#125;</span> -gt 1 ]; <span class="keyword">then</span></span><br><span class="line">    grep <span class="variable">$IP</span> /etc/hosts.deny &gt; /dev/null</span><br><span class="line">    <span class="keyword">if</span> [ $? -gt 0 ];<span class="keyword">then</span></span><br><span class="line">      <span class="built_in">echo</span> <span class="string">"sshd:<span class="variable">$IP</span>:deny"</span> &gt;&gt; /etc/hosts.deny</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="3-列入计划"><a href="#3-列入计划" class="headerlink" title="3. 列入计划"></a>3. 列入计划</h1><p>将脚本文件每一分钟执行一次 (<em> /1 </em> <em> </em> * )</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab -e</span><br></pre></td></tr></table></figure></div>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  /1 * * * *  sh /usr/<span class="built_in">local</span>/bin/secure_ssh.sh</span><br><span class="line">或</span><br><span class="line">  * * * * *  sh /usr/<span class="built_in">local</span>/bin/secure_ssh.sh</span><br></pre></td></tr></table></figure></div>
-<h1 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h1><h2 id="1-查看记录列表"><a href="#1-查看记录列表" class="headerlink" title="1).查看记录列表"></a>1).查看记录列表</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/bin/black.list</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab -e</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  /1 * * * *  sh /usr/<span class="built_in">local</span>/bin/secure_ssh.sh</span><br><span class="line">或</span><br><span class="line">  * * * * *  sh /usr/<span class="built_in">local</span>/bin/secure_ssh.sh</span><br></pre></td></tr></table></figure>
+<h1 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h1><h2 id="1-查看记录列表"><a href="#1-查看记录列表" class="headerlink" title="1).查看记录列表"></a>1).查看记录列表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /usr/<span class="built_in">local</span>/bin/black.list</span><br></pre></td></tr></table></figure>
 <h2 id="2-清空记录列表"><a href="#2-清空记录列表" class="headerlink" title="2).清空记录列表"></a>2).清空记录列表</h2><p>black.list文件是根据secure日志文件通过上面脚本文件生成的，且每分钟会覆盖一次</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;&quot; &gt; /var/log/secure </span><br><span class="line">$ echo &quot;&quot; &gt; /usr/local/bin/black.list</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;&quot; &gt; /var/log/secure </span><br><span class="line">$ echo &quot;&quot; &gt; /usr/local/bin/black.list</span><br></pre></td></tr></table></figure>
 <h2 id="3-修改hosts-deny文件"><a href="#3-修改hosts-deny文件" class="headerlink" title="3).修改hosts.deny文件"></a>3).修改hosts.deny文件</h2><p>手动添加或删除IP记录</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/hosts.deny</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/hosts.deny</span><br></pre></td></tr></table></figure>
 
       
-    </div>
-    
-      <footer class="article-footer">
-        完
-      </footer>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  <div class="article-nav-block">
-    
-      <a href="/2018/0623/VPN的简单架设/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            VPN的简单架设
-          
-        </div>
-      </a>
-    
-  </div>
-  <div class="article-nav-block">
-    
-      <a href="/2018/0505/服务器安防之VPS爆破防御（简）/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">服务器安防之VPS爆破防御（简）</div>
-        <strong class="article-nav-caption"></strong>
-      </a>
-    
-  </div>
-</nav>
+    </div><!-- .entry-content -->
 
+    <footer class="entry-meta">
+    <a href="/2018/0517/服务器安防之登陆次数限制/">
+    <time datetime="2018-05-17T01:05:42.000Z" class="entry-date">
+        2018-05-17
+    </time>
+</a>
     
-<!-- <div id="gitmentContainer"></div> -->
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器安防/">服务器安防</a></li></ul>
 
-<!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  owner: 'nsleep',
-  repo: 'nsleep.github.io',
-  oauth: {
-    client_id: '917ab205c597ae6d0534',
-    client_secret: '41b05d1e27da4e3c62d90daf3659f7cbf3921334',
-  },
-})
-gitment.render('gitmentContainer')
-</script>
-
-  
-  
+    </footer>
 </article>
-</section>
-        <aside id="sidebar">
-  
-    <div class="widget-box">
-  <div class="avatar-box">
-    <img class="avatar" src="/images/favicon.ico" title="图片来自网络"></img>
-    <h3 class="avatar-name">
-      
-        天乾
-      
-    </h3>
-    <p class="avatar-slogan">
-      造轮子的攻城狮，热爱玄学的程序猿。
-    </p>
-  </div>
-</div>
 
 
-  
     
-  <div class="widget-box">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/扉页/">扉页</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a></li></ul>
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2018/0623/VPN的简单架设/" rel="prev"><span class="meta-nav">←</span> VPN的简单架设</a></span>
+    
+    
+        <span class="nav-next"><a href="/2018/0505/服务器安防之VPS爆破防御（简）/" rel="next">服务器安防之VPS爆破防御（简） <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
     </div>
-  </div>
-
-
+</form></aside>
   
     
-  <div class="widget-box">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN架设/">VPN架设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-网站架设/">Web 网站架设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器安防/">服务器安防</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器管理/">服务器管理</a></li></ul>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/扉页/">扉页</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li></ul>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/VPN架设/" style="font-size: 15px;">VPN架设</a> <a href="/tags/Web-网站架设/" style="font-size: 10px;">Web 网站架设</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/服务器安防/" style="font-size: 15px;">服务器安防</a> <a href="/tags/服务器管理/" style="font-size: 10px;">服务器管理</a>
-    </div>
-  </div>
+  </aside>
 
   
     
-  <div class="widget-box">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
       <ul>
         
           <li>
@@ -256,22 +196,38 @@ gitment.render('gitmentContainer')
         
       </ul>
     </div>
-  </div>
+  </aside>
 
   
-</aside>
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN架设/">VPN架设</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-网站架设/">Web 网站架设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器安防/">服务器安防</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器管理/">服务器管理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/VPN架设/" style="font-size: 15px;">VPN架设</a> <a href="/tags/Web-网站架设/" style="font-size: 10px;">Web 网站架设</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/服务器安防/" style="font-size: 15px;">服务器安防</a> <a href="/tags/服务器管理/" style="font-size: 10px;">服务器管理</a>
+    </div>
+  </aside>
+
+  
+</div>
       </div>
-      <footer id="footer">
-  <div class="foot-box global-width">
-    &copy; 2019 程乾 &nbsp;&nbsp;
-    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a><br>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
-  </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 Simon 的博客
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 <script src="/js/jquery-2.0.3.min.js"></script>
+
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   <script src="/fancybox/jquery.fancybox.pack.js"></script>
@@ -279,20 +235,10 @@ gitment.render('gitmentContainer')
 
 <script src="/js/script.js"></script>
 
+<script src="/js/navigation.js"></script>
 
+<div id="bg"></div>
 
-    </div>
-    <nav id="mobile-nav" class="mobile-nav-box">
-  <div class="mobile-nav-img mobile-nav-top"></div>
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
-  <div class="mobile-nav-img  mobile-nav-bottom"></div>
-</nav>    
   </div>
 </body>
 </html>
