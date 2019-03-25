@@ -274,10 +274,11 @@
 <hr>
 <h2 id="禁止所有IP访问SSH功能"><a href="#禁止所有IP访问SSH功能" class="headerlink" title="禁止所有IP访问SSH功能"></a>禁止所有IP访问SSH功能</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="（自行决定）"><a href="#（自行决定）" class="headerlink" title="（自行决定）"></a>（自行决定）</h2><h2 id="更改端口号"><a href="#更改端口号" class="headerlink" title="更改端口号"></a>更改端口号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Port 22</span></span><br></pre></td></tr></table></figure>
-<h2 id="禁止root-ssh登录"><a href="#禁止root-ssh登录" class="headerlink" title="禁止root ssh登录"></a>禁止root ssh登录</h2><p>暴力破解骇客首先会尝试root 用户，可以,修改sshd_conf文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#PermitRootLogin no</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<h2 id="（自行决定）"><a href="#（自行决定）" class="headerlink" title="（自行决定）"></a>（自行决定）</h2><h2 id="更改端口号"><a href="#更改端口号" class="headerlink" title="更改端口号"></a>更改端口号</h2><pre><code>#Port 22
+</code></pre><h2 id="禁止root-ssh登录"><a href="#禁止root-ssh登录" class="headerlink" title="禁止root ssh登录"></a>禁止root ssh登录</h2><p>暴力破解骇客首先会尝试root 用户，可以,修改sshd_conf文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
+<p>注释一行</p>
+<pre><code>#PermitRootLogin no
+</code></pre><p>重启ssh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></p>
 <hr>
 
                 
