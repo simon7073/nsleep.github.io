@@ -109,7 +109,7 @@
     <link href="http://nsleep.github.io/2019/0224/Django%E5%88%9D%E6%AD%A5/"/>
     <id>http://nsleep.github.io/2019/0224/Django初步/</id>
     <published>2019-02-24T03:26:44.000Z</published>
-    <updated>2019-04-20T04:15:16.991Z</updated>
+    <updated>2019-05-22T12:36:22.826Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>正在学习<a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>中…<br><a id="more"></a><br><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a> 是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。</p></blockquote><p>参考文档：<br>&emsp;&emsp;<a href="https://docs.djangoproject.com/zh-hans/2.1/" target="_blank" rel="noopener">Django 文档</a><br>&emsp;&emsp;<a href="https://docs.djangoproject.com/zh-hans/2.1/intro/" target="_blank" rel="noopener">Django 教程</a><br>&emsp;&emsp;<a href="https://www.cnblogs.com/zhangxinqi/p/8969006.html" target="_blank" rel="noopener">python3之Django基础篇</a><br>&emsp;&emsp;<a href="http://www.runoob.com/django/django-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>]]></content>
     
@@ -158,16 +158,16 @@
     <link href="http://nsleep.github.io/2018/0730/Hexo-Github-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"/>
     <id>http://nsleep.github.io/2018/0730/Hexo-Github-绑定域名/</id>
     <published>2018-07-29T17:23:48.000Z</published>
-    <updated>2019-02-20T07:41:38.450Z</updated>
+    <updated>2019-05-22T12:23:23.057Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-获取GitHub-Pages的IP"><a href="#1-获取GitHub-Pages的IP" class="headerlink" title="1. 获取GitHub Pages的IP"></a>1. 获取GitHub Pages的IP</h2><p>Ping出Github Pages的IP </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping YOURNAME.github.io</span><br></pre></td></tr></table></figure><h2 id="2-配置域名"><a href="#2-配置域名" class="headerlink" title="2. 配置域名"></a>2. 配置域名</h2><p>在目录 YOURNAME\source 下添加一个名为CNAME的文件，文件的内容就是你的域名。</p><h2 id="3-域名解析"><a href="#3-域名解析" class="headerlink" title="3. 域名解析"></a>3. 域名解析</h2><p>修改的时候只要修改两个记录类型为A，主机记录分别为@和www的行就可以了<br><a id="more"></a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="1-获取GitHub-Pages的IP"><a href="#1-获取GitHub-Pages的IP" class="headerlink" title="1. 获取GitHub Pages的IP"></a>1. <del>获取GitHub Pages的IP</del></h2><p><del>Ping出Github Pages的IP</del> <code>(解析时没有用到IP地址)</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping YOURNAME.github.io</span><br></pre></td></tr></table></figure></p><h2 id="2-配置域名"><a href="#2-配置域名" class="headerlink" title="2. 配置域名"></a>2. 配置域名</h2><p>在目录 YOURNAME\source 下创建一个名为CNAME的文件，文件的内容是你的二级域名<br> <code>例如：blog.xxxx.com</code> 。</p><h2 id="3-域名解析"><a href="#3-域名解析" class="headerlink" title="3. 域名解析"></a>3. 域名解析</h2><p>拿二级域名<code>blog.xxxx.com</code>举例，记录类型置为CNAME，主机记录置为 <code>blog.xxxx.com</code> 中的 <code>blog</code> ，记录值置为 <code>YOURNAME.githob.io</code></p><p>修改的时候只要修改两个记录类型为A，主机记录分别为@和www的行就可以了</p><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-获取GitHub-Pages的IP&quot;&gt;&lt;a href=&quot;#1-获取GitHub-Pages的IP&quot; class=&quot;headerlink&quot; title=&quot;1. 获取GitHub Pages的IP&quot;&gt;&lt;/a&gt;1. 获取GitHub Pages的IP&lt;/h2&gt;&lt;p&gt;Ping出Github Pages的IP &lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ ping YOURNAME.github.io&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;2-配置域名&quot;&gt;&lt;a href=&quot;#2-配置域名&quot; class=&quot;headerlink&quot; title=&quot;2. 配置域名&quot;&gt;&lt;/a&gt;2. 配置域名&lt;/h2&gt;&lt;p&gt;在目录 YOURNAME\source 下添加一个名为CNAME的文件，文件的内容就是你的域名。&lt;/p&gt;
-&lt;h2 id=&quot;3-域名解析&quot;&gt;&lt;a href=&quot;#3-域名解析&quot; class=&quot;headerlink&quot; title=&quot;3. 域名解析&quot;&gt;&lt;/a&gt;3. 域名解析&lt;/h2&gt;&lt;p&gt;修改的时候只要修改两个记录类型为A，主机记录分别为@和www的行就可以了&lt;br&gt;
+      &lt;h2 id=&quot;1-获取GitHub-Pages的IP&quot;&gt;&lt;a href=&quot;#1-获取GitHub-Pages的IP&quot; class=&quot;headerlink&quot; title=&quot;1. 获取GitHub Pages的IP&quot;&gt;&lt;/a&gt;1. &lt;del&gt;获取GitHub Pages的IP&lt;/del&gt;&lt;/h2&gt;&lt;p&gt;&lt;del&gt;Ping出Github Pages的IP&lt;/del&gt; &lt;code&gt;(解析时没有用到IP地址)&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ ping YOURNAME.github.io&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-配置域名&quot;&gt;&lt;a href=&quot;#2-配置域名&quot; class=&quot;headerlink&quot; title=&quot;2. 配置域名&quot;&gt;&lt;/a&gt;2. 配置域名&lt;/h2&gt;&lt;p&gt;在目录 YOURNAME\source 下创建一个名为CNAME的文件，文件的内容是你的二级域名&lt;br&gt; &lt;code&gt;例如：blog.xxxx.com&lt;/code&gt; 。&lt;/p&gt;
+&lt;h2 id=&quot;3-域名解析&quot;&gt;&lt;a href=&quot;#3-域名解析&quot; class=&quot;headerlink&quot; title=&quot;3. 域名解析&quot;&gt;&lt;/a&gt;3. 域名解析&lt;/h2&gt;&lt;p&gt;拿二级域名&lt;code&gt;blog.xxxx.com&lt;/code&gt;举例，记录类型置为CNAME，主机记录置为 &lt;code&gt;blog.xxxx.com&lt;/code&gt; 中的 &lt;code&gt;blog&lt;/code&gt; ，记录值置为 &lt;code&gt;YOURNAME.githob.io&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;修改的时候只要修改两个记录类型为A，主机记录分别为@和www的行就可以了&lt;/p&gt;
     
     </summary>
     

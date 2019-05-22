@@ -132,7 +132,7 @@
       <link href="/2018/0730/Hexo-Github-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"/>
       <url>/2018/0730/Hexo-Github-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</url>
       
-        <content type="html"><![CDATA[<h2 id="1-获取GitHub-Pages的IP"><a href="#1-获取GitHub-Pages的IP" class="headerlink" title="1. 获取GitHub Pages的IP"></a>1. 获取GitHub Pages的IP</h2><p>Ping出Github Pages的IP </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping YOURNAME.github.io</span><br></pre></td></tr></table></figure><h2 id="2-配置域名"><a href="#2-配置域名" class="headerlink" title="2. 配置域名"></a>2. 配置域名</h2><p>在目录 YOURNAME\source 下添加一个名为CNAME的文件，文件的内容就是你的域名。</p><h2 id="3-域名解析"><a href="#3-域名解析" class="headerlink" title="3. 域名解析"></a>3. 域名解析</h2><p>修改的时候只要修改两个记录类型为A，主机记录分别为@和www的行就可以了<br><a id="more"></a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-获取GitHub-Pages的IP"><a href="#1-获取GitHub-Pages的IP" class="headerlink" title="1. 获取GitHub Pages的IP"></a>1. <del>获取GitHub Pages的IP</del></h2><p><del>Ping出Github Pages的IP</del> <code>(解析时没有用到IP地址)</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping YOURNAME.github.io</span><br></pre></td></tr></table></figure></p><h2 id="2-配置域名"><a href="#2-配置域名" class="headerlink" title="2. 配置域名"></a>2. 配置域名</h2><p>在目录 YOURNAME\source 下创建一个名为CNAME的文件，文件的内容是你的二级域名<br> <code>例如：blog.xxxx.com</code> 。</p><h2 id="3-域名解析"><a href="#3-域名解析" class="headerlink" title="3. 域名解析"></a>3. 域名解析</h2><p>拿二级域名<code>blog.xxxx.com</code>举例，记录类型置为CNAME，主机记录置为 <code>blog.xxxx.com</code> 中的 <code>blog</code> ，记录值置为 <code>YOURNAME.githob.io</code></p><p>修改的时候只要修改两个记录类型为A，主机记录分别为@和www的行就可以了</p><a id="more"></a>]]></content>
       
       
       
@@ -304,22 +304,22 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>留言板</title>
+      <link href="/gitments/index.html"/>
+      <url>/gitments/index.html</url>
       
-        <content type="html"><![CDATA[<p>欢迎来到我的个人技术博客。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>留言板</title>
-      <link href="/gitments/index.html"/>
-      <url>/gitments/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>欢迎来到我的个人技术博客。</p>]]></content>
       
     </entry>
     
