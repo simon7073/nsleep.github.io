@@ -8,7 +8,7 @@
       <link href="/2019/06/09/%E5%BE%85%E5%8A%9E/"/>
       <url>/2019/06/09/%E5%BE%85%E5%8A%9E/</url>
       
-        <content type="html"><![CDATA[<p>hexo博客安装RSS插件<br><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">https://github.com/hexojs/hexo-generator-feed</a><br><a href="https://blog.csdn.net/u011303443/article/details/52333695" target="_blank" rel="noopener">https://blog.csdn.net/u011303443/article/details/52333695</a><br><a href="https://www.jianshu.com/p/a79422ab2013" target="_blank" rel="noopener">https://www.jianshu.com/p/a79422ab2013</a></p><p>hexo博客安装Search插件<br><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">https://github.com/wzpan/hexo-generator-search</a></p><p>图标<br><a href="https://fontawesome.com/icons?from=io" target="_blank" rel="noopener">https://fontawesome.com/icons?from=io</a><br><a id="more"></a></p>]]></content>
+        <content type="html"><![CDATA[<p>hexo博客安装RSS插件<br><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">https://github.com/hexojs/hexo-generator-feed</a><br><a href="https://blog.csdn.net/u011303443/article/details/52333695" target="_blank" rel="noopener">https://blog.csdn.net/u011303443/article/details/52333695</a><br><a href="https://www.jianshu.com/p/a79422ab2013" target="_blank" rel="noopener">https://www.jianshu.com/p/a79422ab2013</a></p><p>hexo博客安装Search插件<br><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">https://github.com/wzpan/hexo-generator-search</a></p><p>图标<br><a href="https://fontawesome.com/icons?from=io" target="_blank" rel="noopener">https://fontawesome.com/icons?from=io</a></p><p>安装 NexT<br><a href="http://theme-next.iissnan.com/getting-started.html#menu-settings" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html#menu-settings</a></p><a id="more"></a>]]></content>
       
       
       
@@ -387,11 +387,11 @@
     
     
     <entry>
-      <title>archives</title>
-      <link href="/archives/index.html"/>
-      <url>/archives/index.html</url>
+      <title>404</title>
+      <link href="/404/index.html"/>
+      <url>/404/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homepageurl="http://localhost:4000/" homepagename="回到我的主页"></script>]]></content>
       
     </entry>
     
@@ -409,6 +409,17 @@
     
     
     <entry>
+      <title>archives</title>
+      <link href="/archives/index.html"/>
+      <url>/archives/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>留言板</title>
       <link href="/gitments/index.html"/>
       <url>/gitments/index.html</url>
@@ -420,9 +431,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>读书</title>
+      <link href="/reading/index.html"/>
+      <url>/reading/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -431,9 +442,9 @@
     
     
     <entry>
-      <title>读书</title>
-      <link href="/reading/index.html"/>
-      <url>/reading/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
