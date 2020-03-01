@@ -402,7 +402,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<p>欢迎来到我的个人技术博客。</p><ul><li>20/03/01 测试 travis-ci</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>欢迎来到我的个人技术博客。</p><ul><li>20/03/01 回归</li></ul>]]></content>
       
     </entry>
     
