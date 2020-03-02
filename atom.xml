@@ -20,7 +20,14 @@
     
     <summary type="html">
     
-      &lt;ul&gt;
+      &lt;script&gt;
+
+    var test = window.location.protocol + &#39;//&#39; +window.location.host ;//+&#39;:&#39;+ window.location.port;
+
+    alert(test);
+&lt;/script&gt;
+
+&lt;ul&gt;
 &lt;li&gt;19/02/13 更新：翻译此篇例文&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
