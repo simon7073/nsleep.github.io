@@ -24,7 +24,7 @@
 
     var test = window.location.protocol + &#39;//&#39; +window.location.host ;//+&#39;:&#39;+ window.location.port;
 
-    alert(test);
+    // alert(test);
 &lt;/script&gt;
 
 &lt;ul&gt;
