@@ -360,17 +360,6 @@
     
     
     <entry>
-      <title>404</title>
-      <link href="/404/index.html"/>
-      <url>/404/index.html</url>
-      
-        <content type="html"><![CDATA[<p><div id="pg-404"></div></p><script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homepageurl="https://blog.simon7.top/" homepagename="回到我的主页">    </script><p><input type="button" onclick="setInnerHTML()" value="点击"></p><script type="text/javascript">var str="<script type='text/javascript' \    src='//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js' \    charset='utf-8' \    homePageUrl='https://blog.simon7.top/' \    homePageName='回到我的主页'>\    <\/script>\";function setInnerHTML(){    document.getElementById("pg-404").innerHTML = str;}document.getElementById('pg-404').innerHTML = str;</script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
