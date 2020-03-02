@@ -349,17 +349,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/404.html"/>
-      <url>/404.html</url>
-      
-        <content type="html"><![CDATA[<!DOCTYPE HTML><html><head><meta name="generator" content="Hexo 3.8.0">  <meta http-equiv="content-type" content="text/html;charset=utf-8;"></head><body><script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homepageurl="https://blog.simon7.top/" homepagename="回到我的主页"></script></body></html>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
