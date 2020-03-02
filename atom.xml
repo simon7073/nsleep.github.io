@@ -345,55 +345,20 @@
   </entry>
   
   <entry>
-    <title>Hexo+Github（3）</title>
-    <link href="http://nsleep.github.io/2018/04/01/Hexo-Github-3/"/>
-    <id>http://nsleep.github.io/2018/04/01/Hexo-Github-3/</id>
-    <published>2018-04-01T14:57:42.000Z</published>
-    <updated>2019-02-20T07:32:08.850Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;续&quot;&gt;&lt;a href=&quot;#续&quot; class=&quot;headerlink&quot; title=&quot;续&quot;&gt;&lt;/a&gt;续&lt;/h1&gt;&lt;h2 id=&quot;17、迁移方法&quot;&gt;&lt;a href=&quot;#17、迁移方法&quot; class=&quot;headerlink&quot; title=&quot;17、迁移方法&quot;&gt;&lt;/a&gt;17、迁移方法&lt;/h2&gt;&lt;h3 id=&quot;1-RSS&quot;&gt;&lt;a href=&quot;#1-RSS&quot; class=&quot;headerlink&quot; title=&quot;(1)RSS&quot;&gt;&lt;/a&gt;(1)RSS&lt;/h3&gt;&lt;p&gt;安装hexo-migrator-rss 插件&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-migrator-rss --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;执行 (&lt;source&gt; 文件路径或网址)&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hexo migrate rss &amp;lt;&lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://nsleep.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo+Github（2）</title>
-    <link href="http://nsleep.github.io/2018/04/01/Hexo-Github-2/"/>
-    <id>http://nsleep.github.io/2018/04/01/Hexo-Github-2/</id>
-    <published>2018-04-01T14:44:04.000Z</published>
-    <updated>2019-02-20T07:31:49.429Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;续&quot;&gt;&lt;a href=&quot;#续&quot; class=&quot;headerlink&quot; title=&quot;续&quot;&gt;&lt;/a&gt;续&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new post &lt;span class=&quot;string&quot;&gt;&quot;博客名&quot;&lt;/span&gt;			//新建一篇博客--_posts目录下&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo d -g				//编辑器编好文章，那么就可以生成以及部署了&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://nsleep.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo+Github（1）</title>
     <link href="http://nsleep.github.io/2018/04/01/Hexo-Github-1/"/>
     <id>http://nsleep.github.io/2018/04/01/Hexo-Github-1/</id>
     <published>2018-04-01T13:46:52.000Z</published>
-    <updated>2019-06-09T08:25:26.152Z</updated>
+    <updated>2020-03-02T04:51:44.184Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1、Github账户&quot;&gt;&lt;a href=&quot;#1、Github账户&quot; class=&quot;headerlink&quot; title=&quot;1、Github账户&quot;&gt;&lt;/a&gt;1、Github账户&lt;/h2&gt;&lt;p&gt;注册并新建项目，项目必须要遵守格式：账户名.github.io&lt;/p&gt;
-&lt;h2 id=&quot;2、安装Git&quot;&gt;&lt;a href=&quot;#2、安装Git&quot; class=&quot;headerlink&quot; title=&quot;2、安装Git&quot;&gt;&lt;/a&gt;2、安装&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Git&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&quot;配置好Git环境&quot;&gt;&lt;a href=&quot;#配置好Git环境&quot; class=&quot;headerlink&quot; title=&quot;配置好Git环境&quot;&gt;&lt;/a&gt;配置好Git环境&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;your_name&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &lt;span class=&quot;string&quot;&gt;&quot;your_email&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h1 id=&quot;一、-准备环境&quot;&gt;&lt;a href=&quot;#一、-准备环境&quot; class=&quot;headerlink&quot; title=&quot;一、 准备环境&quot;&gt;&lt;/a&gt;一、 准备环境&lt;/h1&gt;&lt;h2 id=&quot;1-Github账户&quot;&gt;&lt;a href=&quot;#1-Github账户&quot; class=&quot;headerlink&quot; title=&quot;1. Github账户&quot;&gt;&lt;/a&gt;1. Github账户&lt;/h2&gt;&lt;p&gt;注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io&lt;/p&gt;
+&lt;h2 id=&quot;2-安装Git&quot;&gt;&lt;a href=&quot;#2-安装Git&quot; class=&quot;headerlink&quot; title=&quot;2. 安装Git&quot;&gt;&lt;/a&gt;2. 安装&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Git&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Windows：下载并安装 &lt;a href=&quot;https://git-scm.com/download/win&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;git&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;还可以前往 &lt;a href=&quot;https://npm.taobao.org/mirrors/git-for-windows/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;淘宝 Git for Windows 镜像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;更多&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
