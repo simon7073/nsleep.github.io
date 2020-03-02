@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
+  <meta name="description" content="一、 检查1. 查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解 1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta name="keywords" content="服务器安防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器安防之VPS爆破防御（简）">
 <meta property="og:url" content="http://nsleep.github.io/2018/05/05/服务器安防之VPS爆破防御（简）/index.html">
 <meta property="og:site_name" content="Simon 的博客">
-<meta property="og:description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
+<meta property="og:description" content="一、 检查1. 查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解 1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://nsleep.github.io/2018/05/05/服务器安防之VPS爆破防御（简）/Failed%20login.png">
-<meta property="og:updated_time" content="2019-03-25T05:36:42.696Z">
+<meta property="og:updated_time" content="2020-03-02T06:23:02.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器安防之VPS爆破防御（简）">
-<meta name="twitter:description" content="查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
+<meta name="twitter:description" content="一、 检查1. 查看登录失败的IP显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解 1$ grep &quot;Failed password for root&quot; /var/log/secure | awk &apos;&amp;#123;print $11&amp;#125;&apos; | sort | uniq -c | sort -nr | more">
 <meta name="twitter:image" content="http://nsleep.github.io/2018/05/05/服务器安防之VPS爆破防御（简）/Failed%20login.png">
 
 
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-25 13:36:42" itemprop="dateModified" datetime="2019-03-25T13:36:42+08:00">2019-03-25</time>
+                <time title="修改时间：2020-03-02 14:23:02" itemprop="dateModified" datetime="2020-03-02T14:23:02+08:00">2020-03-02</time>
               
             
           </span>
@@ -494,24 +494,32 @@
       
 
       
-        <h2 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
+        <h1 id="一、-检查"><a href="#一、-检查" class="headerlink" title="一、 检查"></a>一、 检查</h1><h2 id="1-查看登录失败的IP"><a href="#1-查看登录失败的IP" class="headerlink" title="1. 查看登录失败的IP"></a>1. 查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><img src="Failed login.png" alt="Failed login"></p>
-<hr>
-<h2 id="列出用户所有的登录时间和登录终端的地址"><a href="#列出用户所有的登录时间和登录终端的地址" class="headerlink" title="列出用户所有的登录时间和登录终端的地址"></a>列出用户所有的登录时间和登录终端的地址</h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br></pre></td></tr></table></figure></p>
-<p>显示系统中所有用户最近一次登录信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lastlog</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="加入到黑名单"><a href="#加入到黑名单" class="headerlink" title="加入到黑名单"></a>加入到黑名单</h2><p>把对方IP加入到黑名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="禁止所有IP访问SSH功能"><a href="#禁止所有IP访问SSH功能" class="headerlink" title="禁止所有IP访问SSH功能"></a>禁止所有IP访问SSH功能</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="（自行决定）"><a href="#（自行决定）" class="headerlink" title="（自行决定）"></a>（自行决定）</h2><h2 id="更改端口号"><a href="#更改端口号" class="headerlink" title="更改端口号"></a>更改端口号</h2><pre><code>#Port 22
-</code></pre><h2 id="禁止root-ssh登录"><a href="#禁止root-ssh登录" class="headerlink" title="禁止root ssh登录"></a>禁止root ssh登录</h2><p>暴力破解骇客首先会尝试root 用户，可以,修改sshd_conf文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-列出用户所有的登录时间和登录终端的地址"><a href="#2-列出用户所有的登录时间和登录终端的地址" class="headerlink" title="2. 列出用户所有的登录时间和登录终端的地址"></a>2. 列出用户所有的登录时间和登录终端的地址</h2><p>为了验证是否被入侵，可以先查看现在谁在登录服务器，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ last | more</span><br></pre></td></tr></table></figure>
+<p>显示系统中所有用户最近一次登录信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lastlog</span><br></pre></td></tr></table></figure>
+<h1 id="二、-处理"><a href="#二、-处理" class="headerlink" title="二、 处理"></a>二、 处理</h1><h2 id="1-加入到黑名单"><a href="#1-加入到黑名单" class="headerlink" title="1. 加入到黑名单"></a>1. 加入到黑名单</h2><p>把对方IP加入到黑名单</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/hosts.deny</span><br><span class="line">$ /etc/hosts.deny</span><br></pre></td></tr></table></figure>
+<h2 id="2-禁止所有IP访问SSH功能"><a href="#2-禁止所有IP访问SSH功能" class="headerlink" title="2. 禁止所有IP访问SSH功能"></a>2. 禁止所有IP访问SSH功能</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:all:deny"</span> &gt;&gt; /etc/hosts.deny</span><br></pre></td></tr></table></figure>
+<h2 id="3-更改端口号"><a href="#3-更改端口号" class="headerlink" title="3. 更改端口号"></a>3. 更改端口号</h2><p>编辑sshd配置，修改默认的端口：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>按【i】，进入编辑模式，找到并注释如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Port 22</span></span><br></pre></td></tr></table></figure>
+<p>按【Esc】退出编辑模式，【Shift】+【：】进入命令模式，”:wq”保存并退出</p>
+<h2 id="4-禁止root-ssh登录"><a href="#4-禁止root-ssh登录" class="headerlink" title="4. 禁止root ssh登录"></a>4. 禁止root ssh登录</h2><p>修改sshd_conf文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
 <p>注释一行</p>
-<pre><code>#PermitRootLogin no
-</code></pre><p>重启ssh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></p>
-<hr>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#PermitRootLogin no</span></span><br></pre></td></tr></table></figure>
+<h1 id="三、-重启ssh"><a href="#三、-重启ssh" class="headerlink" title="三、 重启ssh"></a>三、 重启ssh</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd.service</span><br><span class="line">或</span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
+<!--  
+    或尝试
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart </span><br><span class="line">/etc/init.d/sshd reload</span><br><span class="line">/etc/init.d/sshd restart</span><br></pre></td></tr></table></figure>
+<p>–&gt;</p>
+-->
       
     </div>
 
@@ -550,8 +558,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/01/Hexo-Github-1/" rel="next" title="Hexo+Github（1）">
-                <i class="fa fa-chevron-left"></i> Hexo+Github（1）
+              <a href="/2018/04/01/Hexo-Github/" rel="next" title="Hexo+Github">
+                <i class="fa fa-chevron-left"></i> Hexo+Github
               </a>
             
           </div>
@@ -701,6 +709,8 @@
                     
                       
                     
+                      
+                    
                     <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
@@ -746,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看登录失败的IP"><span class="nav-number">1.</span> <span class="nav-text">查看登录失败的IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列出用户所有的登录时间和登录终端的地址"><span class="nav-number">2.</span> <span class="nav-text">列出用户所有的登录时间和登录终端的地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加入到黑名单"><span class="nav-number">3.</span> <span class="nav-text">加入到黑名单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁止所有IP访问SSH功能"><span class="nav-number">4.</span> <span class="nav-text">禁止所有IP访问SSH功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（自行决定）"><span class="nav-number">5.</span> <span class="nav-text">（自行决定）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改端口号"><span class="nav-number">6.</span> <span class="nav-text">更改端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁止root-ssh登录"><span class="nav-number">7.</span> <span class="nav-text">禁止root ssh登录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、-检查"><span class="nav-number">1.</span> <span class="nav-text">一、 检查</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-查看登录失败的IP"><span class="nav-number">1.1.</span> <span class="nav-text">1. 查看登录失败的IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-列出用户所有的登录时间和登录终端的地址"><span class="nav-number">1.2.</span> <span class="nav-text">2. 列出用户所有的登录时间和登录终端的地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、-处理"><span class="nav-number">2.</span> <span class="nav-text">二、 处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-加入到黑名单"><span class="nav-number">2.1.</span> <span class="nav-text">1. 加入到黑名单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-禁止所有IP访问SSH功能"><span class="nav-number">2.2.</span> <span class="nav-text">2. 禁止所有IP访问SSH功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-更改端口号"><span class="nav-number">2.3.</span> <span class="nav-text">3. 更改端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-禁止root-ssh登录"><span class="nav-number">2.4.</span> <span class="nav-text">4. 禁止root ssh登录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、-重启ssh"><span class="nav-number">3.</span> <span class="nav-text">三、 重启ssh</span></a></li></ol></div>
             
 
           </div>

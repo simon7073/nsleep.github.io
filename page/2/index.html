@@ -648,7 +648,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-20 15:34:13" itemprop="dateModified" datetime="2019-02-20T15:34:13+08:00">2019-02-20</time>
+                <time title="修改时间：2020-03-02 14:24:24" itemprop="dateModified" datetime="2020-03-02T14:24:24+08:00">2020-03-02</time>
               
             
           </span>
@@ -707,9 +707,10 @@
 
       
         
-          <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>继上次爆破防御后，依然有陌生IP骚扰，百无聊赖，续作此篇；</p>
 <hr>
-<h1 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h1><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
+<h1 id="1-始终允许IP"><a href="#1-始终允许IP" class="headerlink" title="1. 始终允许IP"></a>1. 始终允许IP</h1><p>假设IP：192.168.18.1 是经常登录的IP，填入 /etc/hosts.allow ，当然 :allow 是可以省略的。当hosts.allow和host.deny相冲突时, 以hosts.allow设置为准</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"sshd:192.168.18.1:allow"</span> &gt;&gt; /etc/hosts.allow</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -835,7 +836,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-25 13:36:42" itemprop="dateModified" datetime="2019-03-25T13:36:42+08:00">2019-03-25</time>
+                <time title="修改时间：2020-03-02 14:23:02" itemprop="dateModified" datetime="2020-03-02T14:23:02+08:00">2020-03-02</time>
               
             
           </span>
@@ -894,7 +895,8 @@
 
       
         
-          <h2 id="查看登录失败的IP"><a href="#查看登录失败的IP" class="headerlink" title="查看登录失败的IP"></a>查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure></p>
+          <h1 id="一、-检查"><a href="#一、-检查" class="headerlink" title="一、 检查"></a>一、 检查</h1><h2 id="1-查看登录失败的IP"><a href="#1-查看登录失败的IP" class="headerlink" title="1. 查看登录失败的IP"></a>1. 查看登录失败的IP</h2><p>显示错误次数 如果错误次数太大 你的服务器十有八九曾被暴力破解</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep <span class="string">"Failed password for root"</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">'&#123;print $11&#125;'</span> | sort | uniq -c | sort -nr | more</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -958,7 +960,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://nsleep.github.io/2018/04/01/Hexo-Github-1/">
+    <link itemprop="mainEntityOfPage" href="http://nsleep.github.io/2018/04/01/Hexo-Github/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -978,7 +980,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/01/Hexo-Github-1/" class="post-title-link" itemprop="url">Hexo+Github（1）</a>
+                <a href="/2018/04/01/Hexo-Github/" class="post-title-link" itemprop="url">Hexo+Github</a>
               
             
           </h1>
@@ -1020,7 +1022,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-02 12:51:44" itemprop="dateModified" datetime="2020-03-02T12:51:44+08:00">2020-03-02</time>
+                <time title="修改时间：2020-03-02 14:17:10" itemprop="dateModified" datetime="2020-03-02T14:17:10+08:00">2020-03-02</time>
               
             
           </span>
@@ -1038,8 +1040,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/01/Hexo-Github-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/01/Hexo-Github-1/" itemprop="commentCount"></span>
+                <a href="/2018/04/01/Hexo-Github/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/01/Hexo-Github/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1047,7 +1049,7 @@
 
           
           
-            <span id="/2018/04/01/Hexo-Github-1/" class="leancloud_visitors" data-flag-title="Hexo+Github（1）">
+            <span id="/2018/04/01/Hexo-Github/" class="leancloud_visitors" data-flag-title="Hexo+Github">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -1088,7 +1090,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/01/Hexo-Github-1/#more" rel="contents">
+              <a class="btn" href="/2018/04/01/Hexo-Github/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1222,6 +1224,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     
