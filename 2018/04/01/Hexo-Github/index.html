@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="一、 准备环境1. Github账户注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io 2. 安装Git Windows：下载并安装 git. 还可以前往 淘宝 Git for Windows 镜像 更多">
+  <meta name="description" content="一、 准备环境1. Github账户注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io 2. 安装Git Windows：下载并安装 git. 还可以前往 淘宝 Git for Windows 镜像 更多参见">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Github">
 <meta property="og:url" content="https://blog.simon7.top/2018/04/01/Hexo-Github/index.html">
 <meta property="og:site_name" content="Simon 的博客">
-<meta property="og:description" content="一、 准备环境1. Github账户注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io 2. 安装Git Windows：下载并安装 git. 还可以前往 淘宝 Git for Windows 镜像 更多">
+<meta property="og:description" content="一、 准备环境1. Github账户注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io 2. 安装Git Windows：下载并安装 git. 还可以前往 淘宝 Git for Windows 镜像 更多参见">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-02T06:17:10.574Z">
+<meta property="og:updated_time" content="2020-03-03T11:46:49.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github">
-<meta name="twitter:description" content="一、 准备环境1. Github账户注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io 2. 安装Git Windows：下载并安装 git. 还可以前往 淘宝 Git for Windows 镜像 更多">
+<meta name="twitter:description" content="一、 准备环境1. Github账户注册并新建项目，项目必须要遵守格式：YOUR_NAME.github.io 2. 安装Git Windows：下载并安装 git. 还可以前往 淘宝 Git for Windows 镜像 更多参见">
 
 
 
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-02 14:17:10" itemprop="dateModified" datetime="2020-03-02T14:17:10+08:00">2020-03-02</time>
+                <time title="修改时间：2020-03-03 19:46:49" itemprop="dateModified" datetime="2020-03-03T19:46:49+08:00">2020-03-03</time>
               
             
           </span>
@@ -532,28 +532,27 @@
 <h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2. 安装Git"></a>2. 安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></h2><ul>
 <li>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>.</li>
 <li>还可以前往 <a href="https://npm.taobao.org/mirrors/git-for-windows/" target="_blank" rel="noopener">淘宝 Git for Windows 镜像</a></li>
-<li><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener">更多</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener">更多参见</a></li>
 </ul>
 <a id="more"></a>
 <h3 id="配置好Git环境"><a href="#配置好Git环境" class="headerlink" title="配置好Git环境"></a>配置好Git环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your_name"</span></span><br><span class="line">git config --global user.email <span class="string">"your_email"</span></span><br></pre></td></tr></table></figure>
 <h3 id="创建ssh密钥，将公钥上传"><a href="#创建ssh密钥，将公钥上传" class="headerlink" title="创建ssh密钥，将公钥上传"></a>创建ssh密钥，将公钥上传</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email"</span>	// 创建密钥对</span><br><span class="line">ssh -T git@github.com  		//测试添加ssh是否成功</span><br></pre></td></tr></table></figure>
 <ul>
-<li><a href="https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">更多</a></li>
+<li>更多参见<a href="https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github</a></li>
 </ul>
 <h2 id="3-安装Node-js"><a href="#3-安装Node-js" class="headerlink" title="3. 安装Node.js"></a>3. 安装<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a></h2><ul>
 <li>Node.js 为大多数平台提供了官方的 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">安装程序</a>。</li>
-<li>对于中国大陆地区用户，可以前往 <a href="https://npm.taobao.org/mirrors/node" target="_blank" rel="noopener">淘宝 Node.js 镜像</a> 下载。</li>
-<li><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Node-js" target="_blank" rel="noopener">更多</a></li>
+<li>对于中国大陆地区用户，可以前往 <a href="https://npm.taobao.org/mirrors/node" target="_blank" rel="noopener">淘宝 Node.js 镜像</a> 下载。<br>-更多参见<a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Node-js" target="_blank" rel="noopener">Hexo</a></li>
 </ul>
 <h2 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4. 安装Hexo"></a>4. 安装<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h2><p>使用 npm 安装 Hexo。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo -v 					//检查hexo是否安装成功</span><br></pre></td></tr></table></figure>
 <ul>
-<li><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">更多</a></li>
+<li>更多参见<a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">Hexo</a></li>
 </ul>
 <h1 id="二、-本地博客-fighting"><a href="#二、-本地博客-fighting" class="headerlink" title="二、 本地博客 - fighting"></a>二、 本地博客 - fighting</h1><h2 id="1-初始化博客"><a href="#1-初始化博客" class="headerlink" title="1. 初始化博客"></a>1. 初始化博客</h2><p>执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br><span class="line"><span class="built_in">cd</span> [folder]</span><br><span class="line">npm install					// 安装所需要的组件</span><br><span class="line">hexo g						// 生成静态文件--public文件夹下</span><br></pre></td></tr></table></figure>
 <ul>
-<li><a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">更多</a></li>
+<li>更多参见<a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">Hexo</a></li>
 </ul>
 <h2 id="2-开启本地服务"><a href="#2-开启本地服务" class="headerlink" title="2. 开启本地服务"></a>2. 开启本地服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>或<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
@@ -569,7 +568,7 @@
 <p>在_posts目录下新建一篇博文，编辑器编好文章，那么就可以生成以及部署了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"博文名"</span>		// _posts目录下新建一篇博文</span><br><span class="line">hexo d -g					// 生成以及部署</span><br></pre></td></tr></table></figure>
 <h2 id="3-其他命令："><a href="#3-其他命令：" class="headerlink" title="3. 其他命令："></a>3. 其他命令：</h2><ul>
-<li><a href="https://hexo.io/zh-cn/docs/commands" target="_blank" rel="noopener">更多参见</a></li>
+<li>更多参见<a href="https://hexo.io/zh-cn/docs/commands" target="_blank" rel="noopener">Hexo</a></li>
 </ul>
 <h1 id="四、-备份"><a href="#四、-备份" class="headerlink" title="四、 备份"></a>四、 备份</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>版本是2.x.x使用这条命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-git-backup@0.0.91 --save</span><br></pre></td></tr></table></figure>
@@ -588,7 +587,7 @@
 <pre><code class="bash">hexo migrate rss &lt;<span class="built_in">source</span>&gt;
 </code></pre>
 <ul>
-<li><a href="https://hexo.io/zh-cn/docs/migration" target="_blank" rel="noopener">更多参见</a></li>
+<li>更多参见<a href="https://hexo.io/zh-cn/docs/migration" target="_blank" rel="noopener">Hexo</a></li>
 </ul>
 
       
@@ -607,6 +606,30 @@
     
     
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>simon_cq</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://blog.simon7.top/2018/04/01/Hexo-Github/" title="Hexo+Github">https://blog.simon7.top/2018/04/01/Hexo-Github/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -712,7 +735,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -849,49 +872,14 @@
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com" title="http://example.com" rel="noopener" target="_blank">Title</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.baidu.com/" title="https://www.baidu.com/" rel="noopener" target="_blank">baidu</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com" title="http://example.com" rel="noopener" target="_blank">Titl1e</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.baidu.com/" title="https://www.baidu.com/" rel="noopener" target="_blank">baid1u</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com" title="http://example.com" rel="noopener" target="_blank">Title2</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.baidu.com/" title="https://www.baidu.com/" rel="noopener" target="_blank">baidu2</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://example.com" title="http://example.com" rel="noopener" target="_blank">Titl12e</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.baidu.com/" title="https://www.baidu.com/" rel="noopener" target="_blank">baid12u</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
+		  
+		  <!-- 音乐 插件 -->
+		<link rel="stylesheet" href="/static/aplayer/css/APlayer.min.css">
+		<div id="aplayer"></div>
+		<script type="text/javascript" src="/static/aplayer/js/APlayer.min.js"></script>
+		<script type="text/javascript" src="/static/aplayer/js/music.js"></script>
+		  <!-- 音乐 插件 -->
+		
           
             
           
