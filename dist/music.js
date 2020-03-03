@@ -3,7 +3,7 @@ const ap = new APlayer({
     container: document.getElementById('aplayer'),
 	
     fixed: true, 		// 吸底模式
-    autoplay: true,	// 自动播放
+    autoplay: false,	// 自动播放
 	theme: '#eee' ,		//主题色
 	loop: 'all', 		// 循环播放, 可选值: 'all', 'one', 'none'
 	order: 'list',		// 循环顺序, 可选值: 'list', 'random'
@@ -12,7 +12,7 @@ const ap = new APlayer({
 	mutex: true,		// 阻止多个播放器同时播放
 	listFolded: false,	// 列表默认折叠
 	listMaxHeight: 90,	// 列表最大高度
-    lrcType: 3,
+   
     audio: [
       {
         name: "清新的小女孩", 		//名称
