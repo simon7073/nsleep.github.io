@@ -1,0 +1,83 @@
+
+const player = new APlayer({
+	container: document.getElementById('aplayer'),
+	mini: false,
+	autoplay: false,
+	loop: 'all',
+	order: 'random',
+	preload: 'auto',
+	volume: 0.7,
+	mutex: true,
+	listFolded: false,
+	listMaxHeight: 90,
+	lrcType: 3,
+	audio: [{
+		name: '光るなら',
+		artist: 'Goose house',
+		url: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.mp3',
+		cover: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.jpg',
+		lrc: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/hikarunara.lrc',
+		theme: '#ebd0c2'
+	}, {
+		name: 'トリカゴ',
+		artist: 'XX:me',
+		url: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/darling.mp3',
+		cover: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/darling.jpg',
+		lrc: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/darling.lrc',
+		theme: '#46718b'
+	}, {
+		name: '前前前世',
+		artist: 'RADWIMPS',
+		url: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/yourname.mp3',
+		cover: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/yourname.jpg',
+		lrc: 'https://cn-south-17-aplayer-46154810.oss.dogecdn.com/yourname.lrc',
+		theme: '#505d6b'
+	}]
+});
+player.on('canplay', function() {
+  player.play();
+});
+/*
+player.on('play', function() {
+  var data = playerList[player.playIndex];
+  var img = new Image();
+  img.src = data.pic;
+  img.onerror = function() {
+	$('.aplayer-pic').css(
+	  'background-image',
+	  'url(' + nopic + ')'
+	);
+  };
+  document.title =
+	'正在播放: ' + data.title + ' - ' + data.author;
+  setValue(data);
+});
+player.on('ended', function() {
+  document.title = siteTitle;
+});
+/*
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+	
+    fixed: true, 		// 吸底模式
+    autoplay: true,	// 自动播放
+	theme: '#eee' ,		//主题色
+	loop: 'all', 		// 循环播放, 可选值: 'all', 'one', 'none'
+	order: 'list',		// 循环顺序, 可选值: 'list', 'random'
+	preload: 'auto',	// 预加载，可选值: 'none', 'metadata', 'auto'
+	volume: 0.7,		// 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+	mutex: true,		// 阻止多个播放器同时播放
+	listFolded: false,	// 列表默认折叠
+	listMaxHeight: 90,	// 列表最大高度
+    lrcType: 3,
+    audio: [
+      {
+        name: "清新的小女孩", 		//名称
+        artist: '黄玉娇',			// 艺术家 
+        url: 'https://sharefs.yun.kugou.com/202003032111/d05de21c5cb3359105f00824b994a486/G190/M06/0F/0F/XocBAF5c3_eADuTgADmipoNGn5k022.mp3',				//链接 
+        cover: 'http://oeff2vktt.bkt.clouddn.com/image/84.jpg',	//封面
+		LRC: '[id:$00000000][ar:黄玉娇][ti:清新的小女孩][by:][hash:2c133c1572c4fb16be6063b422745bba][al:][sign:][qq:][total:236042][offset:0][00:00.00]黄玉娇 - 清新的小女孩[00:00.24]作词：聂小慧[00:00.45]作曲：Htet Aung Lwin[00:18.13]沉醉在遇见你的瞬间[00:21.42]我多么思念的小女孩[00:24.91]幸运我爱上你[00:27.27]就在那个最美的季节[00:31.76]缘分像条弯曲的弧线[00:35.12]我多么思念的小女孩[00:38.69]我内心的狂野[00:41.05]是你曾说的那一句誓言[00:45.33]我在多少个不眠的黑夜[00:48.95]寂寞让我渐渐地深陷[00:52.36]记忆成碎片[00:54.58]多想你能再回到我身边[00:59.01]时间它过了一年又一年[01:02.72]我依然还停留在原点[01:06.00]你清新的笑[01:08.07]像蝴蝶飞进了我的心田[01:26.61]沉醉在遇见你的瞬间[01:29.97]我多么思念的小女孩[01:33.55]幸运我爱上你[01:35.75]就在那个最美的季节[01:40.25]缘分像条弯曲的弧线[01:43.61]我多么思念的小女孩[01:47.25]我内心的狂野[01:49.60]是你曾说的那一句誓言[01:53.97]我在多少个不眠的黑夜[01:57.31]寂寞让我渐渐地深陷[02:00.88]记忆成碎片[02:03.24]多想你能再回到我身边[02:07.58]时间它过了一年又一年[02:11.19]我依然还停留在原点[02:14.61]你清新的笑[02:16.61]像蝴蝶飞进了我的心田[02:35.24]缘分像条弯曲的弧线[02:38.59]我多么思念的小女孩[02:42.15]我内心的狂野[02:44.58]是你曾说的那一句誓言[02:48.87]我在多少个不眠的黑夜[02:52.20]寂寞让我渐渐地深陷[02:55.77]记忆成碎片[02:58.26]多想你能再回到我身边[03:02.54]时间它过了一年又一年[03:06.14]我依然还停留在原点[03:09.43]你清新的笑[03:11.36]像蝴蝶飞进了我的心田[03:16.28]时间它过了一年又一年[03:19.62]我依然还停留在原点[03:23.19]你清新的笑[03:25.19]像蝴蝶飞进了我的心田',// 歌词链接
+		theme: '#b7daff', 			//音频时的主题色
+      }
+    ]
+});*/
