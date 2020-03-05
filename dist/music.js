@@ -5,7 +5,7 @@ const ap = new APlayer({
 	
     fixed: true, 		// 吸底模式
 	//mini: true,		// mini 模式
-    autoplay: false,	// 自动播放
+    autoplay: true,	// 自动播放
 	theme: '#eee' ,		//主题色
 	loop: 'all', 		// 循环播放, 可选值: 'all', 'one', 'none'
 	order: 'list',		// 循环顺序, 可选值: 'list', 'random'
