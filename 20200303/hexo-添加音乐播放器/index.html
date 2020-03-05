@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Simon 的博客">
 <meta property="og:description" content="前言在此使用的是 Aplayer ,在Next(Gemini)主题下设置。 一、 安装在GitHub下载 Aplayer，然后将dist文件夹复制到themes/next/source文件夹下。  注：尝试复制到 source文件夹下失败。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-04T06:32:16.220Z">
+<meta property="og:updated_time" content="2020-03-05T09:38:46.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-添加音乐播放器">
 <meta name="twitter:description" content="前言在此使用的是 Aplayer ,在Next(Gemini)主题下设置。 一、 安装在GitHub下载 Aplayer，然后将dist文件夹复制到themes/next/source文件夹下。  注：尝试复制到 source文件夹下失败。">
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-04 14:32:16" itemprop="dateModified" datetime="2020-03-04T14:32:16+08:00">2020-03-04</time>
+                <time title="修改时间：2020-03-05 17:38:46" itemprop="dateModified" datetime="2020-03-05T17:38:46+08:00">2020-03-05</time>
               
             
           </span>
@@ -540,8 +540,11 @@
 <li>更多参见<a href="https://aplayer.js.org/#/zh-Hans/?id=%E5%85%A5%E9%97%A8" target="_blank" rel="noopener">Aplayer 官网</a></li>
 </ul>
 <h1 id="三、-添加到侧边栏"><a href="#三、-添加到侧边栏" class="headerlink" title="三、 添加到侧边栏"></a>三、 添加到侧边栏</h1><p>将外链插入到Hexo根路径的侧边栏文件中： <code>themes/next/layout/_macro/sidebar.swig</code> ，即侧边栏友情链接 <code>theme.links</code> 这一项之后。</p>
+<blockquote>
+<p>后更换到 <code>themes/next/layout/_layout.swig</code>  </p>
+</blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.links %&#125;</span><br><span class="line">	....省略部分代码</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 音乐 插件 --&gt;</span><br><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"/dist/APlayer.min.css"</span>&gt;</span><br><span class="line">&lt;div id=<span class="string">"aplayer"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"/dist/APlayer.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"/dist/music.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 音乐 插件 --&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="四、-参考"><a href="#四、-参考" class="headerlink" title="四、 参考"></a>四、 参考</h1><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md" target="_blank" rel="noopener">GitHub-aplayer</a><br><a href="https://www.jianshu.com/p/f1005ae09e5a" target="_blank" rel="noopener">简书 - Hexo添加Aplayer播放器</a><br><a href="https://www.jianshu.com/p/822a1a12d471" target="_blank" rel="noopener">简书 - Hexo增加APlayer音乐播放功能</a><br><a href="https://www.jianshu.com/p/26a7fc7cc185" target="_blank" rel="noopener">简书 - Hexo博客中插入音乐/视频/</a></p>
+<h1 id="四、-参考"><a href="#四、-参考" class="headerlink" title="四、 参考"></a>四、 参考</h1><p><a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md" target="_blank" rel="noopener">GitHub-aplayer</a><br><a href="https://www.jianshu.com/p/f1005ae09e5a" target="_blank" rel="noopener">简书 - Hexo添加Aplayer播放器</a><br><a href="https://www.jianshu.com/p/822a1a12d471" target="_blank" rel="noopener">简书 - Hexo增加APlayer音乐播放功能</a><br><a href="https://www.jianshu.com/p/26a7fc7cc185" target="_blank" rel="noopener">简书 - Hexo博客中插入音乐/视频/</a><br><a href="https://github.com/maicong/music" target="_blank" rel="noopener">GitHub-音乐搜索器</a></p>
 
       
     </div>
@@ -863,14 +866,14 @@
 
 
         
-      </div>
-			
 			  <!-- 音乐 插件 -->
 			<link rel="stylesheet" href="/dist/APlayer.min.css">
 			<div id="aplayer"></div>
 			<script type="text/javascript" src="/dist/APlayer.min.js"></script>
 			<script type="text/javascript" src="/dist/music.js"></script>
 			  <!-- 音乐 插件 -->
+      </div>
+			
 			  
 			
     </main>
