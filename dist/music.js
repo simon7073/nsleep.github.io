@@ -19,7 +19,7 @@ const ap = new APlayer({
       {
         name: "清新的小女孩 (For Ma)", 		//名称
         artist: 'July Tun',			// 艺术家 
-        url: 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_4208162&response=res&type=convert_url&',				//链接 
+        url: 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_72891154&response=res&type=convert_url&',				//链接 
         cover: 'http://imge.kugou.com/stdmusic/150/20200114/20200114142306429193.jpg',	//封面
 		//theme: '#b7daff', 			//音频时的主题色
       }
