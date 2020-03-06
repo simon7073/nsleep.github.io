@@ -79,7 +79,7 @@
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeOut","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":false,"transition":{"post_block":"slideDownBigIn","post_header":"bounceUpIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -512,7 +512,7 @@
 				
 						<div class="card">
 							<a class="link" href="https://www.safeinfo.me" target="_blank">
-							<el-avatar shape="square" :size="60" src="" @error="errorHandler">
+							<el-avatar shape="square" :size="60" src="https://www.safeinfo.me/images/avatar.gif" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
@@ -528,7 +528,7 @@
 				
 						<div class="card">
 							<a class="link" href="https://www.kylin.show/" target="_blank">
-							<el-avatar shape="square" :size="60" src="" @error="errorHandler">
+							<el-avatar shape="square" :size="60" src="https://www.kylin.show/img/avatar.jpg" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
@@ -544,7 +544,7 @@
 				
 						<div class="card">
 							<a class="link" href="https://wanxion.com" target="_blank">
-							<el-avatar shape="square" :size="60" src="" @error="errorHandler">
+							<el-avatar shape="square" :size="60" src="https://wanxion.com/img/avatar.jpg" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
