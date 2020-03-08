@@ -15,16 +15,7 @@ const ap = new APlayer({
 	listFolded: false,	// 列表默认折叠
 	listMaxHeight: 120,	// 列表最大高度
 	lrcType: 1,seek: 5,
-	audio: [
-		{
-			name: "Gmz创作的原声", 		//名称
-			artist: 'Gmz',			// 艺术家 
-			url: 'https://sharefs.yun.kugou.com/202003071548/1208eefb9f20cba7d2a31bfa590e2b2b/G123/M04/0B/07/uw0DAFyLHdaIIeFUAAHAI_S0MToAAA6WwP7CRoAAcA8727.mp3',				//链接 
-			cover: '',	//封面
-			lrc: '[id:$00000000][ar:arkady sevidov][ti:June][by:][hash:4399c9872c7235b60b58ce88dc487897][al:][sign:][qq:][total:320317][offset:0][00:01.58]纯音乐，请欣赏',
-			//theme: '#b7daff', 			//音频时的主题色
-			
-		},{
+	audio: [{
 			name: "清新的小女孩 (For Ma)", 		//名称
 			artist: 'July Tun',			// 艺术家 
 			url: 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_72891154&response=res&type=convert_url&',				//链接 
