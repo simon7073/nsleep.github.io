@@ -194,6 +194,27 @@
 	
 <!-- 进度条 -->
 <div class="top-scroll-bar"></div>
+<style>
+	// 顶部进度条
+	.top-scroll-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		display: none;
+		width: 0;
+		height: 2px;
+		background: #6d6d6d;
+	}
+</style>
+<script>
+	// 顶部进度条
+	$(document).ready(function () {
+	  $(window).scroll(function(){
+		$(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+	  });
+	});
+</script>
 <!-- 进度条 -->
 
     <div class="custom-logo-site-title">
@@ -814,8 +835,6 @@
   <script src="/js/utils.js?v=7.1.2"></script>
 
   <script src="/js/motion.js?v=7.1.2"></script>
-
-  <script src="/js/custom.js?v=7.1.2"></script>
 
 
 
