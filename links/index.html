@@ -488,13 +488,29 @@
 
 						<div class="card">
 							<a class="link" href="https://www.liaoxuefeng.com/" target="_blank">
-							<el-avatar shape="square" :size="60" src="http://tva2.sinaimg.cn/crop.0.0.180.180.50/62d8efadjw1e8qgp5bmzyj2050050aa8.jpg" @error="errorHandler">
+							<el-avatar shape="square" :size="60" fit="contain" src="http://tva2.sinaimg.cn/crop.0.0.180.180.50/62d8efadjw1e8qgp5bmzyj2050050aa8.jpg" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
 							
 								<div class="card-header">
 									<div>廖雪峰的官方网站</div>
+									<div class="info"></div>
+								</div>
+							</a>
+						</div>
+
+					
+
+						<div class="card">
+							<a class="link" href="" target="_blank">
+							<el-avatar shape="square" :size="60" fit="contain" src="http://www.ruanyifeng.com/blog/images/person2.jpg" @error="errorHandler">
+								
+							      <img class="ava" src="/static/images/default.png">
+							</el-avatar>
+							
+								<div class="card-header">
+									<div>阮一峰的个人网站</div>
 									<div class="info"></div>
 								</div>
 							</a>
@@ -515,24 +531,8 @@
 					
 				
 						<div class="card">
-							<a class="link" href="https://www.safeinfo.me" target="_blank">
-							<el-avatar shape="square" :size="60" src="https://www.safeinfo.me/images/avatar.gif" @error="errorHandler">
-								
-							      <img class="ava" src="/static/images/default.png">
-							</el-avatar>
-							
-								<div class="card-header">
-									<div>Fi9Coder</div>
-									<div class="info">致力于Web安全与Python学习,研究,开发。</div>
-								</div>
-							</a>
-						</div>
-				
-					
-				
-						<div class="card">
 							<a class="link" href="https://www.kylin.show/" target="_blank">
-							<el-avatar shape="square" :size="60" src="https://www.kylin.show/img/avatar.jpg" @error="errorHandler">
+							<el-avatar shape="square" :size="60" fit="contain" src="https://www.kylin.show/img/avatar.jpg" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
@@ -548,7 +548,7 @@
 				
 						<div class="card">
 							<a class="link" href="https://wanxion.com" target="_blank">
-							<el-avatar shape="square" :size="60" src="https://wanxion.com/img/avatar.jpg" @error="errorHandler">
+							<el-avatar shape="square" :size="60" fit="contain" src="https://wanxion.com/img/avatar.jpg" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
@@ -564,7 +564,7 @@
 				
 						<div class="card">
 							<a class="link" href="http://370923.cn" target="_blank">
-							<el-avatar shape="square" :size="60" src="https://tupian-1300443548.cos.ap-beijing.myqcloud.com/lADPD2eDKK-Mp7HNAyzNAzw_828_812.jpg_720x720g.jpg" @error="errorHandler">
+							<el-avatar shape="square" :size="60" fit="contain" src="https://tupian-1300443548.cos.ap-beijing.myqcloud.com/lADPD2eDKK-Mp7HNAyzNAzw_828_812.jpg_720x720g.jpg" @error="errorHandler">
 								
 							      <img class="ava" src="/static/images/default.png">
 							</el-avatar>
@@ -572,6 +572,22 @@
 								<div class="card-header">
 									<div>動G</div>
 									<div class="info">不放松，不醉倒，用学习态度。</div>
+								</div>
+							</a>
+						</div>
+				
+					
+				
+						<div class="card">
+							<a class="link" href="https://blog.gebilaoyu.club" target="_blank">
+							<el-avatar shape="square" :size="60" fit="contain" src="https://blog.gebilaoyu.club/img/avatar.png" @error="errorHandler">
+								
+							      <img class="ava" src="/static/images/default.png">
+							</el-avatar>
+							
+								<div class="card-header">
+									<div>隔壁老于</div>
+									<div class="info">每天坚持写笔记</div>
 								</div>
 							</a>
 						</div>
@@ -866,9 +882,6 @@ source\_data\links.yml
 
           
           
-					<!-- 音乐 插件 -- >
-					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=110 src="//music.163.com/outchain/player?type=0&id=2067079376&auto=1&height=90"></iframe>
-					<!-- 音乐 插件 -->
           
             
           
@@ -910,14 +923,17 @@ source\_data\links.yml
   
     <div id="sidebar-dimmer"></div>
   
+	<!-- 音乐 插件 -- >
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=110 src="//music.163.com/outchain/player?type=0&id=2067079376&auto=1&height=90"></iframe>
+	<!-- 音乐 插件 -->
 
 
         
-			  <!-- 音乐 插件 -->
-			<link rel="stylesheet" href="/dist/APlayer.min.css">
+			  <!-- 音乐 插件 -- >
+			<link rel="stylesheet" href="/static/js/aPlayer/APlayer.min.css">
 			<div id="aplayer" style="max-width: 300px;"></div>
-			<script type="text/javascript" src="/dist/APlayer.min.js"></script>
-			<script type="text/javascript" src="/dist/music.js"></script>
+			<script type="text/javascript" src="/static/js/aPlayer/APlayer.min.js"></script>
+			<script type="text/javascript" src="/static/js/aPlayer/music.js"></script>
 			  <!-- 音乐 插件 -->
       </div>
 			

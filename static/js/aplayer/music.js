@@ -17,30 +17,6 @@ const ap = new APlayer({
 	lrcType: 1,seek: 5,
 	audio: [
 		{
-			name: "Nya",
-			artist: "~ R A I N ~",
-			url: "https://sharefs.yun.kugou.com/202003091115/728f1a95fa3183b1a65dd7027510bf08/G018/M07/15/00/soYBAFWJApuAQ_QIACSBTvZbC1s518.mp3",
-			cover: "http://imge.kugou.com/stdmusic/150/20150714/20150714142537873106.jpg",
-			lrc: "﻿[id:$00000000][ar:arkady sevidov][ti:June][by:][hash:4399c9872c7235b60b58ce88dc487897][al:][sign:][qq:][total:320317][offset:0][00:01.58]纯音乐，请欣赏",
-		},{
-			name: "Somero",
-			artist: "Mich",
-			url: "https://sharefs.yun.kugou.com/202003091116/a2ff2791ffe778ce4eaa8b0242bf08e4/G153/M07/0B/0B/OYcBAFzqb7uAOZl0AEXIqbyO31s917.mp3",
-			cover: "http://imge.kugou.com/stdmusic/150/20161030/20161030173406466888.jpg",
-			lrc: "﻿[id:$00000000][ar:arkady sevidov][ti:June][by:][hash:4399c9872c7235b60b58ce88dc487897][al:][sign:][qq:][total:320317][offset:0][00:01.58]纯音乐，请欣赏",
-		},{
-			name: "Hide",
-			artist: "Multex",
-			url: "http://m10.music.126.net/20200309010328/108175284dd983394edc9df08116d3e2/ymusic/b521/243c/31ca/620e1908a73d17f0fbdc1ce66454b109.mp3",
-			cover: "http://p2.music.126.net/cgl67PV4VRQ2a5Y_vx-ZRw==/3283141728902354.jpg?param=300x300",
-			lrc: "[00:00.00] 暂无歌词",
-		},{
-			name: "Ski",
-			artist: "Hyper Potions",
-			url: "https://sharefs.yun.kugou.com/202003091117/71bfe3047d04fac2c8b6020715a04a7a/G117/M00/1F/11/VZQEAFo5MYqABrv6AClJ93Y6CFk657.mp3",
-			cover: "http://imge.kugou.com/stdmusic/150/20171219/20171219134143236356.jpg",
-			lrc: "[00:00.00] 暂无歌词",
-		},{
 			name: "【跳舞的线】钢琴The Piano / Dancing Line",
 			artist: "暂无",
 			url: "https://sharefs.yun.kugou.com/202003091118/e377e2caf7728094a406f5d61704aeac/G164/M03/1E/1B/RIcBAF0sU0OAWEsiABONra_PPwM097.mp3",
