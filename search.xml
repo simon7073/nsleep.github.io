@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>音乐API</title>
+      <link href="/20200322/%E9%9F%B3%E4%B9%90api/"/>
+      <url>/20200322/%E9%9F%B3%E4%B9%90api/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><h1 id="网易"><a href="#网易" class="headerlink" title="网易"></a>网易</h1><h1 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h1><p>参考资料：</p><ul><li><p>官方</p><ul><li><a href="https://y.qq.com/m/api/open/index.html" target="_blank" rel="noopener">QQ音乐 | 移动WEB接入说明</a></li></ul></li><li><p>简书</p><ul><li><a href="https://www.jianshu.com/p/67e4bd47d981" target="_blank" rel="noopener">QQ音乐api的使用</a></li><li><a href="https://www.jianshu.com/p/ce1180eac37b" target="_blank" rel="noopener">QQ音乐网页接口分析</a></li><li><a href="https://www.jianshu.com/p/e3c8b4b39c11" target="_blank" rel="noopener">qq音乐api接口</a></li></ul></li><li><p>CSDN</p><ul><li><a href="https://blog.csdn.net/qq_41979349/article/details/102458551" target="_blank" rel="noopener">2019最新QQ音乐Api</a></li></ul></li></ul><h1 id="酷狗"><a href="#酷狗" class="headerlink" title="酷狗"></a>酷狗</h1><h1 id="虾米"><a href="#虾米" class="headerlink" title="虾米"></a>虾米</h1><h1 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h1><h1 id="一听"><a href="#一听" class="headerlink" title="一听"></a>一听</h1><h1 id="咪咕"><a href="#咪咕" class="headerlink" title="咪咕"></a>咪咕</h1><h1 id="荔枝"><a href="#荔枝" class="headerlink" title="荔枝"></a>荔枝</h1><h1 id="蜻蜓"><a href="#蜻蜓" class="headerlink" title="蜻蜓"></a>蜻蜓</h1><h1 id="喜马拉雅"><a href="#喜马拉雅" class="headerlink" title="喜马拉雅"></a>喜马拉雅</h1><h1 id="全民K歌"><a href="#全民K歌" class="headerlink" title="全民K歌"></a>全民K歌</h1><h1 id="5sing原创"><a href="#5sing原创" class="headerlink" title="5sing原创"></a>5sing原创</h1><h1 id="5sing翻唱"><a href="#5sing翻唱" class="headerlink" title="5sing翻唱"></a>5sing翻唱</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 音乐 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hide </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo-添加音乐播放器</title>
       <link href="/20200303/hexo-%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/"/>
       <url>/20200303/hexo-%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
@@ -60,6 +85,8 @@
             
             <tag> Hexo </tag>
             
+            <tag> hide </tag>
+            
         </tags>
       
     </entry>
@@ -86,6 +113,8 @@
             <tag> python </tag>
             
             <tag> Django </tag>
+            
+            <tag> hide </tag>
             
         </tags>
       
@@ -123,7 +152,7 @@
       <link href="/20190324/hexo-search%E9%85%8D%E7%BD%AE/"/>
       <url>/20190324/hexo-search%E9%85%8D%E7%BD%AE/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">官方文档</a></p><hr><h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><a id="more"></a><hr><h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p>修改在根目录下的_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml </span><br><span class="line">  field: all </span><br><span class="line">  content: true</span><br></pre></td></tr></table></figure></p><ul><li>path - 文件的路径。默认是 search.xml。如果文件扩展名为 .json,则输出格式为JSON。</li><li>field - 要搜索的搜索范围：</li><li>post (Default) -  仅涵盖您博客的所有帖子。</li><li>page - 仅涵盖您博客的所有页面。</li><li>all - 将涵盖您博客的所有帖子和页面。</li><li>content - 是否包含每篇文章的全部内容。如果false，生成的结果仅覆盖没有主体的标题和其他元信息。默认是true。</li></ul><hr><h1 id="排除索引"><a href="#排除索引" class="headerlink" title="排除索引"></a>排除索引</h1><p>在文章顶部配置里加入 indexing: false </p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">官方文档</a></p><h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><hr><h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p>修改在根目录下的_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml </span><br><span class="line">  field: all </span><br><span class="line">  content: true</span><br></pre></td></tr></table></figure></p><a id="more"></a><ul><li>path - 文件的路径。默认是 search.xml。如果文件扩展名为 .json,则输出格式为JSON。</li><li>field - 要搜索的搜索范围：</li><li>post (Default) -  仅涵盖您博客的所有帖子。</li><li>page - 仅涵盖您博客的所有页面。</li><li>all - 将涵盖您博客的所有帖子和页面。</li><li>content - 是否包含每篇文章的全部内容。如果false，生成的结果仅覆盖没有主体的标题和其他元信息。默认是true。</li></ul><hr><h1 id="排除索引"><a href="#排除索引" class="headerlink" title="排除索引"></a>排除索引</h1><p>在文章顶部配置里加入 indexing: false </p>]]></content>
       
       
       
