@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.simon7.top/"/>
-  <updated>2020-03-26T13:42:01.398Z</updated>
+  <updated>2020-03-29T17:13:32.225Z</updated>
   <id>https://blog.simon7.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.simon7.top/20200322/%E9%9F%B3%E4%B9%90api/"/>
     <id>https://blog.simon7.top/20200322/音乐api/</id>
     <published>2020-03-22T08:33:52.000Z</published>
-    <updated>2020-03-26T13:42:01.398Z</updated>
+    <updated>2020-03-29T17:13:32.225Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h1 id="一、-网易"><a href="#一、-网易" class="headerlink" title="一、 网易"></a>一、 网易</h1><h2 id="1-何以诚-网易云音乐API分析-CSDN"><a href="#1-何以诚-网易云音乐API分析-CSDN" class="headerlink" title="1. 何以诚.网易云音乐API分析.CSDN"></a>1. <a href="https://blog.csdn.net/u013022222/article/details/51707352" target="_blank" rel="noopener">何以诚.网易云音乐API分析.CSDN</a></h2><h1 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h1><p>参考资料：</p><ul><li><p>官方</p><ul><li><a href="https://y.qq.com/m/api/open/index.html" target="_blank" rel="noopener">QQ音乐 | 移动WEB接入说明</a></li></ul></li><li><p>简书</p><ul><li><a href="https://www.jianshu.com/p/67e4bd47d981" target="_blank" rel="noopener">QQ音乐api的使用</a></li><li><a href="https://www.jianshu.com/p/ce1180eac37b" target="_blank" rel="noopener">QQ音乐网页接口分析</a></li><li><a href="https://www.jianshu.com/p/e3c8b4b39c11" target="_blank" rel="noopener">qq音乐api接口</a></li></ul></li><li><p>CSDN</p><ul><li><a href="https://blog.csdn.net/qq_41979349/article/details/102458551" target="_blank" rel="noopener">2019最新QQ音乐Api</a></li></ul></li></ul><h1 id="二、-酷狗"><a href="#二、-酷狗" class="headerlink" title="二、 酷狗"></a>二、 酷狗</h1><h1 id="虾米"><a href="#虾米" class="headerlink" title="虾米"></a>虾米</h1><h1 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h1><h1 id="一听"><a href="#一听" class="headerlink" title="一听"></a>一听</h1><h1 id="咪咕"><a href="#咪咕" class="headerlink" title="咪咕"></a>咪咕</h1><h1 id="荔枝"><a href="#荔枝" class="headerlink" title="荔枝"></a>荔枝</h1><h1 id="蜻蜓"><a href="#蜻蜓" class="headerlink" title="蜻蜓"></a>蜻蜓</h1><h1 id="喜马拉雅"><a href="#喜马拉雅" class="headerlink" title="喜马拉雅"></a>喜马拉雅</h1><h1 id="全民K歌"><a href="#全民K歌" class="headerlink" title="全民K歌"></a>全民K歌</h1><h1 id="5sing原创"><a href="#5sing原创" class="headerlink" title="5sing原创"></a>5sing原创</h1><h1 id="5sing翻唱"><a href="#5sing翻唱" class="headerlink" title="5sing翻唱"></a>5sing翻唱</h1>]]></content>
     
@@ -77,16 +77,21 @@
     <link href="https://blog.simon7.top/20190609/%E5%BE%85%E5%8A%9E/"/>
     <id>https://blog.simon7.top/20190609/待办/</id>
     <published>2019-06-09T10:36:00.000Z</published>
-    <updated>2020-03-29T13:48:46.530Z</updated>
+    <updated>2020-03-29T17:16:57.620Z</updated>
     
-    <content type="html"><![CDATA[<p>hexo博客安装RSS插件<br><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">https://github.com/hexojs/hexo-generator-feed</a><br><a href="https://blog.csdn.net/u011303443/article/details/52333695" target="_blank" rel="noopener">https://blog.csdn.net/u011303443/article/details/52333695</a><br><a href="https://www.jianshu.com/p/a79422ab2013" target="_blank" rel="noopener">https://www.jianshu.com/p/a79422ab2013</a></p><p>hexo博客安装Search插件<br><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">https://github.com/wzpan/hexo-generator-search</a></p><p>图标<br><a href="https://fontawesome.com/icons?from=io" target="_blank" rel="noopener">https://fontawesome.com/icons?from=io</a></p><p>安装 NexT<br><a href="http://theme-next.iissnan.com/getting-started.html#menu-settings" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html#menu-settings</a></p><a id="more"></a><ul><li><a href="http://www.bitbug.net/" target="_blank" rel="noopener">比特虫-在线制作ico图标</a></li><li><a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">Hexo的Next主题详细配置</a></li><li><a href="https://zhuanlan.zhihu.com/p/71164003?from_voters_page=true" target="_blank" rel="noopener">Github+Hexo一站式部署个人博客 (原创)</a></li><li><a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></li><li><a href="https://github.com/liaoyajun/hexo-tag-aplayer" target="_blank" rel="noopener">hexo-tag-aplayer</a></li><li><a href="https://hfanss.com/2018/腾讯云COS-本地图片上传.html" target="_blank" rel="noopener">腾讯云COS图床制作</a></li><li><a href="https://hfanss.com/2018/hexo%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%8F%8A%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo博客常用插件及教程</a></li><li><a href="https://www.mscoder.cn/program/hexo-disable-scrollbar/" target="_blank" rel="noopener">Next主题 禁用代码段.code pre滚动条以及自动换行</a></li><li><a href="https://www.jianshu.com/p/5017abb0d0a2" target="_blank" rel="noopener">Hexo 美化</a> <blockquote><p>/layout/_partials/header/brand.swig<br>/source/css/_custom/custom.styl<br>/source/js/custom.js<br>/layout/_script/commons.swig</p></blockquote></li><li><a href="https://blog.csdn.net/qq_36759224/article/details/86936453" target="_blank" rel="noopener">免费CDN：jsDelivr+Github 使用方法</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><ul><li style="list-style: none"><input type="checkbox"> <a href="https://fontawesome.com/icons?from=io" target="_blank" rel="noopener">图标</a></li><li style="list-style: none"><input type="checkbox"> <a href="http://www.bitbug.net/" target="_blank" rel="noopener">比特虫-在线制作ico图标</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">Hexo的Next主题详细配置</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://zhuanlan.zhihu.com/p/71164003?from_voters_page=true" target="_blank" rel="noopener">Github+Hexo一站式部署个人博客 (原创)</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://github.com/liaoyajun/hexo-tag-aplayer" target="_blank" rel="noopener">hexo-tag-aplayer</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://hfanss.com/2018/腾讯云COS-本地图片上传.html" target="_blank" rel="noopener">腾讯云COS图床制作</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://hfanss.com/2018/hexo%E5%8D%9A%E5%AE%A2%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%8F%8A%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo博客常用插件及教程</a></li><li style="list-style: none"><input type="checkbox"> <a href="https://www.mscoder.cn/program/hexo-disable-scrollbar/" target="_blank" rel="noopener">Next主题 禁用代码段.code pre滚动条以及自动换行</a></li><li><p>[ ] <a href="https://www.jianshu.com/p/5017abb0d0a2" target="_blank" rel="noopener">Hexo 美化</a> </p><blockquote><p>/layout/_partials/header/brand.swig<br>/source/css/_custom/custom.styl<br>/source/js/custom.js<br>/layout/_script/commons.swig</p></blockquote></li><li><p>[ ] <a href="https://blog.csdn.net/qq_36759224/article/details/86936453" target="_blank" rel="noopener">免费CDN：jsDelivr+Github 使用方法</a></p></li><li style="list-style: none"><input type="checkbox"> <a href="https://theme-next.org/docs/tag-plugins/#Centered-Quote" target="_blank" rel="noopener">Tag Plugins</a></li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;hexo博客安装RSS插件&lt;br&gt;&lt;a href=&quot;https://github.com/hexojs/hexo-generator-feed&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/hexojs/hexo-generator-feed&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/u011303443/article/details/52333695&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blog.csdn.net/u011303443/article/details/52333695&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.jianshu.com/p/a79422ab2013&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.jianshu.com/p/a79422ab2013&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;hexo博客安装Search插件&lt;br&gt;&lt;a href=&quot;https://github.com/wzpan/hexo-generator-search&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/wzpan/hexo-generator-search&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;图标&lt;br&gt;&lt;a href=&quot;https://fontawesome.com/icons?from=io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://fontawesome.com/icons?from=io&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;安装 NexT&lt;br&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html#menu-settings&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://theme-next.iissnan.com/getting-started.html#menu-settings&lt;/a&gt;&lt;/p&gt;
+      
+      
+        
+        
+          &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li style=&quot;list-style: none&quot;&gt;&lt;input type=&quot;checkbox&quot;&gt; &lt;a href=&quot;https://fontawesome.com/icons?from=io&quot; target=&quot;_blank&quot;
+        
+      
     
     </summary>
     
