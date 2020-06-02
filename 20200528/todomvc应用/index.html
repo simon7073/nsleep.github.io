@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/static/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="Sj57y850f1" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iblog.simon7.top","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"bounceIn","post_body":"slideUpIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="使用VueJs实现官方的 TodoMVC 示例，将其数据存储到后端数据库，并部署上线。示例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TodoMVC应用">
+<meta property="og:url" content="https://iblog.simon7.top/20200528/todomvc%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:site_name" content="Simon 的博客">
+<meta property="og:description" content="使用VueJs实现官方的 TodoMVC 示例，将其数据存储到后端数据库，并部署上线。示例">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-28T14:55:02.281Z">
+<meta property="article:modified_time" content="2020-06-02T05:20:18.587Z">
+<meta property="article:author" content="Simon">
+<meta property="article:tag" content="Simon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://iblog.simon7.top/20200528/todomvc%E5%BA%94%E7%94%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>TodoMVC应用 | Simon 的博客</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?40fe1da0798212a31314b7ff6e3c58bb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Simon 的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">玄之又玄，众妙之门</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/nsleep" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://iblog.simon7.top/20200528/todomvc%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/static/images/avatar.png">
+      <meta itemprop="name" content="Simon">
+      <meta itemprop="description" content="一花一世界，一叶一菩提">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Simon 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TodoMVC应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-28 22:55:02" itemprop="dateCreated datePublished" datetime="2020-05-28T22:55:02+08:00">2020-05-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 13:20:18" itemprop="dateModified" datetime="2020-06-02T13:20:18+08:00">2020-06-02</time>
+              </span>
+
+          
+            <span id="/20200528/todomvc%E5%BA%94%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="TodoMVC应用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/20200528/todomvc%E5%BA%94%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/20200528/todomvc%E5%BA%94%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>10 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>使用VueJs实现官方的 <a href="http://todomvc.com/" target="_blank" rel="noopener">TodoMVC</a> 示例，将其数据存储到后端数据库，并部署上线。<br><a href="https://vuejs.org/v2/examples/todomvc.html" target="_blank" rel="noopener">示例</a></p>
+<a id="more"></a>
+
+<blockquote>
+<p>环境 Git、Node、npm、heroku</p>
+</blockquote>
+<h1 id="一、-TodoMVC-应用"><a href="#一、-TodoMVC-应用" class="headerlink" title="一、 TodoMVC 应用"></a>一、 TodoMVC 应用</h1><h2 id="1-下载模板"><a href="#1-下载模板" class="headerlink" title="1. 下载模板"></a>1. 下载模板</h2><p>GitHub<a href="https://github.com/tastejs/todomvc-app-template" target="_blank" rel="noopener">下载</a>模板</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:tastejs/todomvc-app-template.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-获取支持文件"><a href="#2-获取支持文件" class="headerlink" title="2. 获取支持文件"></a>2. 获取支持文件</h2><p>通过<code>npm</code>下载模板的CSS和JS文件，以及之后要用到的<code>Vue.js</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> todomvc-app-template</span><br><span class="line">npm install</span><br><span class="line">npm install vue</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-使用Vuejs实现Todo"><a href="#3-使用Vuejs实现Todo" class="headerlink" title="3. 使用Vuejs实现Todo"></a>3. 使用Vuejs实现Todo</h2><p>主要修改<code>js/app.js</code>和<code>index.html</code>两个文件。</p>
+<figure class="highlight javascript"><figcaption><span>js/app.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">Vue</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 数据</span></span><br><span class="line">    <span class="keyword">let</span> todos=[</span><br><span class="line">        &#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">title</span>:<span class="string">'吃饭'</span>,<span class="attr">completed</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span>:<span class="number">2</span>,<span class="attr">title</span>:<span class="string">'睡觉'</span>,<span class="attr">completed</span>:<span class="literal">true</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span>:<span class="number">3</span>,<span class="attr">title</span>:<span class="string">'打豆豆'</span>,<span class="attr">completed</span>:<span class="literal">true</span>&#125;</span><br><span class="line">    ];</span><br><span class="line">    <span class="comment">/*/ 全局自定义指令,自动获取焦点</span></span><br><span class="line"><span class="comment">    Vue.directive('focus', &#123;</span></span><br><span class="line"><span class="comment">        inserted: function (el) &#123;</span></span><br><span class="line"><span class="comment">              el.focus();</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;);*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// vue实例</span></span><br><span class="line">    <span class="built_in">window</span>.app=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">'#todoapp'</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            todos:todos,</span><br><span class="line">            currentEditing:<span class="literal">null</span>,</span><br><span class="line">            filterState:<span class="string">'all'</span>,</span><br><span class="line">            toggleAllstate:<span class="literal">true</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        computed:&#123;</span><br><span class="line">            leftCount:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">item</span> =&gt;</span> !item.completed).length</span><br><span class="line">            &#125;,</span><br><span class="line">            filterTodos:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">switch</span>(<span class="keyword">this</span>.filterState)&#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'active'</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">item</span>=&gt;</span>!item.completed);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'completed'</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.todos.filter(<span class="function"><span class="params">item</span>=&gt;</span>item.completed);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">default</span>:</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.todos;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 全选的联动效果</span></span><br><span class="line">            toggleState:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.todos.every(<span class="function"><span class="params">item</span>=&gt;</span>item.completed);</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            <span class="comment">// 添加任务</span></span><br><span class="line">            addTodo(event)&#123;</span><br><span class="line">                <span class="keyword">let</span> todoText=event.target.value.trim();</span><br><span class="line">                <span class="keyword">if</span>(!todoText.length)&#123;</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">const</span> lastTodo=<span class="keyword">this</span>.todos[<span class="keyword">this</span>.todos.length<span class="number">-1</span>];</span><br><span class="line">                <span class="keyword">const</span> id=lastTodo?lastTodo.id+<span class="number">1</span>:<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">this</span>.todos.push(&#123;</span><br><span class="line">                    id:id,</span><br><span class="line">                    title:todoText,</span><br><span class="line">                    completed:<span class="literal">false</span>,</span><br><span class="line">                &#125;);</span><br><span class="line">                event.target.value=<span class="string">''</span>;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 点击全部完成或者未完成</span></span><br><span class="line">            toggleAll(event)&#123;</span><br><span class="line">                <span class="keyword">let</span> checked=event.target.checked;</span><br><span class="line">                <span class="keyword">this</span>.todos.forEach(<span class="function"><span class="params">todo</span> =&gt;</span> todo.completed=checked);</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 删除单个任务项</span></span><br><span class="line">            removeTodo(delIndex,event)&#123;</span><br><span class="line">                <span class="keyword">this</span>.todos.splice(delIndex,<span class="number">1</span>);</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 显示所有未完成任务数(删除所有已完成)</span></span><br><span class="line">            removeAllDone()&#123;</span><br><span class="line">                <span class="keyword">this</span>.todos=<span class="keyword">this</span>.todos.filter(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> !item.completed;<span class="comment">//return true,即item.completed为false</span></span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 保存编辑项</span></span><br><span class="line">            saveEdit(item,index,event)&#123;</span><br><span class="line">                <span class="keyword">var</span> editText=event.target.value.trim();</span><br><span class="line">                <span class="comment">// 如果为空,直接删除这个item</span></span><br><span class="line">                <span class="keyword">if</span>(!editText.length)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.todos.splice(index,<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 如果不为空,修改title的值,然后去除eiditing样式</span></span><br><span class="line">                item.title=editText;</span><br><span class="line">                <span class="keyword">this</span>.currentEditing=<span class="literal">null</span>;</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">        directives:&#123;</span><br><span class="line">            <span class="comment">// 局部自定义属性</span></span><br><span class="line">            editingFocus:&#123;</span><br><span class="line">                update(el,binding)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(binding.value)&#123;</span><br><span class="line">                        el.focus();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            focus:&#123;</span><br><span class="line">                inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">                      el.focus();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 路由状态切换</span></span><br><span class="line">    <span class="built_in">window</span>.onhashchange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> hash=<span class="built_in">window</span>.location.hash.substr(<span class="number">2</span>) || <span class="string">'all'</span>;</span><br><span class="line">        <span class="built_in">window</span>.app.filterState=hash;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 页面第一次进来,保持状态</span></span><br><span class="line">    <span class="built_in">window</span>.onhashchange();</span><br><span class="line">&#125;)(Vue);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Template • TodoMVC<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"node_modules/todomvc-common/base.css"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"node_modules/todomvc-app-css/index.css"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- CSS overrides - remove if you don't need it --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/app.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"todoapp"</span> <span class="attr">class</span>=<span class="string">"todoapp"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h1</span>&gt;</span>todos<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"new-todo"</span> <span class="attr">placeholder</span>=<span class="string">"What needs to be done?"</span> @<span class="attr">keyup.enter</span>=<span class="string">'addTodo'</span> <span class="attr">v-focus</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- This section should be hidden by default and shown when there are todos --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">'todos.length'</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"toggle-all"</span> <span class="attr">class</span>=<span class="string">"toggle-all"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> @<span class="attr">click</span>=<span class="string">'toggleAll'</span> <span class="attr">v-bind:checked</span>=<span class="string">'toggleState'</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"toggle-all"</span>&gt;</span>Mark all as complete<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"todo-list"</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- These are here just to show the structure of the list items --&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- List items should get the class `editing` when editing and `completed` when marked as completed --&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- vue列表渲染 --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of filterTodos"</span> <span class="attr">v-bind:class</span>=<span class="string">'&#123;completed:item.completed,editing:item===currentEditing&#125;'</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"view"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"toggle"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">'item.completed'</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">label</span> @<span class="attr">dblclick</span>=<span class="string">"currentEditing=item"</span>&gt;</span>&#123;&#123;item.title&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"destroy"</span> @<span class="attr">click</span>=<span class="string">'removeTodo(index,$event)'</span> &gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"edit"</span> <span class="attr">:value</span>=<span class="string">'item.title'</span> @<span class="attr">blur</span>=<span class="string">'saveEdit(item,index,$event)'</span> @<span class="attr">keyup.enter</span>=<span class="string">'saveEdit(item,index,$event)'</span> @<span class="attr">keyup.esc</span>=<span class="string">'currentEditing=null'</span> <span class="attr">v-editing-focus</span>=<span class="string">"item===currentEditing"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- This footer should hidden by default and shown when there are todos --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- This should be `0 items left` by default --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"todo-count"</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123;leftCount&#125;&#125;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> 个待办<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- Remove this if you don't implement routing --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"filters"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">:class</span>=<span class="string">"&#123;selected:filterState==='all'&#125;"</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>全部<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">:class</span>=<span class="string">"&#123;selected:filterState==='active'&#125;"</span> <span class="attr">href</span>=<span class="string">"#/active"</span>&gt;</span>未完成<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">:class</span>=<span class="string">"&#123;selected:filterState==='completed'&#125;"</span> <span class="attr">href</span>=<span class="string">"#/completed"</span>&gt;</span>已完成<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- Hidden if no completed items are left ↓ --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"clear-completed"</span> @<span class="attr">click</span>=<span class="string">'removeAllDone'</span>&gt;</span>清除已完成<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"info"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>Double-click to edit a todo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- Remove the below line ↓ -- &gt;</span></span><br><span class="line"><span class="comment">			&lt;p&gt;Template by &lt;a href="http://sindresorhus.com"&gt;Sindre Sorhus&lt;/a&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">			&lt;!-- Change this out with your name and url ↓ -- &gt;</span></span><br><span class="line"><span class="comment">			&lt;p&gt;Created by &lt;a href="http://todomvc.com"&gt;you&lt;/a&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">			&lt;p&gt;Part of &lt;a href="http://todomvc.com"&gt;TodoMVC&lt;/a&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="comment">			&lt;!--  --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Scripts here. Don't remove ↓ --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/todomvc-common/base.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/axios/dist/axios.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/app.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>至此，完成了本地Todo。</p>
+<h2 id="4-配置本地服务"><a href="#4-配置本地服务" class="headerlink" title="4. 配置本地服务"></a>4. 配置本地服务</h2><p>由于要在<code>heroku</code>上部署，这一节将使用<code>Node</code>创建<code>Web</code>服务。本节有一部分参考<a href="https://github.com/heroku/node-js-getting-started.git" target="_blank" rel="noopener">heroku的项目</a>，使用的是 Web 开发框架<a href="https://www.expressjs.com.cn/" target="_blank" rel="noopener">Express</a> </p>
+<p>通过<code>npm</code>下载<code>express</code>和<code>ejs</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br><span class="line">npm install ejs</span><br></pre></td></tr></table></figure>
+
+<p>在项目根目录下添加<code>index.js</code>。</p>
+<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> PORT = process.env.PORT || <span class="number">5000</span></span><br><span class="line">express()</span><br><span class="line">  .use(express.static(path.join(__dirname, <span class="string">'.'</span>)))</span><br><span class="line">  .set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>))</span><br><span class="line">  .get(<span class="string">'/'</span>, (req, res) =&gt; res.render(<span class="string">'index'</span>))</span><br><span class="line">  .listen(PORT, () =&gt; <span class="built_in">console</span>.log(<span class="string">`Listening on <span class="subst">$&#123; PORT &#125;</span>`</span>))</span><br></pre></td></tr></table></figure>
+
+<p>尝试执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node index.js</span><br></pre></td></tr></table></figure>
+
+<p>显示</p>
+<pre><code>Listening on 5000</code></pre><p>打开 <a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a>或者<a href="http://127.0.0.1:5000" target="_blank" rel="noopener">http://127.0.0.1:5000</a>访问本地服务，使用本地IP也是可以的。</p>
+<h2 id="5-部署到heroku"><a href="#5-部署到heroku" class="headerlink" title="5. 部署到heroku"></a>5. 部署到heroku</h2><p>部署之前需要在项目根目录添加一个文件<code>Procfile</code></p>
+<figure class="highlight bash"><figcaption><span>Procfile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">web: node index.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-通过GitHub部署"><a href="#1-通过GitHub部署" class="headerlink" title="1). 通过GitHub部署"></a>1). 通过GitHub部署</h3><p>先上传到<code>Github</code>，然后登录<a href="https://dashboard.heroku.com/apps" target="_blank" rel="noopener">heroku网站</a>在 web控制台配置里配置即可。</p>
+<h3 id="2-直接在本地上传部署"><a href="#2-直接在本地上传部署" class="headerlink" title="2). 直接在本地上传部署"></a>2). 直接在本地上传部署</h3><p>下载<a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank" rel="noopener">Heroku CLI</a></p>
+<figure class="highlight bash"><figcaption><span>Windows命令</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">heroku create ::创建</span><br><span class="line">git push heroku master ::部署</span><br><span class="line">heroku ps:scale web=1 ::运行实例</span><br><span class="line">heroku open ::打开预览</span><br><span class="line">heroku logs --tail ::网站运行日志</span><br></pre></td></tr></table></figure>
+
+<p>其他可能用到的</p>
+<figure class="highlight bash"><figcaption><span>Windows命令</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">heroku <span class="built_in">local</span> web ::本地启动</span><br><span class="line"></span><br><span class="line">git add -u</span><br><span class="line">git commit -m  <span class="string">"Todo"</span></span><br><span class="line">git push heroku master</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-后端数据库"><a href="#6-后端数据库" class="headerlink" title="6. 后端数据库"></a>6. 后端数据库</h2><p>在这里使用的<code>postgresql</code>数据库。在<code>heroku</code>中添加<code>postgresql</code>数据库。<a href="https://elements.heroku.com/addons/heroku-postgresql" target="_blank" rel="noopener">查看文档</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku addons:create heroku-postgresql:hobby-dev</span><br></pre></td></tr></table></figure>
+
+<p>查看数据库(postgresql)。通过以下两种方式之一检索PG连接字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heroku pg:credentials DATABASE</span><br><span class="line">heroku config -s | grep DATABASE_URL</span><br></pre></td></tr></table></figure>
+
+<p>设置主数据库(postgresql)，如果存在多个数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku pg:promote HEROKU_POSTGRESQL_RED</span><br></pre></td></tr></table></figure>
+
+<p>查看数据库使用信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku pg:info</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-封装对postgresql的增删改查基本操作"><a href="#7-封装对postgresql的增删改查基本操作" class="headerlink" title="7. 封装对postgresql的增删改查基本操作"></a>7. 封装对postgresql的增删改查基本操作</h2><ul>
+<li><a href="https://blog.csdn.net/cheneypao/article/details/51378053" target="_blank" rel="noopener">Nodejs对postgresql基本操作的封装·cheneypao·CSDN</a></li>
+</ul>
+<figure class="highlight javascript"><figcaption><span>PG.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pg = <span class="built_in">require</span>(<span class="string">'pg'</span>);</span><br><span class="line"><span class="keyword">var</span> conString = <span class="string">"postgres://username:password@localhost/databasename"</span>;</span><br><span class="line"><span class="keyword">var</span> client = <span class="keyword">new</span> pg.Client(conString);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> PG = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"准备向****数据库连接..."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">PG.prototype.getConnection = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    client.connect(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">console</span>.error(<span class="string">'could not connect to postgres'</span>, err);</span><br><span class="line">        &#125;</span><br><span class="line">        client.query(<span class="string">'SELECT NOW() AS "theTime"'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">console</span>.error(<span class="string">'error running query'</span>, err);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"hbdfxt数据库连接成功..."</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 查询函数</span></span><br><span class="line"><span class="comment">//@param str 查询语句</span></span><br><span class="line"><span class="comment">//@param value 相关值</span></span><br><span class="line"><span class="comment">//@param cb 回调函数</span></span><br><span class="line"><span class="keyword">var</span> clientHelper = <span class="function"><span class="keyword">function</span>(<span class="params">str,value,cb</span>)</span>&#123;</span><br><span class="line">    client.query(str,value,<span class="function"><span class="keyword">function</span>(<span class="params">err,result</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            cb(<span class="string">"err"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(result.rows != <span class="literal">undefined</span>)</span><br><span class="line">                cb(result.rows);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cb();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//增</span></span><br><span class="line"><span class="comment">//@param tablename 数据表名称</span></span><br><span class="line"><span class="comment">//@param fields 更新的字段和值，json格式</span></span><br><span class="line"><span class="comment">//@param cb 回调函数</span></span><br><span class="line">PG.prototype.save = <span class="function"><span class="keyword">function</span>(<span class="params">tablename,fields,cb</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!tablename) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">"insert into "</span>+tablename+<span class="string">"("</span>;</span><br><span class="line">    <span class="keyword">var</span> field = [];</span><br><span class="line">    <span class="keyword">var</span> value = [];</span><br><span class="line">    <span class="keyword">var</span> num = [];</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> fields)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        field.push(i);</span><br><span class="line">        value.push(fields[i]);</span><br><span class="line">        num.push(<span class="string">"$"</span>+count);</span><br><span class="line">    &#125;</span><br><span class="line">    str += field.join(<span class="string">","</span>) +<span class="string">") values("</span>+num.join(<span class="string">","</span>)+<span class="string">")"</span>;</span><br><span class="line">    clientHelper(str,value,cb);</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="comment">//@param tablename 数据表名称</span></span><br><span class="line"><span class="comment">//@param fields 条件字段和值，json格式</span></span><br><span class="line"><span class="comment">//@param cb 回调函数</span></span><br><span class="line">PG.prototype.remove = <span class="function"><span class="keyword">function</span>(<span class="params">tablename,fields,cb</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!tablename) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">"delete from "</span>+tablename+<span class="string">" where "</span>;</span><br><span class="line">    <span class="keyword">var</span> field = [];</span><br><span class="line">    <span class="keyword">var</span> value = [];</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> fields)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        field.push(i+<span class="string">"=$"</span> +count);</span><br><span class="line">        value.push(fields[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    str += field.join(<span class="string">" and "</span>);</span><br><span class="line">    clientHelper(str,value,cb);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line"><span class="comment">//@param tablename 数据表名称</span></span><br><span class="line"><span class="comment">//@param fields 更新的字段和值，json格式</span></span><br><span class="line"><span class="comment">//@param mainfields 条件字段和值，json格式</span></span><br><span class="line">PG.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params">tablename,mainfields,fields,cb</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!tablename) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">"update "</span>+tablename+<span class="string">" set "</span>;</span><br><span class="line">    <span class="keyword">var</span> field = [];</span><br><span class="line">    <span class="keyword">var</span> value = [];</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> fields)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        field.push(i+<span class="string">"=$"</span>+count);</span><br><span class="line">        value.push(fields[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    str += field.join(<span class="string">","</span>) +<span class="string">" where "</span>;</span><br><span class="line">    field = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j <span class="keyword">in</span> mainfields)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        field.push(j+<span class="string">"=$"</span>+count);</span><br><span class="line">        value.push(mainfields[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    str += field.join(<span class="string">" and "</span>);</span><br><span class="line">    clientHelper(str,value,cb);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//查询</span></span><br><span class="line"><span class="comment">//@param tablename 数据表名称</span></span><br><span class="line"><span class="comment">//@param fields 条件字段和值，json格式</span></span><br><span class="line"><span class="comment">//@param returnfields 返回字段</span></span><br><span class="line"><span class="comment">//@param cb 回调函数</span></span><br><span class="line">PG.prototype.select = <span class="function"><span class="keyword">function</span>(<span class="params">tablename,fields,returnfields,cb</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!tablename) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> returnStr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">if</span>(returnfields.length == <span class="number">0</span>)</span><br><span class="line">        returnStr = <span class="string">'*'</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        returnStr= returnfields.join(<span class="string">","</span>);</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">"select "</span>+returnStr+ <span class="string">" from "</span>+tablename+<span class="string">" where "</span>;</span><br><span class="line">    <span class="keyword">var</span> field = [];</span><br><span class="line">    <span class="keyword">var</span> value = [];</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> fields)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        field.push(i+<span class="string">"=$"</span>+count);</span><br><span class="line">        value.push(fields[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    str += field.join(<span class="string">" and "</span>);</span><br><span class="line">    clientHelper(str,value,cb);</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">new</span> PG();</span><br></pre></td></tr></table></figure>
+
+<p>使用方法：</p>
+<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pgclient = <span class="built_in">require</span>(<span class="string">'./PG.js'</span>);<span class="comment">// 引用上述文件</span></span><br><span class="line">pgclient.getConnection();</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 调用上述四个函数即可</span></span><br><span class="line">pgclient.save(<span class="string">'userinfo'</span>,&#123;<span class="string">'name'</span>: admin&#125;,cb);</span><br></pre></td></tr></table></figure>
+
+<div class="note warning">
+            <p>创建数据库表可以在<code>PG.js</code>中完善。</p>
+          </div>
+
+
+
+
+<h2 id="X-关于登录"><a href="#X-关于登录" class="headerlink" title="X. 关于登录"></a>X. 关于登录</h2><p>关于登录操作官网有个<a href="https://github.com/expressjs/express/blob/master/examples/auth/index.js" target="_blank" rel="noopener">示例</a><br>下载两个模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install pbkdf2-password</span><br><span class="line">npm install express-session</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://todomvc.com/" target="_blank" rel="noopener">Todomvc</a></li>
+<li><a href="https://www.cnblogs.com/EricZLin/p/9369260.html" target="_blank" rel="noopener">框架入门经典项目TodoMVC·澎湃_L·博客园</a></li>
+<li><a href="https://vuejs.org/v2/examples/todomvc.html" target="_blank" rel="noopener">vuejs示例</a></li>
+<li><a href="https://blog.csdn.net/cheneypao/article/details/51378053" target="_blank" rel="noopener">Nodejs对postgresql基本操作的封装·cheneypao·CSDN</a></li>
+<li><a href="https://www.jianshu.com/p/7bc34e56fa39" target="_blank" rel="noopener">Heroku 使用教程</a></li>
+<li><a href="https://www.jianshu.com/p/5007e533eff9" target="_blank" rel="noopener">使用Node.js在Heroku上开始</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Simon
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://iblog.simon7.top/20200528/todomvc%E5%BA%94%E7%94%A8/" title="TodoMVC应用">https://iblog.simon7.top/20200528/todomvc应用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/20200524/%E4%BD%BF%E7%94%A8heroku%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="使用heroku遇到的问题">
+      <i class="fa fa-chevron-left"></i> 使用heroku遇到的问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/20200602/python%E4%BE%9D%E8%B5%96%E6%80%A7%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E6%A6%82%E8%BF%B0/" rel="next" title="python依赖性管理工具概述">
+      python依赖性管理工具概述 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、-TodoMVC-应用"><span class="nav-text">一、 TodoMVC 应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载模板"><span class="nav-text">1. 下载模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-获取支持文件"><span class="nav-text">2. 获取支持文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用Vuejs实现Todo"><span class="nav-text">3. 使用Vuejs实现Todo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置本地服务"><span class="nav-text">4. 配置本地服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-部署到heroku"><span class="nav-text">5. 部署到heroku</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通过GitHub部署"><span class="nav-text">1). 通过GitHub部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-直接在本地上传部署"><span class="nav-text">2). 直接在本地上传部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-后端数据库"><span class="nav-text">6. 后端数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-封装对postgresql的增删改查基本操作"><span class="nav-text">7. 封装对postgresql的增删改查基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-关于登录"><span class="nav-text">X. 关于登录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Simon"
+      src="/static/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Simon</p>
+  <div class="site-description" itemprop="description">一花一世界，一叶一菩提</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:simoncq@163.com" title="E-Mail → mailto:simoncq@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=707347059&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;707347059&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="rss → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Simon</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">93k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:24</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e80c7c728c55cea" async="async"></script>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="100" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 24241,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : '8Ird2SL0kJ6cm8SkTPpalz4t-gzGzoHsz',
+      appKey     : '1y5VLrRzpanTFwuy3OJ5y0Fp',
+      placeholder: "写点什么吧",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
