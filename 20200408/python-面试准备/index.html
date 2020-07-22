@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://pic2.zhimg.com/80/v2-474f556cb8cd7d2ea7a47b0cba51c9cd_720w.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-f78e20b47b593dc30d2892c34e1c5a7b_720w.jpg">
 <meta property="article:published_time" content="2020-04-08T03:19:55.000Z">
-<meta property="article:modified_time" content="2020-07-21T08:03:27.145Z">
+<meta property="article:modified_time" content="2020-07-21T15:15:25.721Z">
 <meta property="article:author" content="Simon">
 <meta property="article:tag" content="hide">
 <meta name="twitter:card" content="summary">
@@ -245,7 +245,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-21 16:03:27" itemprop="dateModified" datetime="2020-07-21T16:03:27+08:00">2020-07-21</time>
+                <time title="修改时间：2020-07-21 23:15:25" itemprop="dateModified" datetime="2020-07-21T23:15:25+08:00">2020-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,14 +288,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>16k</span>
+              <span>18k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>15 分钟</span>
+              <span>16 分钟</span>
             </span>
 
         </div>
@@ -585,15 +585,114 @@
 <li>issue中查询是否有相似bug</li>
 </ul>
 <h2 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a>语言特性</h2><ol>
-<li>谈谈对 Python 和其他语言的区别</li>
-<li>简述解释型和编译型编程语言</li>
-<li>Python 的解释器种类以及相关特点？</li>
-<li>说说你知道的Python3 和 Python2 之间的区别？</li>
-<li>Python3 和 Python2 中 int 和 long 区别？</li>
-<li>xrange 和 range 的区别？</li>
+<li>谈谈对 Python 和其他语言的区别<br>语言特点：简洁、优雅，省略了各种大括号和分号，还有一些关键字，类型说明；<br>语言类型：解释型语言，运行的时候是一行一行的解释，并运行，所以调试代码很方便，开发效率很高；<br>第三方库：python是开源的，并且python的定位是任由其发展。Python具有非常完备的第三方库；标准库与第三方库都非常强大，而且应用领域也非常广，比如Web，运维，自动化测试，爬虫，数据分析，人工智能。</li>
 </ol>
-<h2 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h2><p>7.什么是 PEP8?<br>8.了解 Python 之禅么？<br>9.了解 docstring 么？<br>10.了解类型注解么？<br>11.例举你知道 Python 对象的命名规范，例如方法或者类等<br>12.Python 中的注释有几种？<br>13.如何优雅的给一个函数加注释？<br>14.如何给变量加注释？<br>15.Python 代码缩进中是否支持 Tab 键和空格混用。<br>16.是否可以在一句 import 中导入多个库?<br>17.在给 Py 文件命名的时候需要注意什么?<br>18.例举几个规范 Python 代码风格的工具</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>19.列举 Python 中的基本数据类型？<br>20.如何区别可变数据类型和不可变数据类型<br>21.将”hello world”转换为首字母大写”Hello World”<br>22.如何检测字符串中只含有数字?<br>23.将字符串”ilovechina”进行反转<br>24.Python 中的字符串格式化方式你知道哪些？<br>25.有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。<br>26.获取字符串”123456“最后的两个字符。<br>27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？<br>28. (1)s=”info：xiaoZhang 33 shandong”，用正则切分字符串输出<a href="2">‘info’, ‘xiaoZhang’, ‘33’, ‘shandong’</a> a = “你好 中国 “，去除多余空格只留一个空格。<br>29. (1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？</p>
+<p>和Java相比：在很多方面，Python比Java要简单，比如java中所有变量必须声明才能使用，而Python不需要声明,用少量的代码构建出很多功能;（高效的高级数据结构）</p>
+<p>和C相比：类库齐全并且使用简洁，很少代码实现的功能用C可能要很复杂。运行速度相较于C，绝对是很慢了，Python和CPython解释器都是C语言编写的</p>
+<ol start="2">
+<li><p>简述解释型和编译型编程语言<br>解释型：就是边解释边执行；<br>编译性：编译后再执行</p>
+</li>
+<li><p>Python 的解释器种类以及相关特点？<br>CPython：c语言开发的 使用最广的解释器<br>IPython：基于cpython之上的一个交互式计时器 交互方式增强 功能和cpython一样<br>PyPy：目标是执行效率 采用JIT技术 对python代码进行动态编译，提高执行效率<br>Jython/JPython：运行在Java上的解释器 直接把python代码编译成Java字节码执行<br>IronPython：运行在微软 .NET 平台上的解释器，把python编译成. NET 的字节码</p>
+</li>
+<li><p>说说你知道的Python3 和 Python2 之间的区别？<br>python3 和 python2 是不兼容的，而且差异比较大。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Python2</th>
+<th align="left">Python3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Python2 打印内容可以不用带小括号</td>
+<td align="left">Python3 中必须带；</td>
+</tr>
+<tr>
+<td align="left">Python2 <code>range(1,10)</code>返回列表</td>
+<td align="left">Python3 返回迭代器，节约内存；</td>
+</tr>
+<tr>
+<td align="left">Python2 中使用ascii编码</td>
+<td align="left">Python3 中使用utf-8编码；</td>
+</tr>
+<tr>
+<td align="left">python2中unicode表示字符串序列，str表示字节序列</td>
+<td align="left">python3中 str表示字符串序列，byte表示字节序列；</td>
+</tr>
+<tr>
+<td align="left">python2中为正常显示中文，引入coding声明</td>
+<td align="left">python3中 不需要</td>
+</tr>
+<tr>
+<td align="left">python2中在使用<code>super()</code>必须在参数中写上基类</td>
+<td align="left">python3中 不需要，直接无参数调用即可</td>
+</tr>
+<tr>
+<td align="left">python2中True 和 <code>False</code> 是两个全局变量</td>
+<td align="left">python3中 True或False不可变</td>
+</tr>
+<tr>
+<td align="left">python2中range,字典对象的 <code>dict.keys()</code>、<code>dict.values()</code> 方法, <code>map</code>、<code>filter</code>、<code>zip</code>等返回列表，迭代器必须实现next方法</td>
+<td align="left">python3中 将返回列表的方法改为了返回迭代器对象，内置了<strong>next</strong>，不用特意去实现next，<code>rang()</code>相当于python2中 <code>xrang()</code></td>
+</tr>
+<tr>
+<td align="left">python2中 没有办法在嵌套函数中将变量声明为一个非局部变量，只能在函数中声明全局变量</td>
+<td align="left">python3中 <code>nonlocal</code>方法实现声明全局变量</td>
+</tr>
+<tr>
+<td align="left">python2中函数定义不可以用中文定义</td>
+<td align="left">python3中可以用中文</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Python3 和 Python2 中 int 和 long 区别？<br>python3 中 <code>int</code> 整合了 python2 重中的 <code>int</code> 和 <code>long</code><br>python3 中 <code>int</code> 类型的范围是动态长度的，正整数或者负整数，用<code>sys.getsizeof()</code>可以看int占了几位.<br>Python2中<code>long</code>类型的范围是无限大小</p>
+</li>
+<li><p>xrange 和 range 的区别？<br>python2 中<code>xrang()</code>返回到的是迭代器对象，<code>rang()</code>返回的是list列表类型<br>python3 中弃用了<code>xrang()</code>，<code>rang()</code>返回到的是迭代器对象</p>
+</li>
+<li><p>强类型语言、动态语言和脚本语言之间的区别？<br>强类型：不允许不同类型相加。例如：整形+字符串会报类型错误。<br>动态：不使用显示数据类型声明，且确定一个变量的类型是在第一次给它赋值的时候。<br>脚本语言：一般是解释性语言，运行代码只需要一个解释器，不需要编辑。</p>
+</li>
+</ol>
+<h2 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h2><ol start="7">
+<li>什么是 PEP8?</li>
+</ol>
+<p><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">PEP 8</a>(Python Enhancement Proposal 8)，是 Python 第8号增强提案，针对Python语言编订的代码风格指南、编码约定。</p>
+<ul>
+<li>缩进。4个空格的缩进，不使用Tap，更不能混合使用Tap和空格</li>
+<li>每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。</li>
+<li>类和top-level函数定义之间空两行；类中的方法定义之间空一行；函数内逻辑无关段落之间空一行；其他地方尽量不要再空行。</li>
+<li>模块导入的顺序：按标准、三方和自己编写顺序依次导入，之间空一行。</li>
+<li>不要在一句中import多个库</li>
+<li>避免不必要的空格</li>
+<li>注释必须要有</li>
+<li>函数命名要遵循规范</li>
+<li>尽可能使用’is’’is not’取代’==’，比如if x is not None 要优于if x</li>
+<li>异常中try的代码尽可能少</li>
+</ul>
+<ol start="8">
+<li>了解 Python 之禅么？</li>
+<li>了解 docstring 么？</li>
+<li>了解类型注解么？</li>
+<li>例举你知道 Python 对象的命名规范，例如方法或者类等</li>
+<li>Python 中的注释有几种？</li>
+<li>如何优雅的给一个函数加注释？</li>
+<li>如何给变量加注释？</li>
+<li>Python 代码缩进中是否支持 Tab 键和空格混用。</li>
+<li>是否可以在一句 import 中导入多个库?</li>
+<li>在给 Py 文件命名的时候需要注意什么?</li>
+<li>例举几个规范 Python 代码风格的工具</li>
+</ol>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ol start="19">
+<li>列举 Python 中的基本数据类型？</li>
+<li>如何区别可变数据类型和不可变数据类型</li>
+<li>将”hello world”转换为首字母大写”Hello World”</li>
+<li>如何检测字符串中只含有数字?</li>
+<li>将字符串”ilovechina”进行反转</li>
+<li>Python 中的字符串格式化方式你知道哪些？</li>
+<li>有一个字符串开头和末尾都有空格，比如“ adabdw ”,要求写一个函数把这个字符串的前后空格都去掉。</li>
+<li>获取字符串”123456“最后的两个字符。</li>
+<li>一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？</li>
+<li>(1)s=”info：xiaoZhang 33 shandong”，用正则切分字符串输出<a href="2">‘info’, ‘xiaoZhang’, ‘33’, ‘shandong’</a> a = “你好 中国 “，去除多余空格只留一个空格。</li>
+<li>(1)怎样将字符串转换为小写 (2)单引号、双引号、三引号的区别？</li>
+</ol>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>30.已知 AList = [1,2,3,1,2],对 AList 列表元素去重，写出具体过程。<br>31.如何实现 “1,2,3” 变成 [“1”,”2”,”3”]<br>32.给定两个 list，A 和 B，找出相同元素和不同元素<br>33.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]<br>34.合并列表[1,5,7,9]和[2,2,6,8]<br>35.如何打乱一个列表的元素？</p>
 <h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>36.字典操作中 del 和 pop 有什么区别<br>37.按照字典的内的年龄排序<br><img data-src="https://pic2.zhimg.com/80/v2-f0c87fcad0839af06187a4def1706f51_720w.jpg" alt=""><br>d1=[<br>    {‘name’:’alice’,’age’:38},<br>    {‘name’:’bob’,’age’:16},<br>    {‘name’:’carl’,’age’:18},</p>
 <p>]</p>
@@ -771,17 +870,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">133k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:01</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-  <div class="addthis_inline_share_toolbox">
-    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e80c7c728c55cea" async="async"></script>
   </div>
 
         
