@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/static/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="Sj57y850f1" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"iblog.simon7.top","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"manual"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"bounceIn","post_body":"slideUpIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Scoop是一个Windows下的包管理器，完全免费，依赖于Github。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次Scoop安装">
+<meta property="og:url" content="https://iblog.simon7.top/20200815/%E8%AE%B0%E4%B8%80%E6%AC%A1scoop%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="Simon 的博客">
+<meta property="og:description" content="Scoop是一个Windows下的包管理器，完全免费，依赖于Github。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-15T07:20:09.000Z">
+<meta property="article:modified_time" content="2020-08-18T04:15:29.577Z">
+<meta property="article:author" content="Simon">
+<meta property="article:tag" content="Simon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://iblog.simon7.top/20200815/%E8%AE%B0%E4%B8%80%E6%AC%A1scoop%E5%AE%89%E8%A3%85/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>记一次Scoop安装 | Simon 的博客</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?40fe1da0798212a31314b7ff6e3c58bb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Simon 的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">玄之又玄，众妙之门</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/nsleep" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://iblog.simon7.top/20200815/%E8%AE%B0%E4%B8%80%E6%AC%A1scoop%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/static/images/avatar.png">
+      <meta itemprop="name" content="Simon">
+      <meta itemprop="description" content="一花一世界，一叶一菩提">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Simon 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          记一次Scoop安装
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-15 15:20:09" itemprop="dateCreated datePublished" datetime="2020-08-15T15:20:09+08:00">2020-08-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-18 12:15:29" itemprop="dateModified" datetime="2020-08-18T12:15:29+08:00">2020-08-18</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/20200815/%E8%AE%B0%E4%B8%80%E6%AC%A1scoop%E5%AE%89%E8%A3%85/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/20200815/%E8%AE%B0%E4%B8%80%E6%AC%A1scoop%E5%AE%89%E8%A3%85/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><code>Scoop</code>是一个<code>Windows</code>下的包管理器，完全免费，依赖于<code>Github</code>。</p>
+<a id="more"></a>
+
+<h2 id="安装-卸载Scoop"><a href="#安装-卸载Scoop" class="headerlink" title="安装/卸载Scoop"></a>安装/卸载Scoop</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 允许本地脚本的执行：</span></span><br><span class="line"><span class="built_in">set-executionpolicy</span> <span class="string">remotesigned </span>-<span class="string">scope </span><span class="string">currentuser</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#</span> 安装 <span class="string">Scoop：</span></span><br><span class="line"><span class="string">Invoke-Expression </span>(<span class="string">New-Object </span><span class="string">System.</span><span class="string">Net.</span><span class="string">WebClient)</span>.<span class="string">DownloadString(</span><span class="string">'https://get.scoop.sh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者更短</span></span><br><span class="line"><span class="string">iwr </span>-<span class="string">useb </span><span class="string">get.</span><span class="string">scoop.</span><span class="string">sh </span>| <span class="string">iex</span></span><br></pre></td></tr></table></figure>
+
+<div class="note warning no-icon">
+            <p>应注意以下几点</p><ul><li>用户名不含中文字符</li><li>能正常、快速的访问 GitHub 并下载上面的资源</li><li>如果下载scoop的过程中断，那么必须先删除(C:\Users\&lt;user&gt;\scoop)文件夹，再执行以上命令安装。</li><li>Windows 7 SP1+ / Windows Server 2008+</li><li>PowerShell 3+</li><li>.NET Framework 4.5+</li></ul><p>若Powershell或.NET Franmework版本过旧，更新后重启即可。<br>若不清楚版本号，可<code>Win+R</code>运行<code>powershell</code>，输入以下命令获取版本号。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PSVersionTable</span><span class="selector-class">.PSVersion</span><span class="selector-class">.Major</span>   #查看Powershell版本</span><br><span class="line"><span class="variable">$PSVersionTable</span><span class="selector-class">.CLRVersion</span><span class="selector-class">.Major</span>  #查看<span class="selector-class">.NET</span> Framework版本</span><br></pre></td></tr></table></figure>
+          </div>
+
+<p><code>Scoop</code>的卸载很简单,就是用<code>Scoop</code>卸载自己就好了.</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">scoop uninstall scoop</span></span><br></pre></td></tr></table></figure>
+
+<p>更新仓库以及scoop：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">scoop </span>update</span><br><span class="line"><span class="keyword">scoop </span>update *</span><br></pre></td></tr></table></figure>
+
+<p>修改默认安装路径：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[environment]::setEnvironmentVariable(<span class="string">'SCOOP_GLOBAL'</span>,<span class="string">'D:\GlobalScoopApps'</span>,<span class="string">'Machine'</span>)</span><br><span class="line"><span class="variable">$env</span><span class="symbol">:SCOOP_GLOBAL=<span class="string">'D:\GlobalScoopApps'</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装软件注意加 -g</span></span><br><span class="line">scoop install -g &lt;app&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>在安装一个软件之前，需要先搜索仓库检查是否有这个软件。</p>
+<h3 id="bucket-仓库"><a href="#bucket-仓库" class="headerlink" title="bucket 仓库"></a>bucket 仓库</h3><p><code>Scoop</code>默认是<code>main</code>仓库，也可以安装其他仓库：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span><span class="keyword">add </span>&lt;<span class="keyword">bucket_name&gt;</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"># </span>删除仓库</span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span>rm &lt;<span class="keyword">bucket_name&gt;</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"># </span>查看已知仓库</span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span>known</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前的收录的仓库</span></span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span>list</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="keyword">extras </span><span class="comment"># 诸多有用的软件都在里面</span></span><br><span class="line">main <span class="comment"># 默认的大仓库</span></span><br><span class="line">nerd-fonts <span class="comment"># 编程字体一览无遗</span></span><br><span class="line">nonportable <span class="comment"># 收录神奇的UWP应用</span></span><br><span class="line">versions <span class="comment"># 收录软件包的历史版本</span></span><br></pre></td></tr></table></figure>
+<div class="note info no-icon">
+            <p>仓库的多少影响搜索软件包的搜索结果、搜索速度、「一键更新」的速度、清理的速度。所以收录/订阅必要的软件仓库即可，也不必盲目添加。</p>
+          </div>
+<h3 id="安装-卸载软件"><a href="#安装-卸载软件" class="headerlink" title="安装/卸载软件"></a>安装/卸载软件</h3><p>以<code>anaconda3</code>为例，这个软件并不在默认的仓库，需要添加<code>extras</code>仓库：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span><span class="keyword">add </span><span class="keyword">extras</span></span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">install </span>anaconda3</span><br></pre></td></tr></table></figure>
+
+<p>卸载<code>anaconda3</code>：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">scoop </span>uninstall anaconda3</span><br></pre></td></tr></table></figure>
+
+<p>更新<code>anaconda3</code>：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update a<span class="symbol">naconda3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="加速下载"><a href="#加速下载" class="headerlink" title="加速下载"></a>加速下载</h2><p>在使用scoop安装aria2后，scoop会自动调用aria2进行多线程下载以加速下载：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scoop install aria2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开16线程（aria2编译版本默认最高线程为16，需要更高的请自行编译）：</span></span><br><span class="line">scoop<span class="built_in"> config </span>aria2-max-connection-per-server 16</span><br><span class="line">scoop<span class="built_in"> config </span>aria2-split 16</span><br><span class="line">scoop<span class="built_in"> config </span>aria2-min-split-size 1M</span><br></pre></td></tr></table></figure>
+
+<h2 id="推荐软件"><a href="#推荐软件" class="headerlink" title="推荐软件"></a>推荐软件</h2><blockquote>
+<p>7zip<br>aria2 # 安装aria2后，scoop会自动调用aria2进行多线程下载以加速下载<br>anaconda3<br>calibre<br>curl<br>fluent-terminal-np # Windows平台终端工具<br>gcc<br>gimp<br>inkscape<br>latex<br>mactype-np # 装机必备的字体优化工具<br>motrix # 开源美观的下载工具<br>potplayer # 超强的视频播放器<br>quicklook # 快速预览工具<br>snipaste # 大名鼎鼎的截图工具<br>sudo<br>typora # 久负盛名的 Markdown 编辑器<br>vim<br>vscode<br>windows-terminal # windows官方的终端应用<br>zotero</p>
+</blockquote>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><h3 id="1-添加extras失败"><a href="#1-添加extras失败" class="headerlink" title="1. 添加extras失败"></a>1. 添加extras失败</h3><p>使用命令<code>scoop bucket add extras</code>添加仓库时出现错误：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Checking repo... ok</span><br><span class="line">efatal: the remote <span class="keyword">end</span> hung up unexpectedly</span><br><span class="line">rror: RPC <span class="keyword">failed</span>; curl 18 transfer closed <span class="keyword">with</span> outstanding <span class="keyword">read</span> <span class="keyword">data</span> remaining</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: <span class="keyword">index</span>-pack <span class="keyword">failed</span></span><br><span class="line">The extras <span class="keyword">bucket</span> was added successfully.</span><br></pre></td></tr></table></figure>
+<p>虽然提示添加成功，但在安装<code>anaconda3</code>软件时出现：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Updating Scoop...</span><br><span class="line">Updating <span class="string">'extras'</span> bucket...</span><br><span class="line">fatal: <span class="keyword">not</span> <span class="keyword">a</span> git repository (<span class="keyword">or</span> <span class="keyword">any</span> <span class="keyword">of</span> <span class="keyword">the</span> parent <span class="built_in">directories</span>): .git</span><br><span class="line">fatal: <span class="keyword">not</span> <span class="keyword">a</span> git repository (<span class="keyword">or</span> <span class="keyword">any</span> <span class="keyword">of</span> <span class="keyword">the</span> parent <span class="built_in">directories</span>): .git</span><br><span class="line">fatal: <span class="keyword">not</span> <span class="keyword">a</span> git repository (<span class="keyword">or</span> <span class="keyword">any</span> <span class="keyword">of</span> <span class="keyword">the</span> parent <span class="built_in">directories</span>): .git</span><br><span class="line">Updating <span class="string">'main'</span> bucket...</span><br><span class="line"> * <span class="number">9</span>d903fc3 git-up: Update <span class="built_in">to</span> <span class="built_in">version</span> <span class="number">2.0</span><span class="number">.0</span>                              <span class="number">9</span> hours ago</span><br><span class="line">Scoop was updated successfully!</span><br><span class="line">Couldn<span class="string">'t find manifest for '</span>anaconda3<span class="string">'.</span></span><br></pre></td></tr></table></figure>
+<p>看起来是文件夹里缺少一些必要的东西，于是去查看仓库所在路径(C:\Users\&lt;user&gt;\scoop\buckets)，发现<code>extras</code>只是一个空文件夹，为此在网络上搜罗解决办法：</p>
+<ul>
+<li><del>说是缓冲区溢出，需要执行<code>git config --global http.postBuffer 524288000</code>，无果！</del></li>
+<li><del>说是网络太慢，需要执行<code>git config --global http.lowSpeedLimit 0</code>和<code>git config --global http.lowSpeedTime 999999</code>，无果！</del><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Checking</span> <span class="string">repo... ok</span></span><br><span class="line"><span class="attr">efrror</span>: <span class="string">RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054</span></span><br><span class="line"><span class="attr">fatal</span>: <span class="string">the remote end hung up unexpectedly</span></span><br><span class="line"><span class="attr">atal</span>: <span class="string">early EOF</span></span><br><span class="line"><span class="attr">fatal</span>: <span class="string">index-pack failed</span></span><br><span class="line"><span class="attr">The</span> <span class="string">extras bucket was added successfully.</span></span><br></pre></td></tr></table></figure></li>
+<li><del>需要执行<code>git config --global http.sslVerify &quot;false&quot;</code>，无果！</del><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Checking repo... ok</span><br><span class="line">efrror: RPC failed; curl 18 transfer closed <span class="keyword">with</span> outstanding <span class="keyword">read</span> <span class="keyword">data</span> remaining</span><br><span class="line">atal: the remote <span class="keyword">end</span> hung up unexpectedly</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: <span class="keyword">index</span>-pack <span class="keyword">failed</span></span><br><span class="line">The extras <span class="keyword">bucket</span> was added successfully.</span><br></pre></td></tr></table></figure></li>
+<li>需要执行<code>git clone --depth=1 https://github.com/lukesampson/scoop-extras.git</code>，<strong>成功！！</strong><br>这里是先找到<code>extras</code>仓库分支，然后在路径(C:\Users\&lt;user&gt;\scoop)下<code>clone</code>这个分支，再修改下这个下载下来的文件夹的名称为<code>extras</code>，就可以正常使用了。<blockquote>
+<p>注：<code>--depth=1</code>参数是指只克隆最近一次commit，只会把默认分支clone下来。对不是参与整个项目的开发工作的我们来说问题不大。<br>(http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&amp;+]|[!*,]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)|([a-zA-Z]+.\w+.+[a-zA-Z0-9/_]+)</p>
+</blockquote>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Simon
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://iblog.simon7.top/20200815/%E8%AE%B0%E4%B8%80%E6%AC%A1scoop%E5%AE%89%E8%A3%85/" title="记一次Scoop安装">https://iblog.simon7.top/20200815/记一次scoop安装/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/20200721/python%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/" rel="prev" title="python日期时间">
+      <i class="fa fa-chevron-left"></i> python日期时间
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/20200831/python%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="next" title="python多进程">
+      python多进程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-卸载Scoop"><span class="nav-text">安装&#x2F;卸载Scoop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装软件"><span class="nav-text">安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bucket-仓库"><span class="nav-text">bucket 仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-卸载软件"><span class="nav-text">安装&#x2F;卸载软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加速下载"><span class="nav-text">加速下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐软件"><span class="nav-text">推荐软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他问题"><span class="nav-text">其他问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-添加extras失败"><span class="nav-text">1. 添加extras失败</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Simon"
+      src="/static/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Simon</p>
+  <div class="site-description" itemprop="description">一花一世界，一叶一菩提</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:simoncq@163.com" title="E-Mail → mailto:simoncq@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=707347059&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;707347059&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="rss → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Simon</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">145k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:12</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="100" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 24241,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : '8Ird2SL0kJ6cm8SkTPpalz4t-gzGzoHsz',
+      appKey     : '1y5VLrRzpanTFwuy3OJ5y0Fp',
+      placeholder: "写点什么吧",
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '6' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
