@@ -117,7 +117,7 @@
 </div>
 
 
-<h2 id="Fast-io"><a href="#Fast-io" class="headerlink" title="Fast.io"></a>Fast.io</h2><p><a target="_blank" rel="noopener" href="https://fast.io/">Fast</a>支持网盘 <code>Google Drive</code> / <code>OneDrive</code> / <code>Github</code> / <code>Dropbox</code> / <code>MediaFire</code> / <code>BOX</code>。如此获取网盘资源外链，图床不是问题。但也有<del>（可忽略的）</del>限制，如下：</p>
+<h2 id="Fast-iohe"><a href="#Fast-iohe" class="headerlink" title="Fast.iohe"></a>Fast.iohe</h2><p><strong><del>Fast.io于2021年1月15日关闭服务</del></strong><br><a target="_blank" rel="noopener" href="https://fast.io/">Fast</a>支持网盘 <code>Google Drive</code> / <code>OneDrive</code> / <code>Github</code> / <code>Dropbox</code> / <code>MediaFire</code> / <code>BOX</code>。如此获取网盘资源外链，图床不是问题。但也有<del>（可忽略的）</del>限制，如下：</p>
 <ul>
 <li>免费创建5个站点</li>
 <li>单个文件最大500M</li>
