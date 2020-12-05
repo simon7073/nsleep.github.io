@@ -1,0 +1,140 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site 
+title: Simon 的博客
+subtitle: Simon
+description: 玄之又玄，众妙之门
+keywords: 
+author: 
+language: zh-CN # zh-Hans # zh-CN
+timezone: 
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://nsleep.github.io/
+root: /
+#:title/        文件名称   
+#:post_title    文章标题
+#:id            文章 ID
+#:category      分类
+permalink: :year/:month/:day/:title/
+permalink_defaults: 
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render: [README.md, 模板.md]
+
+# Writing
+new_post_name: :year-:i_month-:i_day-:title.md #title.md # File name of new posts
+default_layout: post
+auto_spacing: false
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+# index2 generator是否包含官方的hexo-generator-index，默认true（包含）
+index2_include_index: true
+index2_generator:
+  path: ''
+  per_page: 10
+  order_by: 
+    date: -1
+  #include:
+  #  - category Web  # 只包含Web分类下的文章
+  exclude: 
+    - tag hide      # 不包含标签为hide的文章
+    #- category hide # 不包含分类为hide的文章
+
+# Category & Tag  #uncategorized
+default_category: 未分类
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+#注：以下 raytaylorism 主题的配置
+#（禁用归档、标签、目录页面的分页功能）
+archive_generator:
+  per_page: 0
+tag_generator:
+  per_page: 0
+category_generator:
+  per_page: 0
+
+# Extensions
+# RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
+## Plugins: https://hexo.io/plugins/
+
+## Themes: https://hexo.io/themes/
+## theme: landscape
+# theme: hexo-theme-landfarz
+#theme: raytaylorism
+theme: next
+# theme: hexo-theme-cyanstyle
+# theme: hexo-theme-antiquity
+
+# path - 文件的路径。默认是 search.xml。如果文件扩展名为 .json,则输出格式为JSON。
+# field - 要搜索的搜索范围：
+#   post (Default) -  仅涵盖您博客的所有帖子。
+#   page - 仅涵盖您博客的所有页面。
+#   all - 将涵盖您博客的所有帖子和页面。
+# content - 是否包含每篇文章的全部内容。如果false，生成的结果仅覆盖没有主体的标题和其他元信息。默认是true。
+# 排除索引 在文章顶部配置里加入 indexing: false 
+search:
+  path: search.xml 
+  field: all 
+  content: true
+
+# Deployment 部署
+## Docs: https://hexo.io/zh-cn/docs/one-command-deployment#content-inner
+deploy:
+  type: git
+  repo: git@github.com:nsleep/nsleep.github.io.git
+  branch: master
+
+# Backup 备份
+## 
+backup:
+  type: git
+  message: hexo blog source
+  repository:
+    github: git@github.com:nsleep/nsleep.github.io.git,backup
