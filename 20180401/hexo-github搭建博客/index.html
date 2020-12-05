@@ -34,7 +34,7 @@
 <meta property="og:description" content="此篇用以记录使用Hexo搭建博客的过程，不时修改加以完善。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-01T13:46:52.000Z">
-<meta property="article:modified_time" content="2020-12-04T18:21:14.365Z">
+<meta property="article:modified_time" content="2020-12-05T01:50:56.018Z">
 <meta property="article:author" content="Simon">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -214,7 +214,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83"><span class="nav-text">一、 准备环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Github%E8%B4%A6%E6%88%B7"><span class="nav-text">1. Github账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Git"><span class="nav-text">2. 安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%A5%BDGit%E7%8E%AF%E5%A2%83"><span class="nav-text">配置好Git环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAssh%E5%AF%86%E9%92%A5%EF%BC%8C%E5%B0%86%E5%85%AC%E9%92%A5%E4%B8%8A%E4%BC%A0"><span class="nav-text">创建ssh密钥，将公钥上传</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85Node-js"><span class="nav-text">3. 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85Hexo"><span class="nav-text">4. 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2-Fighting"><span class="nav-text">二、 本地博客 - Fighting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="nav-text">1. 初始化博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%80%E5%90%AF%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1"><span class="nav-text">2. 开启本地服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%86%99%E7%AF%87%E6%96%87%E7%AB%A0"><span class="nav-text">3. 写篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90"><span class="nav-text">4. 文件生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%86%99%E7%AF%87%E8%8D%89%E7%A8%BF"><span class="nav-text">5. 写篇草稿</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%96%B0%E5%BB%BA%E8%8D%89%E7%A8%BF"><span class="nav-text">1). 新建草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%A2%84%E8%A7%88%E8%8D%89%E7%A8%BF"><span class="nav-text">2). 预览草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8F%91%E8%A1%A8%E8%8D%89%E7%A8%BF"><span class="nav-text">3). 发表草稿</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="nav-text">6. 其他操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B8%B2%E6%9F%93%E6%96%87%E4%BB%B6"><span class="nav-text">1). 渲染文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B8%85%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-text">2). 清除文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E6%8E%A8%E9%80%81%E5%88%B0GitHub"><span class="nav-text">三、 推送到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">1. 配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%94%9F%E6%88%90%E5%B9%B6%E9%83%A8%E7%BD%B2%E6%96%87%E7%AB%A0"><span class="nav-text">2. 生成并部署文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95"><span class="nav-text">四、 迁移方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RSS"><span class="nav-text">RSS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81-%E5%85%B6%E4%BB%96%E9%83%A8%E7%BD%B2"><span class="nav-text">五、 其他部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fast-iohe"><span class="nav-text">Fast.iohe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Js-org"><span class="nav-text">Js.org</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Firebase-Hosting"><span class="nav-text">Firebase Hosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">FTP服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91COS"><span class="nav-text">腾讯云COS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0"><span class="nav-text">其他平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9B%B4%E6%96%B0"><span class="nav-text">六、更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E9%98%85%E8%AF%BB"><span class="nav-text">其他相关阅读</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83"><span class="nav-text">一、 准备环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Github%E8%B4%A6%E6%88%B7"><span class="nav-text">1. Github账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Git"><span class="nav-text">2. 安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%A5%BDGit%E7%8E%AF%E5%A2%83"><span class="nav-text">配置好Git环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAssh%E5%AF%86%E9%92%A5%EF%BC%8C%E5%B0%86%E5%85%AC%E9%92%A5%E4%B8%8A%E4%BC%A0"><span class="nav-text">创建ssh密钥，将公钥上传</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85Node-js"><span class="nav-text">3. 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85Hexo"><span class="nav-text">4. 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2-Fighting"><span class="nav-text">二、 本地博客 - Fighting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="nav-text">1. 初始化博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%80%E5%90%AF%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1"><span class="nav-text">2. 开启本地服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%86%99%E7%AF%87%E6%96%87%E7%AB%A0"><span class="nav-text">3. 写篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90"><span class="nav-text">4. 文件生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%86%99%E7%AF%87%E8%8D%89%E7%A8%BF"><span class="nav-text">5. 写篇草稿</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%96%B0%E5%BB%BA%E8%8D%89%E7%A8%BF"><span class="nav-text">1). 新建草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%A2%84%E8%A7%88%E8%8D%89%E7%A8%BF"><span class="nav-text">2). 预览草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8F%91%E8%A1%A8%E8%8D%89%E7%A8%BF"><span class="nav-text">3). 发表草稿</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="nav-text">6. 其他操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B8%B2%E6%9F%93%E6%96%87%E4%BB%B6"><span class="nav-text">1). 渲染文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B8%85%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-text">2). 清除文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E6%8E%A8%E9%80%81%E5%88%B0GitHub"><span class="nav-text">三、 推送到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">1. 配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%94%9F%E6%88%90%E5%B9%B6%E9%83%A8%E7%BD%B2%E6%96%87%E7%AB%A0"><span class="nav-text">2. 生成并部署文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95"><span class="nav-text">四、 迁移方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RSS"><span class="nav-text">RSS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81-%E5%85%B6%E4%BB%96%E9%83%A8%E7%BD%B2"><span class="nav-text">五、 其他部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fast-iohe"><span class="nav-text">Fast.iohe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Js-org"><span class="nav-text">Js.org</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8Cfork-%E4%BB%93%E5%BA%93%E3%80%82"><span class="nav-text">第一步，fork 仓库。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%A0%81%E3%80%82"><span class="nav-text">第二步，修改代码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8CPull-Request%E3%80%82"><span class="nav-text">第三步，Pull Request。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Firebase-Hosting"><span class="nav-text">Firebase Hosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">FTP服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91COS"><span class="nav-text">腾讯云COS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0"><span class="nav-text">其他平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9B%B4%E6%96%B0"><span class="nav-text">六、更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E9%98%85%E8%AF%BB"><span class="nav-text">其他相关阅读</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -304,7 +304,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-05 02:21:14" itemprop="dateModified" datetime="2020-12-05T02:21:14+08:00">2020-12-05</time>
+        <time title="修改时间：2020-12-05 09:50:56" itemprop="dateModified" datetime="2020-12-05T09:50:56+08:00">2020-12-05</time>
       </span>
 
   
@@ -322,14 +322,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.3k</span>
+      <span>4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -449,6 +449,15 @@
 <li>每个月100G流量    </li>
 </ul>
 <h2 id="Js-org"><a href="#Js-org" class="headerlink" title="Js.org"></a>Js.org</h2><p>使用<a target="_blank" rel="noopener" href="https://js.org/">Js.org</a>和自定义域名类似，将一个名为“CNAME”的文件添加到您的存储库中，然后在GitHub <a target="_blank" rel="noopener" href="https://github.com/js-org/js.org/tree/master">repository </a>中发出拉取请求，该请求会将子域添加到现有JS.ORG域的列表中。</p>
+<h3 id="第一步，fork-仓库。"><a href="#第一步，fork-仓库。" class="headerlink" title="第一步，fork 仓库。"></a>第一步，fork 仓库。</h3><p>进入 <code>js.org</code> 的主仓库，点击右上角的 Fork 按钮。稍等一下刷新页面。这样，这个仓库就被 fork 到你自己的名下。</p>
+<h3 id="第二步，修改代码。"><a href="#第二步，修改代码。" class="headerlink" title="第二步，修改代码。"></a>第二步，修改代码。</h3><p>将 fork 过来到仓库 <code>clone</code> 到本地，然后用编辑器打开，找到 <code>cnames_active.js</code> 文件，在里面看一下，大概知道怎么回事了吧。添加你想要到二级域名，以及 <code>CNAME</code> 到的网址。注意，大家的约定都是按字母顺序排序的。照葫芦画瓢改好代码。<code>push</code> 回 github。</p>
+<ul>
+<li>比如：<code>&quot;isimon&quot;: &quot;nsleep.github.io&quot;,</code></li>
+<li><code>CNAME</code>文件：<code>isimon.js.org</code></li>
+</ul>
+<h3 id="第三步，Pull-Request。"><a href="#第三步，Pull-Request。" class="headerlink" title="第三步，Pull Request。"></a>第三步，Pull Request。</h3><p>回到你 fork 的仓库页面，找到一个叫 <code>Pull Request</code> 的按钮。点击它，向js.org发送一个申请<br>内容如下：<br>标题：你要申请的域名，如：isimon.js.org<br>内容：（阅读协议，不用更改）<br>点击 <code>Create pull request</code> 提交。</p>
+<p>这样就完成了域名申请和绑定了。是不是很简单。接下来的事情，就是等待，<del>因为中美之间的时差关系，你最好在晚上 12 点之前完成上面这些操作</del>（根据indus的提醒，他实际上是在德国工作，因此时间比我们早）。等<del>美国</del>那边的项目维护者上线之后，就会对你的 <code>pull request</code> 进行检查，如果没有问题，就会 approve，一切顺利，就会 merge，之后很快你就可以用拿到的域名访问你的 gh-pages 了。</p>
+<p>如果你有兴趣，还可以继续看看 <code>ns_active.js</code>，看完之后，你就能再次明白，js.org 就是一个域名服务项目啊。</p>
 <h2 id="Firebase-Hosting"><a href="#Firebase-Hosting" class="headerlink" title="Firebase Hosting"></a>Firebase Hosting</h2><p><a target="_blank" rel="noopener" href="https://console.firebase.google.com/">Firebase</a>是一个把后端作为服务的云平台（BaaS）</p>
 <ul>
 <li>国内无法访问。</li>
@@ -507,7 +516,7 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/whjkm/article/details/81088518">Hexo版本升级和Next主题升级之坑</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157511323">将 Hexo 升级到 v4.2.1</a></li>
 </ul>
-<h1 id="其他相关阅读"><a href="#其他相关阅读" class="headerlink" title="其他相关阅读"></a>其他相关阅读</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cf6d7a180aa4">简书-hexo使用grunt实现自动化</a></p>
+<h1 id="其他相关阅读"><a href="#其他相关阅读" class="headerlink" title="其他相关阅读"></a>其他相关阅读</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cf6d7a180aa4">简书-hexo使用grunt实现自动化</a><br><a target="_blank" rel="noopener" href="https://www.tangshuang.net/7603.html">创建自己的 .js.org 域名网站</a></p>
 
     </div>
 
@@ -582,7 +591,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">186k</span>
+    <span title="站点总字数">187k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

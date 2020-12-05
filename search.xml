@@ -124,6 +124,15 @@
 <li>每个月100G流量    </li>
 </ul>
 <h2 id="Js-org"><a href="#Js-org" class="headerlink" title="Js.org"></a>Js.org</h2><p>使用<a target="_blank" rel="noopener" href="https://js.org/">Js.org</a>和自定义域名类似，将一个名为“CNAME”的文件添加到您的存储库中，然后在GitHub <a target="_blank" rel="noopener" href="https://github.com/js-org/js.org/tree/master">repository </a>中发出拉取请求，该请求会将子域添加到现有JS.ORG域的列表中。</p>
+<h3 id="第一步，fork-仓库。"><a href="#第一步，fork-仓库。" class="headerlink" title="第一步，fork 仓库。"></a>第一步，fork 仓库。</h3><p>进入 <code>js.org</code> 的主仓库，点击右上角的 Fork 按钮。稍等一下刷新页面。这样，这个仓库就被 fork 到你自己的名下。</p>
+<h3 id="第二步，修改代码。"><a href="#第二步，修改代码。" class="headerlink" title="第二步，修改代码。"></a>第二步，修改代码。</h3><p>将 fork 过来到仓库 <code>clone</code> 到本地，然后用编辑器打开，找到 <code>cnames_active.js</code> 文件，在里面看一下，大概知道怎么回事了吧。添加你想要到二级域名，以及 <code>CNAME</code> 到的网址。注意，大家的约定都是按字母顺序排序的。照葫芦画瓢改好代码。<code>push</code> 回 github。</p>
+<ul>
+<li>比如：<code>&quot;isimon&quot;: &quot;nsleep.github.io&quot;,</code></li>
+<li><code>CNAME</code>文件：<code>isimon.js.org</code></li>
+</ul>
+<h3 id="第三步，Pull-Request。"><a href="#第三步，Pull-Request。" class="headerlink" title="第三步，Pull Request。"></a>第三步，Pull Request。</h3><p>回到你 fork 的仓库页面，找到一个叫 <code>Pull Request</code> 的按钮。点击它，向js.org发送一个申请<br>内容如下：<br>标题：你要申请的域名，如：isimon.js.org<br>内容：（阅读协议，不用更改）<br>点击 <code>Create pull request</code> 提交。</p>
+<p>这样就完成了域名申请和绑定了。是不是很简单。接下来的事情，就是等待，<del>因为中美之间的时差关系，你最好在晚上 12 点之前完成上面这些操作</del>（根据indus的提醒，他实际上是在德国工作，因此时间比我们早）。等<del>美国</del>那边的项目维护者上线之后，就会对你的 <code>pull request</code> 进行检查，如果没有问题，就会 approve，一切顺利，就会 merge，之后很快你就可以用拿到的域名访问你的 gh-pages 了。</p>
+<p>如果你有兴趣，还可以继续看看 <code>ns_active.js</code>，看完之后，你就能再次明白，js.org 就是一个域名服务项目啊。</p>
 <h2 id="Firebase-Hosting"><a href="#Firebase-Hosting" class="headerlink" title="Firebase Hosting"></a>Firebase Hosting</h2><p><a target="_blank" rel="noopener" href="https://console.firebase.google.com/">Firebase</a>是一个把后端作为服务的云平台（BaaS）</p>
 <ul>
 <li>国内无法访问。</li>
@@ -182,7 +191,7 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/whjkm/article/details/81088518">Hexo版本升级和Next主题升级之坑</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157511323">将 Hexo 升级到 v4.2.1</a></li>
 </ul>
-<h1 id="其他相关阅读"><a href="#其他相关阅读" class="headerlink" title="其他相关阅读"></a>其他相关阅读</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cf6d7a180aa4">简书-hexo使用grunt实现自动化</a></p>
+<h1 id="其他相关阅读"><a href="#其他相关阅读" class="headerlink" title="其他相关阅读"></a>其他相关阅读</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cf6d7a180aa4">简书-hexo使用grunt实现自动化</a><br><a target="_blank" rel="noopener" href="https://www.tangshuang.net/7603.html">创建自己的 .js.org 域名网站</a></p>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -270,9 +279,9 @@
   <entry>
     <title>VPN的简单架设</title>
     <url>/20180623/vpn%E7%9A%84%E7%AE%80%E5%8D%95%E6%9E%B6%E8%AE%BE/</url>
-    <content><![CDATA[<blockquote><p>提要：<br>      系统：CentOS 6.9</p>
+    <content><![CDATA[<blockquote>
+<p>提要：<br>    系统：CentOS 6.9</p>
 </blockquote>
-
 <h1 id="下载shadowsocks服务端"><a href="#下载shadowsocks服务端" class="headerlink" title="下载shadowsocks服务端"></a>下载shadowsocks服务端</h1><p>参考文章：<a target="_blank" rel="noopener" href="https://teddysun.com/486.html">秋水逸冰 - Shadowsocks 一键安装脚本（四合一）</a></p>
 <p>使用root用户登录，运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh &amp;&amp; chmod +x shadowsocks-all.sh &amp;&amp; ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
