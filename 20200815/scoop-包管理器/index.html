@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="Sj57y850f1">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.simon7.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":2,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="Scoop是一个Windows下的包管理器，完全免费，依赖于Github。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scoop 包管理器">
+<meta property="og:url" content="https://blog.simon7.top/20200815/scoop-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/">
+<meta property="og:site_name" content="Simon">
+<meta property="og:description" content="Scoop是一个Windows下的包管理器，完全免费，依赖于Github。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-15T07:20:09.000Z">
+<meta property="article:modified_time" content="2020-08-15T07:20:09.000Z">
+<meta property="article:author" content="Simon">
+<meta property="article:tag" content="scoop">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.simon7.top/20200815/scoop-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.simon7.top/20200815/scoop-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/","path":"20200815/scoop-包管理器/","title":"Scoop 包管理器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Scoop 包管理器 | Simon</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?40fe1da0798212a31314b7ff6e3c58bb"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Simon" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Simon</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">玄之又玄，众妙之门</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">46</span></a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-友情链接"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97-Scoop-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">获得 Scoop 包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9Scoop%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-text">对Scoop管理器的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E4%BB%93%E5%BA%93"><span class="nav-text">管理仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Scoop-%E7%AE%A1%E7%90%86%E5%8C%85"><span class="nav-text">使用 Scoop 管理包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E8%BD%AF%E4%BB%B6"><span class="nav-text">推荐软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E9%80%9F%E4%B8%8B%E8%BD%BD"><span class="nav-text">加速下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E6%9D%83"><span class="nav-text">提权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="nav-text">其他问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B7%BB%E5%8A%A0extras%E5%A4%B1%E8%B4%A5"><span class="nav-text">1. 添加extras失败</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Simon"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Simon</p>
+  <div class="site-description" itemprop="description">Simon's blog</div>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:simoncq@163.com" title="E-Mail → mailto:simoncq@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="rss → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/nsleep" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.simon7.top/20200815/scoop-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Simon">
+      <meta itemprop="description" content="Simon's blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Simon">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Scoop 包管理器<a href="https://github.com/nsleep/blog/blob/main/source/_posts/2020-8-15-Scoop%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-15 15:20:09" itemprop="dateCreated datePublished" datetime="2020-08-15T15:20:09+08:00">2020-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><code>Scoop</code>是一个<code>Windows</code>下的包管理器，完全免费，依赖于<code>Github</code>。</p>
+<span id="more"></span>
+
+<h2 id="获得-Scoop-包管理器"><a href="#获得-Scoop-包管理器" class="headerlink" title="获得 Scoop 包管理器"></a>获得 Scoop 包管理器</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 准备将 Scoop 本体安装到已定义目录</span>
+<span class="token variable">$env</span>:SCOOP=<span class="token string">'D:\Scoop'</span>
+<span class="token comment"># 先添加用户级别的环境变量 SCOOP</span>
+<span class="token namespace">[environment]</span>::setEnvironmentVariable<span class="token punctuation">(</span><span class="token string">'SCOOP'</span><span class="token punctuation">,</span><span class="token variable">$env</span>:SCOOP<span class="token punctuation">,</span><span class="token string">'User'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 允许本地脚本的执行：</span>
+<span class="token function">set-executionpolicy</span> remotesigned <span class="token operator">-</span>scope currentuser
+<span class="token comment"># 安装 Scoop：</span>
+<span class="token function">Invoke-Expression</span> <span class="token punctuation">(</span><span class="token function">New-Object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">'https://get.scoop.sh'</span><span class="token punctuation">)</span>
+<span class="token comment"># 或者更短</span>
+<span class="token function">iwr</span> <span class="token operator">-</span>useb get<span class="token punctuation">.</span>scoop<span class="token punctuation">.</span>sh <span class="token punctuation">|</span> <span class="token function">iex</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<div class="note warning no-icon"><p>应注意以下几点</p>
+<ul>
+<li>用户名不含中文字符</li>
+<li>能正常、快速的访问 GitHub 并下载上面的资源</li>
+<li>如果下载scoop的过程中断，那么必须先删除(C:\Users\&lt;user&gt;\scoop)文件夹，再执行以上命令安装。</li>
+<li>Windows 7 SP1+ &#x2F; Windows Server 2008+</li>
+<li>PowerShell 3+</li>
+<li>.NET Framework 4.5+</li>
+</ul>
+<p>若Powershell或.NET Franmework版本过旧，更新后重启即可。<br>若不清楚版本号，可<code>Win+R</code>运行<code>powershell</code>，输入以下命令获取版本号。</p>
+<pre class="line-numbers language-none"><code class="language-none">$PSVersionTable.PSVersion.Major   #查看Powershell版本
+$PSVersionTable.CLRVersion.Major  #查看.NET Framework版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</div>
+
+
+<h2 id="对Scoop管理器的操作"><a href="#对Scoop管理器的操作" class="headerlink" title="对Scoop管理器的操作"></a>对Scoop管理器的操作</h2><ul>
+<li>修改默认全局安装路径</li>
+</ul>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token variable">$env</span>:SCOOP_GLOBAL=<span class="token string">'D:\GlobalScoopApps'</span>
+<span class="token namespace">[environment]</span>::setEnvironmentVariable<span class="token punctuation">(</span><span class="token string">'SCOOP_GLOBAL'</span><span class="token punctuation">,</span><span class="token variable">$env</span>:SCOOP_GLOBAL<span class="token punctuation">,</span><span class="token string">'Machine'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>更新 Scoop</li>
+</ul>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">scoop update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>卸载 Scoop</li>
+</ul>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">scoop uninstall scoop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="管理仓库"><a href="#管理仓库" class="headerlink" title="管理仓库"></a>管理仓库</h2><p><code>Scoop</code> 默认使用的是 <code>main</code> 仓库，安装APP之前，可能需要先进行搜索<code>scoop search &lt;APP&gt;</code>，如果没有的话那就需要使用其他的仓库。</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 查看可用的仓库</span>
+scoop bucket known
+<span class="token comment"># 添加一个仓库</span>
+scoop bucket add &lt;bucket_name:extras>
+<span class="token comment"># 查看已添加的仓库</span>
+scoop bucket list
+<span class="token comment"># 更新</span>
+scoop update <span class="token operator">*</span>
+<span class="token comment"># 删除</span>
+scoop bucket <span class="token function">rm</span> &lt;bucket_name>
+
+<span class="token comment"># 添加第三方 bucket</span>
+scoop bucket add &lt;bucketname> https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/xxx/xxx
+<span class="token comment"># 安装APP</span>
+scoop install &lt;bucketname><span class="token operator">/</span>&lt;app>
+···
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>bucket 排行榜 </p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://rasa.github.io/scoop-directory/by-score.html">链接1</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://scoop.netlify.app/buckets/">链接2</a></p>
+</li>
+<li><p>main ： 默认的大仓库 </p>
+</li>
+<li><p>extras ： 常用，诸多有用的软件都在里面。地址 <a target="_blank" rel="noopener" href="https://github.com/lukesampson/scoop-extras/tree/master/bucket">lukesampson&#x2F;scoop-extras</a></p>
+</li>
+<li><p>nirsoft ： NirSoft 开发的小工具的安装合集，包括系统工具、网络工具、密码恢复等</p>
+<ul>
+<li>地址 <a target="_blank" rel="noopener" href="https://github.com/kodybrown/scoop-nirsoft">kodybrown&#x2F;scoop-nirsoft</a></li>
+<li>官网地址 <a target="_blank" rel="noopener" href="https://www.nirsoft.net/">NirSoft</a></li>
+</ul>
+</li>
+<li><p>dorado ： 添加了一些国内的app，比如 qqplayer 👍🏻️ <a target="_blank" rel="noopener" href="https://github.com/h404bi/dorado">h404bi&#x2F;dorado</a></p>
+</li>
+<li><p>ash258 ： <a target="_blank" rel="noopener" href="https://github.com/Ash258/scoop-Ash258">Ash258&#x2F;scoop-Ash258</a></p>
+</li>
+<li><p>nerd-fonts ： 编程字体一览无遗 <nonportable></p>
+</li>
+<li><p>nonportable ： 收录神奇的UWP应用 windows平台应用</p>
+</li>
+<li><p>versions ： 收录软件包的历史版本</p>
+</li>
+<li><p>java</p>
+</li>
+</ul>
+<div class="note info no-icon"><p>仓库的多少影响搜索软件包的搜索结果、搜索速度、「一键更新」的速度、清理的速度。所以收录&#x2F;订阅必要的软件仓库即可，也不必盲目添加。</p>
+</div>
+
+<h2 id="使用-Scoop-管理包"><a href="#使用-Scoop-管理包" class="headerlink" title="使用 Scoop 管理包"></a>使用 Scoop 管理包</h2><ul>
+<li>安装软件，参数<code>-g</code>是在全局下安装</li>
+</ul>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 安装</span>
+scoop install <span class="token operator">-</span>g &lt;app>
+<span class="token comment"># 查看</span>
+scoop list
+<span class="token comment"># 更新指定APP</span>
+scoop update <span class="token operator">-</span>g &lt;app>
+<span class="token comment"># 更新所有APP 包括全局</span>
+scoop update <span class="token operator">-</span>g <span class="token operator">*</span>
+<span class="token comment"># 卸载</span>
+scoop uninstall <span class="token operator">-</span>g &lt;app>
+<span class="token comment"># 卸载并删除配置文件</span>
+scoop uninstall <span class="token operator">-</span><span class="token function">gp</span> &lt;app><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>清理安装包缓存</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 显示安装包的缓存</span>
+scoop cache show
+<span class="token comment"># 删除 指定APP的安装包</span>
+scoop cache <span class="token function">rm</span> &lt;app>
+<span class="token comment"># 删除所有APP安装包</span>
+scoop cache <span class="token function">rm</span> <span class="token operator">*</span>
+<span class="token comment"># 禁用安装包缓存 -k 或 --no-cache</span>
+scoop install <span class="token operator">-</span>k &lt;app>
+scoop update <span class="token operator">-</span>k <span class="token operator">*</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>删除旧版本APP</p>
+</li>
+</ul>
+<p>由于自身的特性（滚动更新，当更新时是立刻拉取最新的commit）可能会导致程序异常，所以当软件被更新后 Scoop 还会保留软件的旧版本，更新软件后可以通过 scoop cleanup 命令进行删除。</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 删除指定APP旧版本</span>
+scoop cleanup &lt;app>
+<span class="token comment"># 删除所有APP旧版本</span>
+scoop cleanup <span class="token operator">*</span>
+<span class="token comment"># 不仅删除所有APP旧版本，也包括缓存的安装包</span>
+scoop cleanup <span class="token operator">-</span>k <span class="token operator">*</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="推荐软件"><a href="#推荐软件" class="headerlink" title="推荐软件"></a>推荐软件</h2><p>必装： </p>
+<ul>
+<li>7zip</li>
+<li>git</li>
+<li>aria2 # 安装aria2后，scoop会自动调用aria2进行多线程下载以加速下载</li>
+<li>anaconda3</li>
+<li>curl</li>
+</ul>
+<p>可选：</p>
+<ul>
+<li>vscode </li>
+<li>mactype-np # 装机必备的字体优化工具</li>
+<li>motrix # 开源美观的下载工具</li>
+<li>potplayer # 超强的视频播放器</li>
+<li>quicklook # 快速预览工具</li>
+<li>snipaste # 大名鼎鼎的截图工具</li>
+<li>typora # 久负盛名的 Markdown 编辑器</li>
+<li>windows-terminal # windows官方的终端应用</li>
+<li>fluent-terminal-np # Windows平台终端工具</li>
+<li>sudo</li>
+<li>gcc</li>
+<li>vim</li>
+</ul>
+<p>还有：</p>
+<ul>
+<li>gimp </li>
+<li>inkscape </li>
+<li>latex </li>
+<li>calibre </li>
+<li>zotero</li>
+</ul>
+<h2 id="加速下载"><a href="#加速下载" class="headerlink" title="加速下载"></a>加速下载</h2><p>在使用scoop安装aria2后，scoop会自动调用aria2进行多线程下载以加速下载：</p>
+<pre class="line-numbers language-none"><code class="language-none">scoop install aria2
+
+# 打开16线程（aria2编译版本默认最高线程为16，需要更高的请自行编译）：
+scoop config aria2-max-connection-per-server 16
+scoop config aria2-split 16
+scoop config aria2-min-split-size 1M<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 添加 nerd-fonts 仓库</span>
+scoop bucket add nerd-fonts
+<span class="token comment"># 搜索字体</span>
+scoop search <span class="token string">"-NF"</span>
+<span class="token comment"># 安装字体</span>
+sudo scoop install FiraCode-NF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h2><p>如果不是以管理员的身份运行PowerShell，常常会出现一些错误。此时sudo来了。</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">scoop install <span class="token operator">-</span>g sudo
+sudo scoop install <span class="token operator">-</span>g &lt;app><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><h3 id="1-添加extras失败"><a href="#1-添加extras失败" class="headerlink" title="1. 添加extras失败"></a>1. 添加extras失败</h3><p>使用命令<code>scoop bucket add extras</code>添加仓库时出现错误：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Checking repo<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ok
+efatal: the remote <span class="token keyword">end</span> hung up unexpectedly
+rror: RPC failed<span class="token punctuation">;</span> curl 18 transfer closed with outstanding read <span class="token keyword">data</span> remaining
+fatal: early EOF
+fatal: index-pack failed
+The extras bucket was added successfully<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>虽然提示添加成功，但在安装<code>anaconda3</code>软件时出现：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Updating Scoop<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+Updating <span class="token string">'extras'</span> bucket<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+fatal: not a git repository <span class="token punctuation">(</span>or any of the parent directories<span class="token punctuation">)</span>: <span class="token punctuation">.</span>git
+fatal: not a git repository <span class="token punctuation">(</span>or any of the parent directories<span class="token punctuation">)</span>: <span class="token punctuation">.</span>git
+fatal: not a git repository <span class="token punctuation">(</span>or any of the parent directories<span class="token punctuation">)</span>: <span class="token punctuation">.</span>git
+Updating <span class="token string">'main'</span> bucket<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ <span class="token operator">*</span> 9d903fc3 git-up: Update to version 2<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0                              9 hours ago
+Scoop was updated successfully!
+Couldn<span class="token string">'t find manifest for '</span>anaconda3'<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>看起来是文件夹里缺少一些必要的东西，于是去查看仓库所在路径(C:\Users\&lt;user&gt;\scoop\buckets)，发现<code>extras</code>只是一个空文件夹，为此在网络上搜罗解决办法：</p>
+<ul>
+<li><del>说是缓冲区溢出，需要执行<code>git config --global http.postBuffer 524288000</code>，无果！</del></li>
+<li><del>说是网络太慢，需要执行<code>git config --global http.lowSpeedLimit 0</code>和<code>git config --global http.lowSpeedTime 999999</code>，无果！</del><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Checking repo<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ok
+efrror: RPC failed<span class="token punctuation">;</span> curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL<span class="token punctuation">,</span> errno 10054
+fatal: the remote <span class="token keyword">end</span> hung up unexpectedly
+atal: early EOF
+fatal: index-pack failed
+The extras bucket was added successfully<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><del>需要执行<code>git config --global http.sslVerify &quot;false&quot;</code>，无果！</del><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Checking repo<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ok
+efrror: RPC failed<span class="token punctuation">;</span> curl 18 transfer closed with outstanding read <span class="token keyword">data</span> remaining
+atal: the remote <span class="token keyword">end</span> hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+The extras bucket was added successfully<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>需要执行<code>git clone --depth=1 https://github.com/lukesampson/scoop-extras.git</code>，<strong>成功！！</strong><br>这里是先找到<code>extras</code>仓库分支，然后在路径(C:\Users\&lt;user&gt;\scoop)下<code>clone</code>这个分支，再修改下这个下载下来的文件夹的名称为<code>extras</code>，就可以正常使用了。<blockquote>
+<p>注：<code>--depth=1</code>参数是指只克隆最近一次commit，只会把默认分支clone下来。对不是参与整个项目的开发工作的我们来说问题不大。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://scoop.sh/">Scoop 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lukesampson/scoop/wiki/Quick-Start">Quick Start On GitHub</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Simon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.simon7.top/20200815/scoop-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/" title="Scoop 包管理器">https://blog.simon7.top/20200815/scoop-包管理器/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/scoop/" rel="tag"><i class="fa fa-tag"></i> scoop</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20200721/python%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/" rel="prev" title="Python日期时间">
+                  <i class="fa fa-chevron-left"></i> Python日期时间
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/20200831/python%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="next" title="Python多进程">
+                  Python多进程 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Simon</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">196k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:58</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":"forest","js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.13.10/dist/mermaid.min.js","integrity":"sha256-CmZCFVnvol9YL23PfjDflGY5nJwE+Mf/JN+8v+tD/34="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
