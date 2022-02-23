@@ -1,0 +1,37 @@
+
+defaultPic: /static/images/default.png
+shape: square 
+
+defaultlinks:
+- nickname: 阮一峰的个人网站
+  avatar:	http://www.ruanyifeng.com/blog/images/person2.jpg
+  info: 	
+  site: 	http://www.ruanyifeng.com/home.html
+
+- nickname: 廖雪峰的官方网站
+  avatar:	http://tva2.sinaimg.cn/crop.0.0.180.180.50/62d8efadjw1e8qgp5bmzyj2050050aa8.jpg
+  info: 	
+  site: 	https://www.liaoxuefeng.com/
+  
+friendslinks :
+- nickname: 隔壁老于
+  avatar: https://www.gebilaoyu.club/wp-content/uploads/2020/10/avatar_1599567513960.jpg
+  info: 	分享技术
+  site: 	https://gebilaoyu.club
+  
+- nickname: 长征部落格
+  avatar: 	https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/logo.jpg
+  info: 	保持怀疑，独立思考
+  site: 	https://www.cz5h.com
+  
+
+nolinks : 
+- nickname: Delimo
+  avatar: 	https://cdn.jsdelivr.net/gh/Delimo/Gallery/Gallery/Avatar.jpg
+  info: 	生活可能不像你想象得那么美好，但也不会像你想象的那么糟糕
+  site: 	https://delimo.tk/
+
+- nickname: Fi9Coder  #友链名称
+  avatar: 	https://www.safeinfo.me/images/avatar.gif  #友链头像
+  info: 	致力于Web安全与Python学习,研究,开发。  #友链说明
+  site: 	https://www.safeinfo.me  #友链地址

@@ -1,0 +1,10 @@
+.deploy_git/
+.deploy_heroku/
+node_modules/
+public/
+db.json
+*.log
+.DS_Store
+Thumbs.db
+NOGIT
+themes/

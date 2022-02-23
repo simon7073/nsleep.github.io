@@ -1,0 +1,114 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Simon
+subtitle: 玄之又玄，众妙之门 # 一花一世界，一叶一菩提
+description: Simon's blog # 主要用于SEO
+keywords: Simon
+author: Simon
+language: zh-CN
+timezone: Asia/Shanghai
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://blog.simon7.top/
+permalink: :year:month:day/:post_title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render: [README.md, readme.md,README.MD,模板.md,待办.md,hide]
+
+new_post_name: :year-:i_month-:i_day-:title.md #title.md 
+default_layout: post # 预设布局
+auto_spacing: true # 中英文中间加空格 官网无此项
+titlecase: true # 英文标题首字母是否大写
+external_link: # 在新标签页中打开
+  enable:  true
+  field: post
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: true # 相对链接
+future: false
+highlight:
+  enable: false 
+  line_number: false
+  auto_detect: false
+  tab_replace: '    '
+  wrap: false
+  hljs: false
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+index2_include_index: false
+index2_generator:
+  - layout: 'index' # 使用现有索引布局
+    path: '' # 输出到根目录: http://127.0.0.1:4000/
+    index: true # 设置索引, results is_home() is true or not
+    order_by: -date
+    exclude:
+      - tag hide
+      - category hide 
+
+  - layout: 'index'
+    path: 'myself'
+    per_page: 10
+    order_by: -date
+    include: 
+      - category hide
+      - tag hide
+
+  - layout: 'archives'
+    path: 'archives'
+    exclude:
+      - tag hide # 排除tag为hide的文章
+      - category hide 
+
+# Category & Tag
+default_category: 未分类
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'date'
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+deploy:
+- type: git
+  repo: git@github.com:nsleep/nsleep.github.io.git
+  branch: master
+
+# 网易云音乐 themes\next\layout\_macro\sidebar.swig
+music:
+  ID: 2067079376
+  height: 90 # 32 | 90 | 430
