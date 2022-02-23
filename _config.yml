@@ -106,7 +106,7 @@ theme: next
 deploy:
 - type: git
   repo: git@github.com:nsleep/nsleep.github.io.git
-  branch: gh-page
+  branch: gh-pages
 
 # 网易云音乐 themes\next\layout\_macro\sidebar.swig
 music:
