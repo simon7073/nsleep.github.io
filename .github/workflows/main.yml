@@ -1,9 +1,9 @@
 name: Hexo Blog CI
 on:
   push:
-    branches: [ main]
+    branches: [ main ]
   #pull_request:
-  #  branches: [ main]
+  #  branches: [ main ]
 
   workflow_dispatch:
 
@@ -30,7 +30,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name 'nsleep' 
-          git config --global user.email 'zizhuyun97@163.com'
+          git config --global user.email 'simoncq@163.com'
           npm install hexo-cli -g
           npm install
           
