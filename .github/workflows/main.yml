@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-gh-pages:
     runs-on: ubuntu-latest
     steps:
       #- uses: actions/checkout@master 
@@ -16,10 +16,10 @@ jobs:
       - name: Checkout Repository backup branch
         uses: actions/checkout@master 
         
-      - name: Setup Node.js 12.x 
+      - name: Setup Node.js lts #16.x 
         uses: actions/setup-node@master 
-        with:
-          node-version: "12.x"
+        #with:
+        #  node-version: "16.x"
       
       - name: Setup Hexo Dependencies
         env:
