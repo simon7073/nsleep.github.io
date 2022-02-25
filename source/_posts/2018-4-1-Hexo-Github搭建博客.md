@@ -6,107 +6,85 @@ tags: Hexo
 
 此篇用以记录使用`Hexo`搭建博客的过程，不时修改加以完善。
 
+1. [Git](https://git-scm.com/downloads)
+2. [Node.js](https://nodejs.org/en/download/)
+
+安装步骤参考 [hexo 文档](https://hexo.io/zh-cn/docs/)
+
 <!-- more -->
+# Git 
 
-> 2020/12/05: 趁着更新 Hexo 和 Next 之际，我个人不再用 hexo-git-backup ，继而改用 GitHub Actions 。为操作方便新建一个 repo 来存储 MD 文件和配置文件，而 .github.io 仅作为静态页面展示。
-
-# 一、 准备环境
-
-## 1. Github账户
-注册并新建项目，项目必须要遵守格式：`YOUR_NAME.github.io`
-
-## 2. 安装[Git](https://git-scm.com/downloads)
-- Windows：下载并安装 [git](https://git-scm.com/download/win).
-- 还可以前往 [淘宝 Git for Windows 镜像](https://npm.taobao.org/mirrors/git-for-windows/)
-- [更多参见](https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Git)
-
-
-### 配置好Git环境
+## 配置本地Git环境
 ```bash
 git config --global user.name "your_name"
 git config --global user.email "your_email"
+# 以下可选
 git config --global core.autocrlf false
 git config --global http.sslVerify false
 git config --global https.sslVerify false
 ```
-
 <details>
-<summary>CRLF问题(折叠)</summary>
+<summary>CRLF 问题(折叠)</summary>
 <blockquote>
 	首先问题出在不同操作系统所使用的换行符是不一样的，下面罗列一下三大主流操作系统的换行符：
-	Uinx/Linux采用换行符LF表示下一行（LF：LineFeed，中文意思是换行）；
-	Dos和Windows采用回车+换行CRLF表示下一行（CRLF：CarriageReturn LineFeed，中文意思是回车换行）；
-	Mac OS采用回车CR表示下一行（CR：CarriageReturn，中文意思是回车）。
-	为true时，Git会将你add的所有文件视为文本问价你，将结尾的CRLF转换为LF，而checkout时会再将文件的LF格式转为CRLF格式。
-	为false时，line endings不做任何改变，文本文件保持其原来的样子。
-	为input时，add时Git会把CRLF转换为LF，而check时仍旧为LF，所以Windows操作系统不建议设置此值。
+	<br/>Uinx/Linux采用换行符LF表示下一行（LF：LineFeed，换行）；
+	<br/>Dos和Windows采用回车+换行CRLF表示下一行（CRLF: CarriageReturn LineFeed，中文意思是回车换行）；
+	<br/>Mac OS采用回车CR表示下一行（CR：CarriageReturn，回车）。
+	<br/><br/>为true时，Git会将你 add 的所有文件视为文本文件，将结尾的CRLF转换为LF，而checkout时会再将文件的LF格式转为CRLF格式。
+	<br/>为false时，line endings不做任何改变，文本文件保持其原来的样子。
+	<br/>为input时，add时Git会把CRLF转换为LF，而check时仍旧为LF，所以Windows操作系统不建议设置此值。
 </blockquote>
 </details>
 
-### 创建ssh密钥，将公钥上传
+## 创建ssh密钥
+为了方便本地访问Github，创建ssh密钥，并将公钥[`%USERPROFILE%/.ssh/id_rsa.pub`]上传[Github ssh keys](https://github.com/settings/ssh/new)
+
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email" 	# 创建密钥对
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 	# 创建密钥对
 ssh -T git@github.com # 测试添加ssh是否成功  -v 显示详细信息	
 ```
 
-- 更多参见[Github](https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh)
+- 更多参见[Github Docs](https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh)
 
-## 3. 安装[Node.js](https://nodejs.org/en/download/)
 
-- Node.js 为大多数平台提供了官方的 [安装程序](https://nodejs.org/en/download/)。
-- 对于中国大陆地区用户，可以前往 [淘宝 Node.js 镜像](https://npm.taobao.org/mirrors/node) 下载。
-- 更多参见[Hexo](https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Node-js)
+# [Hexo](https://hexo.io/zh-cn/docs/#安装-Hexo)
 
-## 4. 安装[Hexo](https://hexo.io/)
-
-使用 npm 安装 Hexo。
-
+## 安装
 ```bash
-npm install hexo-cli -g
-hexo -v 				# 检查hexo是否安装成功
+# 使用 npm 安装 Hexo
+npm install hexo -g   # 全局安装 hexo ，包含hexo-cli
+hexo -v               # 检查hexo是否安装成功
+# 在一个空文件夹下执行
+hexo init             # 初始化
+npm install           # 安装所需要的组件
+
 ```
 
-- 更多参见[Hexo](https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo)
-
-# 二、 本地博客 - Fighting
-
-## 1. 初始化博客
-
-执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
-
+## 预览
 ```bash
-hexo init [folder]
-cd [folder]
-npm install				# 安装所需要的组件
-hexo g					# 生成静态文件--public文件夹下
+hexo g                # 生成静态文件 -- public文件夹下
+hexo s                # 开启本地服务 [-p 端口号]
 ```
 
-- 更多参见[Hexo](https://hexo.io/zh-cn/docs/setup)
-
-## 2. 开启本地服务
-
+## 写篇文章
 ```bash
-hexo server
-hexo s -p 端口号			# 重设端口
-hexo s -s 				#只使用静态文件
+hexo new [layout] "title" # layout 默认值为 post
 ```
 
-## 3. 写篇文章
-
-```bash
-hexo new [layout] <title>
-hexo n -p <path> 			# 自定义新文章的路径
-```
-
-## 4. 文件生成
-
+## 文件生成
 ```bash
 hexo generate
 hexo g -d 		# 文件生成后立即部署网站
 hexo g -f 		# 差分机制，只会重新生成改动的文件
 ```
 
-## 5. 写篇草稿
+## 清除文件
+清除缓存文件 (`db.json`) 和已生成的静态文件 (`public`)。
+```bash
+hexo cl
+```
+
+## 写篇草稿
 
 ### 1). 新建草稿
 
@@ -143,81 +121,115 @@ render_drafts: true
 把草稿变成文章，或者页面：
 
 ```bash 
-hexo publish [layout] <filename>
-```
-
-## 6. 其他操作
-
-### 1). 渲染文件
-
-```bash 
-hexo render <file1> [file2] ...
-```
-
-### 2). 清除文件
-
-清除缓存文件 (`db.json`) 和已生成的静态文件 (`public`)。
-
-```bash
-hexo clean
-hexo cl
+hexo publish [layout] "title"
 ```
 
 - 更多参见[Hexo](https://hexo.io/zh-cn/docs/commands)
 
-# 三、 推送到GitHub
 
-## 1. 配置文件
+# [Github](https://github.com/) 
+注册并新建项目，项目必须要遵守格式：`YOUR_NAME.github.io`
+修改分支，使其有 `main`(默认分支) 和 `gh-pages` 两个分支，修改 `Github pages` 构建分支为 `gh-pages` ，域名填写 `YOUR_NAME.github.io`
 
-打开`_config.yml`文件，修改repo值（在末尾）
-
-> 注：所有配置项目的分号后都需要一个空格
-
-```bash ./_config.yml
-deploy:
-	type: git
-	repo: git@github.com:YOUR_NAME/YOUR_NAME.github.io.git
-	branch: master
+```bash
+git clone git@github.com:<YOUR_NAME>/<YOUR_NAME>.github.io.git
+# 然后将初始化的hexo合并（复制）到本地仓库
 ```
 
-## 2. 生成并部署文章
-
-生成以及部署文章之前，需要安装一个扩展
-
+## 安装 git 插件
 ```bash
 npm install hexo-deployer-git --save
 ```
 
-在`_posts`目录下新建一篇博文，编辑器编好文章，那么就可以生成以及部署了
+## 修改 hexo 配置
+> 注：所有配置项目的分号后都需要一个空格
 
-```bash
-hexo new post "博文名"  #  _posts目录下新建一篇博文
-hexo d -g               #  生成以及部署
+```yml
+deploy:
+- type: git
+  repo: <repository url> 
+  # https://github.com/<username>/<project>
+  # git@github.com:<username>/<username>.github.io.git
+  branch: gh-pages
 ```
 
+- [其他部署配置](https://hexo.io/zh-cn/docs/one-command-deployment)
 
+## 部署 YOUR_NAME.github.io
 
-# 四、 迁移方法
-
-## RSS
-
-安装`hexo-migrator-rss`插件
-
+### 推送原始文件(也看做备份)
 ```bash
-npm install hexo-migrator-rss --save
+git add .
+git commit -m "first commit"
+git push -u origin main
 ```
 
-执行 (`<source>` 文件路径或网址)
-
+### 推送页面文件(生成的缓存，即public文件夹下的文件)
 ```bash
-hexo migrate rss <source>
+hexo cl
+hexo d -g             #  生成以及部署
 ```
 
-- 更多参见[Hexo](https://hexo.io/zh-cn/docs/migration)
+# Github Actions
+自动化部署，每次提交原始文件到 `main` 分支即可更新。
+将密钥上传到仓库的环境变量-`/settings/secrets/actions/new`,命名例如`HEXO_DEPLOY_PRIVATE_KEY`
+创建新的流程-`/actions/new`
+```yml main.yml
+name: Hexo Blog CI
+on:
+  push:
+    branches: [ main ]
+  #pull_request:
+  #  branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository backup branch
+        uses: actions/checkout@master 
+      - name: Setup Node.js lts 
+        uses: actions/setup-node@master
+      - name: Setup Hexo Dependencies
+        env:
+          HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$HEXO_DEPLOY_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa 
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name 'nsleep' 
+          git config --global user.email 'simoncq@163.com'
+          npm install hexo -g
+          npm install
+      - name: Deploy Hexo 
+        run: |
+          hexo clean
+          hexo generate 
+          hexo deploy
+```
+
+{% centerquote %}
+博客搭建完成，访问 `YOUR_NAME.github.io`
+{% endcenterquote %}
+
+
+# [js.org](https://js.org/)
+修改 `Github pages` 域名为 `<NAME>.js.org`，并将`<NAME>.js.org`写入到新文件`source/CNAME`。
+详细操作见 [Github -- js.org](https://github.com/js-org/js.org)
+
+{% note danger %}
+**js.org 修改了添加政策，仅接受与 JavaScript 有明确直接关系的 NPM 包、库、工具等项目**
+类似的服务： [js.cool](https://github.com/js-cool/js.cool), [is-a.dev](https://github.com/is-a-dev/register), [thedev.id](https://github.com/fransallen/thedev.id), [mod.land](https://github.com/denosaurs/mod.land), [runs-on.tech](https://github.com/aakhilv/runs-on.tech)
+{% endnote %}
+
+# [vercel.com](https://vercel.com/)
+[vercel](https://vercel.com/) 是一个自动构建的工具，只要将生肉（就是那些工作空间的文件）所在的 repo 内容库链接到 vercel 就可以得到一个静态博客。在设置里可以自定义域名，连接的 GitHub/Gitlib/Bitbucket 存储库，可以触发给定分支的部署。
+更有一个分析工具，洞察加载速度，响应能力，可视化的稳定性，只不过这个功能需要耗费。
 
 
 
-# 五、 其他部署
+# 其他部署
 
 除了推送到`Github`，也可以使用其他平台，比如`Gitee`和`Coding`。实践出真知，可以多尝试。
 
@@ -227,16 +239,12 @@ hexo migrate rss <source>
 - Coding：速度挺好，但是在我使用的那段时间隔三岔五访问不了
 {% endnote %}
 
-
 ## Fast.io
 **fast.io于2021/01/15 关闭服务**
 [Fast](https://fast.io/)支持网盘 `Google Drive` / `OneDrive` / `Github` / `Dropbox` / `MediaFire` / `BOX`。如此获取网盘资源外链，图床不是问题。但也有~~（可忽略的）~~限制，如下：
 - 免费创建5个站点
 - 单个文件最大500M
 - 每个月100G流量	
-
-## Js.org
-使用[Js.org](https://js.org/)和自定义域名类似，将一个名为“CNAME”的文件添加到您的存储库中，然后在GitHub [repository ](https://github.com/js-org/js.org/tree/master)中发出拉取请求，该请求会将子域添加到现有JS.ORG域的列表中。
 
 ## Firebase Hosting
 [Firebase](https://console.firebase.google.com/)是一个把后端作为服务的云平台（BaaS）
@@ -289,9 +297,6 @@ deploy:
 ```
 
 
-## vercel 自动化部署
-[vercel](https://vercel.com/) 是一个自动构建的工具，只要将生肉（就是那些工作空间的文件）所在的 repo 内容库链接到 vercel 就可以得到一个静态博客。在设置里可以自定义域名，连接的 GitHub/Gitlib/Bitbucket 存储库，可以触发给定分支的部署。
-更有一个分析工具，洞察加载速度，响应能力，可视化的稳定性，只不过这个功能需要耗费。
 
 ## 其他平台
 
