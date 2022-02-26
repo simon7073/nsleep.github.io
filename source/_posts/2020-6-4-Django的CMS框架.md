@@ -2,9 +2,9 @@
 title: Django的CMS框架
 date: 2020-06-04 06:13:24
 tags:
-  - Django
-  - blog
-categories:
+- Python
+- Django
+categories: [未分类 ]
 ---
 
 

@@ -1,8 +1,10 @@
 ---
 title: 简述从 Github 构建 conda R包
 date: 2022-01-19 17:02:00
-tags:
-categories:
+tags: 
+- Conda
+- Github
+categories: [未分类 ]
 ---
 > 示例/目的：安装R包 **NMF**
 > 环境：*CentOS 7 , Miniconda3,  R 4.1.2 .*

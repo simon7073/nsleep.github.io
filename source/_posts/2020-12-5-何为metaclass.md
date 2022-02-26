@@ -1,8 +1,8 @@
 ---
 title: 何为metaclass
 date: 2020-12-05 15:20:32
-tags:
-categories:
+tags: [Python, metaclass]
+categories: [编程语言 ]
 ---
 
 ## 什么是 metaclass ？

@@ -1,7 +1,8 @@
 ---
 title: Hexo-Github搭建博客
 date: 2018-04-01 21:46:52
-tags: Hexo
+tags: [Hexo, Github]
+categories: [未分类 ]
 ---
 
 此篇用以记录使用`Hexo`搭建博客的过程，不时修改加以完善。

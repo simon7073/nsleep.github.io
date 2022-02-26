@@ -1,8 +1,10 @@
 ---
 title: Python路径操作新标准：pathlib 模块
 date: 2020-12-09 16:07:38
-tags:
-categories:
+tags: 
+- Python
+- pathlib
+categories: [编程语言 ]
 ---
 
 [pathlib 模块](https://www.cnblogs.com/nickchen121/p/11596223.html)

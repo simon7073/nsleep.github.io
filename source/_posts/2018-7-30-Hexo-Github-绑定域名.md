@@ -2,6 +2,7 @@
 title: Hexo-Github-绑定域名
 date: 2018-07-30 01:23:48
 tags: Hexo
+categories: [未分类 ]
 ---
 
 ## 1. ~~获取GitHub Pages的IP~~

@@ -1,8 +1,8 @@
 ---
-title: Hexo-Github-备份
+title: Hexo-Github-备份-1
 date: 2018-07-22 15:59:55
 tags: [Hexo]
-categories: 
+categories: [未分类 ]
 ---
 
 用Hexo在GitHub搭建Blog后想要进行备份，方法之一就是通过创建分支把源码放到GitHub上。

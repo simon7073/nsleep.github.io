@@ -2,7 +2,7 @@
 title: Hexo-search配置
 date: 2019-03-24 13:42:18
 tags: Hexo
-categories: 
+categories: [未分类 ]
 ---
 
 [官方文档](https://github.com/wzpan/hexo-generator-search)

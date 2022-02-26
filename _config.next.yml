@@ -83,8 +83,8 @@ creative_commons:
 # 外部网址应以 http:// or https:// 开头
 menu:
   home: / || fa fa-home
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   about: /about/ || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
