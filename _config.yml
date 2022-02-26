@@ -17,8 +17,8 @@ url: https://blog.simon7.top/
 permalink: :year:month:day/:post_title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+ trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+ trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -35,21 +35,24 @@ default_layout: post # 预设布局
 auto_spacing: true # 中英文中间加空格 官网无此项
 titlecase: true # 英文标题首字母是否大写
 external_link: # 在新标签页中打开
-  enable:  true
+  enable:  false
   field: post
   exclude: ''
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: true # 相对链接
 future: false
-highlight:
-  enable: false 
-  line_number: false
-  auto_detect: false
-  tab_replace: '    '
-  wrap: false
-  hljs: false
+# highlight:
+#   enable: false 
+#   line_number: false
+#   auto_detect: false
+#   tab_replace: '    '
+#   wrap: false
+#   hljs: false
 prismjs:
   enable: true
   preprocess: true

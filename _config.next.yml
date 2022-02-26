@@ -11,7 +11,7 @@
 
 # 允许缓存内容生成
 cache:
-  enable: true
+  enable: false
 
 # 生成hexo后删除不需要的文件
 minify: false
@@ -36,9 +36,7 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
-#scheme: Mist
-#scheme: Pisces
+# Gemini | Muse | Mist | Pisces
 scheme: Gemini
 
 # Dark Mode
@@ -149,7 +147,7 @@ site_state: false
 # Key 是显示给最终用户的链接标签.
 # `||` 定界符之前的值是目标永久链接, `||` 定界符之后的值是Font Awesome图标的名称.
 social:
-  #GitHub: https://github.com/nsleep || fab fa-github
+  GitHub: https://github.com/nsleep || fab fa-github
   E-Mail: mailto:simoncq@163.com || fa fa-envelope
   #QQ: http://wpa.qq.com/msgrd?v=3&uin=707347059&site=qq&menu=yes || fab fa-qq
   rss: /atom.xml || fa fa-rss
@@ -186,7 +184,7 @@ toc:
   # If true, 则所有标题将在标题宽度长于边栏宽度的情况下放在下一行.
   wrap: false
   # If true, 则将显示帖子中所有级别的目录，而不是帖子中已激活的部分.
-  expand_all: false
+  expand_all: true
   # 生成的Toc的最大航向深度.
   max_depth: 6
 
@@ -216,14 +214,14 @@ footer:
   # 年份和版权信息之间的图标.
   icon:
     # Font Awesome中的图标名称. See: https://fontawesome.com/icons
-    name: fa fa-at
+    name: fa fa-atom
     # 如果要为图标设置动画, set it to true.
-    animated: false
+    animated: true
     # 使用十六进制代码更改图标的颜色.
     #color: "#ff0000"
 
   # 如果未定义，将使用 `_config.yml` 中的 `author`.
-  copyright:
+  copyright: 
 
   # Powered by Hexo & NexT
   powered: true
@@ -307,13 +305,13 @@ related_posts:
 # Post edit 发布
 # 轻松在线浏览和编辑博客源代码.
 post_edit:
-  enable: true
-  url: https://github.com/nsleep/blog/blob/main/source/ # Link for view source
+  enable: false
+  url: https://github.com/nsleep/nsleep.github.io/tree/main/source # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
 # 在帖子页脚中显示上一个帖子和下一个帖子
 # 可用值: left | right | false
-post_navigation: left
+post_navigation: right
 
 
 # ---------------------------------------------------------------
@@ -329,19 +327,6 @@ tagcloud:
   amount: 200 # 标签总数
   orderby: name # 标签顺序
   order: 1 # 排序
-
-# Google Calendar 日历
-# 通过日历页面与他人共享您最近的日程安排.
-calendar:
-  calendar_id: <required> # Your Google account E-Mail
-  api_key: <required>
-  orderBy: startTime
-  showLocation: false
-  offsetMax: 72 # Time Range
-  offsetMin: 4 # Time Range
-  showDeleted: false
-  singleEvents: true
-  maxResults: 250
 
 
 # ---------------------------------------------------------------
@@ -409,7 +394,7 @@ bookmark:
 
 # 在GitHub关注我 - 右上角横幅
 github_banner:
-  enable: true
+  enable: false
   permalink: https://github.com/nsleep
   title: Follow me on GitHub
 
@@ -502,6 +487,7 @@ baidu_push: true
 # 警告：请根据说明文件安装/卸载相关的渲染器.
 # See: https://theme-next.js.org/docs/third-party-services/math-equations
 # 服务器端插件: https://github.com/next-theme/hexo-filter-mathjax
+# 公式示例： https://theme-next.js.org/docs/third-party-services/math-equations.html?highlight=mathjax#Simple-Equations
 math:
   # Default (false)， 将按需加载 mathjax / katex 脚本.
   # 这只是渲染那些在前面具有 `mathjax: true` 的页面.
@@ -510,7 +496,7 @@ math:
 
   mathjax:
     enable: true
-    tags: ams # none | ams | all
+    tags: ams # none | ams (自动方程编号) | all
 
   katex:
     enable: false
