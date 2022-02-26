@@ -10,7 +10,6 @@ npm install hexo -g
 hexo init
 # 安装其他依赖包
 npm install hexo-deployer-git
-npm install hexo-deployer-heroku
 npm install hexo-generator-feed
 npm install hexo-generator-searchdb
 npm install hexo-symbols-count-time
