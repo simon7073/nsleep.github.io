@@ -6,6 +6,8 @@
 # 说明：hexo-cli （命令行）是 hexo 的最小安装
 #   hexo 包含 hexo-cli .
 npm install hexo -g
+npm install npm-check -g
+npm-check -u -g
 # 在空文件夹下建立副本：
 hexo init
 # 安装其他依赖包
@@ -20,6 +22,7 @@ npm install hexo-generator-index2
 npm uninstall hexo-renderer-marked
 npm install hexo-renderer-pandoc
 # 需 pandoc 软件，用以数学公式
+npm audit fix --force
 ```
 ## 2. 日常操作
 
