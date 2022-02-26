@@ -171,7 +171,7 @@ hexo cl
 hexo d -g             #  生成以及部署
 ```
 
-# Github Actions
+## Github Actions
 自动化部署，每次提交原始文件到 `main` 分支即可更新。
 将密钥上传到仓库的环境变量-`/settings/secrets/actions/new`,命名例如`HEXO_DEPLOY_PRIVATE_KEY`
 创建新的流程-`/actions/new`
@@ -297,8 +297,6 @@ deploy:
   region: ap-shanghai   # cos的region
 ```
 
-
-
 ## 其他平台
 
 - [Heroku](https://heroku.com)
@@ -316,7 +314,7 @@ deploy:
 - [gitshell](https://gitshell.com/)
 - [gitea](https://gitea.com/)
 
-# 六、更新
+# 更新
 
 更新`npm`
 ```
