@@ -5,14 +5,14 @@ shape: square
 defaultlinks:
 - nickname: 阮一峰的个人网站
   avatar:	http://www.ruanyifeng.com/blog/images/person2.jpg
-  info: 	
+  info: 	无
   site: 	http://www.ruanyifeng.com/home.html
 
 - nickname: 廖雪峰的官方网站
   avatar:	http://tva2.sinaimg.cn/crop.0.0.180.180.50/62d8efadjw1e8qgp5bmzyj2050050aa8.jpg
-  info: 	
+  info: 	无
   site: 	https://www.liaoxuefeng.com/
-  
+
 friendslinks :
 - nickname: 隔壁老于
   avatar: https://www.gebilaoyu.club/wp-content/uploads/2020/10/avatar_1599567513960.jpg
