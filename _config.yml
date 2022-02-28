@@ -44,7 +44,7 @@ post_asset_folder: true
 marked:
   prependRoot: true
   postAsset: true
-relative_link: true # 相对链接
+relative_link: false # 相对链接 # next主题404页面需要其置为false
 future: false
 # highlight:
 #   enable: false 
