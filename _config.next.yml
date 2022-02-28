@@ -68,9 +68,10 @@ custom_logo: #/uploads/custom-logo.jpg
 # SA：相同方式共享 允许修改
 # 
 # cc-zero : https://creativecommons.org/publicdomain/zero/1.0/
-# by-sa   : https://creativecommons.org/licenses/by-sa/4.0/deed.zh
+# by-nc-sa   : https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
 creative_commons:
-  license: by-sa # by | by-sa | by-nc | by-nc-sa | by-nd | by-nc-nd | cc-zero
+  license: by-nc-sa # by | by-sa | by-nc | by-nc-sa | by-nd | by-nc-nd | cc-zero
+  size: big # big | small
   sidebar: true
   post: true
   language: deed.zh # deed.en

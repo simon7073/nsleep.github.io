@@ -51,14 +51,32 @@ ssh -T git@github.com # 测试添加ssh是否成功  -v 显示详细信息
 # [Hexo](https://hexo.io/zh-cn/docs/#安装-Hexo)
 
 ## 安装
+
+使用 npm 安装 Hexo，`hexo-cli` （命令行）是 `hexo` 的最小安装，`hexo` 包含 `hexo-cli` .
+
 ```bash
-# 使用 npm 安装 Hexo
-npm install hexo -g   # 全局安装 hexo ，包含hexo-cli
+# 全局安装 hexo
+npm install hexo -g   
+# 检查 npm 包的依赖
+#npm i npm-check -g    
+#npm-check -u -g
 hexo -v               # 检查hexo是否安装成功
 # 在一个空文件夹下执行
 hexo init             # 初始化
 npm install           # 安装所需要的组件
-
+# 安装其他依赖包（可选）
+npm install hexo-deployer-git
+npm install hexo-generator-feed
+npm install hexo-generator-searchdb
+npm install hexo-symbols-count-time
+npm install hexo-theme-next
+npm install jquery
+npm uninstall hexo-generator-index
+npm install hexo-generator-index2
+npm uninstall hexo-renderer-marked
+npm install hexo-renderer-pandoc # 需 pandoc 软件，用以数学公式
+# 解决部分依赖冲突
+npm audit fix --force
 ```
 
 ## 预览
@@ -347,3 +365,8 @@ npm-check -u
 # 其他相关阅读
 
 [简书-hexo使用 grunt 实现自动化](https://www.jianshu.com/p/cf6d7a180aa4)
+
+# 需要注意的问题
+
+1. 安装 `hexo-renderer-pandoc` 插件需要 [pandoc](https://github.com/jgm/pandoc) 软件。
+2. 在写 .md 文章的时候注意 `---` 后要留空行，不然 `hexo-renderer-pandoc` 会报错。
