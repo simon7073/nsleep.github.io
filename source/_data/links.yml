@@ -7,7 +7,6 @@ defaultlinks:
   avatar: http://www.ruanyifeng.com/blog/images/person2.jpg
   info: 无
   site: http://www.ruanyifeng.com/home.html
-
 - nickname: 廖雪峰的官方网站
   avatar: http://tva2.sinaimg.cn/crop.0.0.180.180.50/62d8efadjw1e8qgp5bmzyj2050050aa8.jpg
   info: 无
@@ -18,26 +17,39 @@ friendslinks :
   avatar: https://www.gebilaoyu.club/wp-content/uploads/2020/10/avatar_1599567513960.jpg
   info: 分享技术
   site: https://gebilaoyu.club
-  
 - nickname: 长征部落格
   avatar: https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/logo.jpg
   info: 保持怀疑，独立思考
   site: https://www.cz5h.com
-  
 - nickname: XXiaoA's blog
   avatar: https://s2.loli.net/2022/02/13/LQZurKxEpmwolbD.jpg
   info: My heart is with you
   site: https://xxiaoa.github.io
-
 - nickname: 孤岛
   avatar: https://gao4.top/tx.webp
   info: 喜欢搞事的NAS玩家
   site: https://gao4.top
-
 - nickname: 江卮可乐
   avatar: https://blog.ijann.com/img/jan.webp
   info:  江的三言两语
   site: https://blog.ijann.com
+- nickname: 暗影
+  avatar: https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg
+  info:  暗影无际,暗夜无边
+  site: https://dsanying.github.io
+- nickname: pai233の小窝
+  avatar: https://blog.pai233.top/img/avatar.jpg
+  info: Write Down My Life.
+  site: https://blog.pai233.top/
+- nickname: 玖涯博客
+  avatar: https://blog.nineya.com/favicon.png
+  info: 投资未来的人，是忠于现实的人。
+  site: https://blog.nineya.com/
+- nickname: Fi9Coder          #友链名称
+  avatar: https://s2.loli.net/2022/01/26/udVI4SKODJHneWg.jpg  #友链头像
+  info: 致力于Web安全与Python学习,研究,开发。  #友链说明
+  site: https://www.safeinfo.me  #友链地址
+
 
 nolinks : 
 - nickname: Delimo
@@ -45,7 +57,3 @@ nolinks :
   info: 生活可能不像你想象得那么美好，但也不会像你想象的那么糟糕
   site: https://delimo.tk/
 
-- nickname: Fi9Coder  #友链名称
-  avatar: https://s2.loli.net/2022/01/26/udVI4SKODJHneWg.jpg  #友链头像
-  info: 致力于Web安全与Python学习,研究,开发。  #友链说明
-  site: https://www.safeinfo.me  #友链地址
