@@ -48,7 +48,7 @@ ssh -T git@github.com # 测试添加ssh是否成功  -v 显示详细信息
 - 更多参见[Github Docs](https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 
-# [Hexo](https://hexo.io/zh-cn/docs/#安装-Hexo)
+# 在本地使用[Hexo](https://hexo.io/zh-cn/docs/#安装-Hexo)
 
 ## 安装
 
@@ -90,14 +90,14 @@ hexo s                # 开启本地服务 [-p 端口号]
 hexo new [layout] "title" # layout 默认值为 post
 ```
 
-## 文件生成
+## 文件渲染
 ```bash
 hexo generate
 hexo g -d 		# 文件生成后立即部署网站
 hexo g -f 		# 差分机制，只会重新生成改动的文件
 ```
 
-## 清除文件
+## 清除缓存
 清除缓存文件 (`db.json`) 和已生成的静态文件 (`public`)。
 ```bash
 hexo cl
@@ -148,7 +148,7 @@ hexo publish [layout] "title"
 
 # [Github](https://github.com/) 
 注册并新建项目，项目必须要遵守格式：`YOUR_NAME.github.io`
-修改分支，使其有 `main`(默认分支) 和 `gh-pages` 两个分支，修改 `Github pages` 构建分支为 `gh-pages` ，域名填写 `YOUR_NAME.github.io`
+修改分支，使其有 `main`(默认分支) 和 `gh-pages` 两个分支，在仓库设置中修改 `Github pages` 构建分支为 `gh-pages` ，域名填写 `YOUR_NAME.github.io`
 
 ```bash
 git clone git@github.com:<YOUR_NAME>/<YOUR_NAME>.github.io.git
