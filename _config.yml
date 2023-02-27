@@ -42,6 +42,7 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: true
 marked:
+  gfm: false
   prependRoot: true
   postAsset: true
 relative_link: false # 相对链接 # next主题404页面需要其置为false

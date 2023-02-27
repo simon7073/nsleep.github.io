@@ -2,103 +2,98 @@
 title: Hexo-Github搭建博客
 date: 2018-04-01 21:46:52
 tags: [Hexo, Github]
-categories: [未分类 ]
+categories: [教程 ]
 ---
 
-此篇用以记录使用`Hexo`搭建博客的过程，不时修改加以完善。
+> 此篇用以记录使用`Hexo`搭建博客的过程，不时修改加以完善。
 
-1. [Git](https://git-scm.com/downloads)
-2. [Node.js](https://nodejs.org/en/download/)
 
-安装步骤参考 [hexo 文档](https://hexo.io/zh-cn/docs/)
+# 本地搭建
+
+参考 [Hexo 官方文档](https://hexo.io/zh-cn/docs/#安装-Hexo)
+
+在安装 `Hexo` 前需要先下载并安装 [node.js](https://nodejs.org/en/download/)，如果需要换国内的镜像源可以用 `npm config set registry https://registry.npm.taobao.org` 换成淘宝的镜像源。
 
 <!-- more -->
-# Git 
 
-## 配置本地Git环境
-```bash
-git config --global user.name "your_name"
-git config --global user.email "your_email"
-# 以下可选
-git config --global core.autocrlf false
-git config --global http.sslVerify false
-git config --global https.sslVerify false
-```
-<details>
-<summary>CRLF 问题(折叠)</summary>
-<blockquote>
-	首先问题出在不同操作系统所使用的换行符是不一样的，下面罗列一下三大主流操作系统的换行符：
-	<br/>Uinx/Linux采用换行符LF表示下一行（LF：LineFeed，换行）；
-	<br/>Dos和Windows采用回车+换行CRLF表示下一行（CRLF: CarriageReturn LineFeed，中文意思是回车换行）；
-	<br/>Mac OS采用回车CR表示下一行（CR：CarriageReturn，回车）。
-	<br/><br/>为true时，Git会将你 add 的所有文件视为文本文件，将结尾的CRLF转换为LF，而checkout时会再将文件的LF格式转为CRLF格式。
-	<br/>为false时，line endings不做任何改变，文本文件保持其原来的样子。
-	<br/>为input时，add时Git会把CRLF转换为LF，而check时仍旧为LF，所以Windows操作系统不建议设置此值。
-</blockquote>
-</details>
+## 安装 Hexo
 
-## 创建ssh密钥
-为了方便本地访问Github，创建ssh密钥，并将公钥[`%USERPROFILE%/.ssh/id_rsa.pub`]上传[Github ssh keys](https://github.com/settings/ssh/new)
-
-```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 	# 创建密钥对
-ssh -T git@github.com # 测试添加ssh是否成功  -v 显示详细信息	
-```
-
-- 更多参见[Github Docs](https://help.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh)
-
-
-# 在本地使用[Hexo](https://hexo.io/zh-cn/docs/#安装-Hexo)
-
-## 安装
-
-使用 npm 安装 Hexo，`hexo-cli` （命令行）是 `hexo` 的最小安装，`hexo` 包含 `hexo-cli` .
+`hexo-cli` （命令行）是 `hexo` 的最小安装，即 `hexo` 包含 `hexo-cli`。
 
 ```bash
 # 全局安装 hexo
 npm install hexo -g   
-# 检查 npm 包的依赖
-#npm i npm-check -g    
-#npm-check -u -g
 hexo -v               # 检查hexo是否安装成功
-# 在一个空文件夹下执行
+```
+
+## 初始化
+
+在一个空文件夹下执行
+
+```bash
 hexo init             # 初始化
 npm install           # 安装所需要的组件
+
 # 安装其他依赖包（可选）
 npm install hexo-deployer-git
 npm install hexo-generator-feed
 npm install hexo-generator-searchdb
-npm install hexo-symbols-count-time
 npm install hexo-theme-next
 npm install jquery
 npm uninstall hexo-generator-index
 npm install hexo-generator-index2
 npm uninstall hexo-renderer-marked
-npm install hexo-renderer-pandoc # 需 pandoc 软件，用以数学公式
+npm install hexo-renderer-pandoc
+```
+
+`npm audit` 用以检查安全性。
+可以选择安装 `npm-check` 来维护 `npm` 包的依赖关系。
+可以选择安装 `npm-check-updates` 查看可更新包
+```bash
+# 安装 npm-check
+npm i npm-check -g 
+# 检查 npm 包的依赖   
+npm-check -u -g
+
+# 检查是否有依赖冲突
+npm audit
 # 解决部分依赖冲突
 npm audit fix --force
+
+npm install npm-check-updates -g
+# 查看可更新包
+ncu
+# 更新package.json
+ncu -u
+npm install
 ```
+
+安装以后，可以使用以下两种方式执行 Hexo：
+1. 使用 `npx hexo <command>` 。
+2. 将 `Hexo` 所在的目录添加到环境变量，使用 `hexo <command>` 。
 
 ## 预览
+
 ```bash
-hexo g                # 生成静态文件 -- public文件夹下
-hexo s                # 开启本地服务 [-p 端口号]
+hexo g
+hexo s
 ```
+`hexo g` 是 `hexo generate` 的简写，表示将 markdown 渲染生成静态文件，生成的文件在 `./public/` 文件夹下。参数`-d`表示文件生成后立即上传云端部署网站，参数`-f`表示差分机制，只会重新生成改动的文件。
+`hexo s` 是 `hexo server` 的简写，表示开启本地服务，可以跟参数 `-p`+端口号，指定端口。 
 
 ## 写篇文章
+
 ```bash
-hexo new [layout] "title" # layout 默认值为 post
+hexo new [layout] "Title"
 ```
 
-## 文件渲染
-```bash
-hexo generate
-hexo g -d 		# 文件生成后立即部署网站
-hexo g -f 		# 差分机制，只会重新生成改动的文件
-```
+`[layout]` 表示采用的模板，默认值为 `post` ，模板文件在 `./scaffolds/` 文件夹下。
+文章标题可以不添加双引号，同时生成两个文章需要用空格隔开。
 
 ## 清除缓存
-清除缓存文件 (`db.json`) 和已生成的静态文件 (`public`)。
+
+清除缓存文件 (`db.json`) 和已生成的静态文件 (`./public/*`)。
+
 ```bash
 hexo cl
 ```
@@ -107,7 +102,7 @@ hexo cl
 
 ### 1). 新建草稿
 
-执行以下命令将在`./source/_drafts`文件夹下创建一篇博文。
+执行以下命令将在`./source/_drafts`文件夹下创建一篇文章。
 
 ```bash
 hexo new draft <filename>
@@ -137,6 +132,7 @@ render_drafts: true
 {% endtabs %}
 
 ### 3). 发表草稿
+
 把草稿变成文章，或者页面：
 
 ```bash 
@@ -146,41 +142,52 @@ hexo publish [layout] "title"
 - 更多参见[Hexo](https://hexo.io/zh-cn/docs/commands)
 
 
-# [Github](https://github.com/) 
-注册并新建项目，项目必须要遵守格式：`YOUR_NAME.github.io`
-修改分支，使其有 `main`(默认分支) 和 `gh-pages` 两个分支，在仓库设置中修改 `Github pages` 构建分支为 `gh-pages` ，域名填写 `YOUR_NAME.github.io`
+# 上传到 Github
+
+设置本地Git环境，见 [<Github 使用指南>](2023-2-23-Github-使用指南)
+
+## 设置远程仓库
+
+1. 新建仓库，仓库名必须要遵守格式：`YOUR_NAME.github.io`
+2. 修改分支，使其有 `main`(默认分支) 和 `gh-pages` 两个分支
+3. 3在仓库设置中修改 `Github pages` 构建分支为 `gh-pages` ，域名填写 `YOUR_NAME.github.io`
+
+## 关联仓库
 
 ```bash
 git clone git@github.com:<YOUR_NAME>/<YOUR_NAME>.github.io.git
-# 然后将初始化的hexo合并（复制）到本地仓库
 ```
 
-## 安装 git 插件
+然后将初始化的 `hexo` 合并/复制到本地仓库
+
+## 将原文件上传
+
 ```bash
-npm install hexo-deployer-git --save
+git add .
+git commit -m "first commit"
+git push -u origin main
 ```
 
-## 修改 hexo 配置
-> 注：所有配置项目的分号后都需要一个空格
+## 将静态文件上传
+
+### 安装 git 插件
+
+```bash
+npm install hexo-deployer-git
+```
+
+### 修改 hexo 配置
+
+> 注：所有配置项目的`:`后都需要一个空格
 
 ```yml
-deploy:
+deploy: 
 - type: git
   repo: <repository url> 
   # https://github.com/<username>/<project>
   # git@github.com:<username>/<username>.github.io.git
   branch: gh-pages
-```
-
-- [其他部署配置](https://hexo.io/zh-cn/docs/one-command-deployment)
-
-## 部署 YOUR_NAME.github.io
-
-### 推送原始文件(也看做备份)
-```bash
-git add .
-git commit -m "first commit"
-git push -u origin main
+  message: Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}
 ```
 
 ### 推送页面文件(生成的缓存，即public文件夹下的文件)
@@ -188,6 +195,11 @@ git push -u origin main
 hexo cl
 hexo d -g             #  生成以及部署
 ```
+
+- [其他部署配置](https://hexo.io/zh-cn/docs/one-command-deployment)
+
+
+# 自动化部署
 
 ## Github Actions
 自动化部署，每次提交原始文件到 `main` 分支即可更新。
@@ -233,20 +245,29 @@ jobs:
 {% endcenterquote %}
 
 
-# [js.org](https://js.org/)
-修改 `Github pages` 域名为 `<NAME>.js.org`，并将`<NAME>.js.org`写入到新文件`source/CNAME`。
-详细操作见 [Github -- js.org](https://github.com/js-org/js.org)
+## js.org
 
 {% note danger %}
-**js.org 修改了添加政策，仅接受与 JavaScript 有明确直接关系的 NPM 包、库、工具等项目**
+**[js.org](https://js.org/) 修改了添加政策，仅接受与 JavaScript 有明确直接关系的 NPM 包、库、工具等项目**
 类似的服务： [js.cool](https://github.com/js-cool/js.cool), [is-a.dev](https://github.com/is-a-dev/register), [thedev.id](https://github.com/fransallen/thedev.id), [mod.land](https://github.com/denosaurs/mod.land), [runs-on.tech](https://github.com/aakhilv/runs-on.tech)
+更多类似的服务查看 [free-for.dev -> Domain](https://free-for.dev/#/?id=domain)。
 {% endnote %}
 
-# [vercel.com](https://vercel.com/)
-[vercel](https://vercel.com/) 是一个自动构建的工具，只要将生肉（就是那些工作空间的文件）所在的 repo 内容库链接到 vercel 就可以得到一个静态博客。在设置里可以自定义域名，连接的 GitHub/Gitlib/Bitbucket 存储库，可以触发给定分支的部署。
-更有一个分析工具，洞察加载速度，响应能力，可视化的稳定性，只不过这个功能需要耗费。
+~~修改 `Github pages` 域名为 `<NAME>.js.org`，并将`<NAME>.js.org`写入到新文件`source/CNAME`。~~
+详细操作见 [Github -- js.org](https://github.com/js-org/js.org)
 
 
+## vercel
+[vercel.com](https://vercel.com/) 是一个自动构建的工具，只要将工作空间的文件所在的 `repo` 内容库链接到 `vercel` 就可以得到一个静态博客。在设置里可以自定义域名，连接的 `GitHub/Gitlib/Bitbucket` 存储库，可以触发给定分支的部署。
+更有一个分析工具，洞察加载速度，响应能力，可视化的稳定性，只不过这个功能需要付费。
+
+## Heroku
+
+[Heroku](https://heroku.com)
+
+## Netlify
+
+[Netlify](https://www.netlify.com/)
 
 # 其他部署
 
@@ -259,14 +280,20 @@ jobs:
 {% endnote %}
 
 ## Fast.io
+
+{% note danger %}
 **fast.io于2021/01/15 关闭服务**
-[Fast](https://fast.io/)支持网盘 `Google Drive` / `OneDrive` / `Github` / `Dropbox` / `MediaFire` / `BOX`。如此获取网盘资源外链，图床不是问题。但也有~~（可忽略的）~~限制，如下：
+{% endnote %}
+
+[Fast](https://fast.io/)支持网盘 `Google Drive` / `OneDrive` / `Github` / `Dropbox` / `MediaFire` / `BOX`。如此获取网盘资源外链，图床不是问题。
+但也有 ~~（可忽略的）~~ 限制：
 - 免费创建5个站点
 - 单个文件最大500M
 - 每个月100G流量	
 
 ## Firebase Hosting
-[Firebase](https://console.firebase.google.com/)是一个把后端作为服务的云平台（BaaS）
+
+[Firebase](https://console.firebase.google.com/) 是一个把后端作为服务的云平台（BaaS）
 - 国内无法访问。
 
 ## FTP服务器
@@ -317,8 +344,6 @@ deploy:
 
 ## 其他平台
 
-- [Heroku](https://heroku.com)
-- [Netlify](https://www.netlify.com/)
 - [Bitbucket](https://bitbucket.org/)
 - [aerobatic](https://www.aerobatic.com/)
 - [surge](https://www.nssurge.com/)
@@ -369,4 +394,4 @@ npm-check -u
 # 需要注意的问题
 
 1. 安装 `hexo-renderer-pandoc` 插件需要 [pandoc](https://github.com/jgm/pandoc) 软件。
-2. 在写 .md 文章的时候注意 `---` 后要留空行，不然 `hexo-renderer-pandoc` 会报错。
+2. 在写 `.md` 文章的时候注意 `---` 后要留空行，不然 `hexo-renderer-pandoc` 会报错。

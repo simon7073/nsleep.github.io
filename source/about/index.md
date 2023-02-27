@@ -18,11 +18,9 @@ layout: about
 
 本站所引用的链接将参考格式：[作品.作者.源]
 
-
-<!--
-* 20/03/01 回归
--->
-
+博客其他链接：
+- isimon.js.org
+- 
 ---
 
 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=707347059&amp;site=qq&amp;menu=yes">

@@ -262,7 +262,7 @@ post_meta:
 # 发布字数显示设置
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
-  separated_meta: true # 分隔元（换行?block?）
+  separated_meta: false # 分隔元（换行?block?）
   item_text_total: false # 文字统计
 
 # 使用tag图标代替'#'符号
