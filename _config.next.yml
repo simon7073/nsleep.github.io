@@ -895,6 +895,6 @@ js: js
 images: images
 
 # config of hexo-renderer-pandoc
-pandoc:
-  args:
-    - --mathjax
+# pandoc:
+#   args:
+#     - --mathjax
