@@ -2,10 +2,11 @@
 .deploy_heroku/
 node_modules/
 public/
+themes/
+source/_drafts/
 db.json
 *.log
 .DS_Store
 Thumbs.db
 NOGIT
-themes/
 package-lock.json

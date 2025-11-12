@@ -496,13 +496,13 @@ math:
   every_page: false
 
   mathjax:
-    enable: true
+    enable: false
     tags: ams # none | ams (自动方程编号) | all
 
   katex:
-    enable: false
+    enable: true
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-    copy_tex: false
+    copy_tex: true
 
 # 在您的网站上轻松启用快速Ajax导航.
 # For more information: https://github.com/next-theme/pjax
@@ -893,3 +893,8 @@ canvas_ribbon:
 css: css
 js: js
 images: images
+
+# config of hexo-renderer-pandoc
+pandoc:
+  args:
+    - --mathjax
